@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Payee Accounts | Cryptocurrency Arbitrage Investment Pool</title>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/animations.css" rel="stylesheet">
+    <link href="/assets/css/interface.css" rel="stylesheet">
+	<link href="/assets/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/assets/css/pace/purple/pace-theme-flash.css" rel="stylesheet">
+    <link href="/assets/css/new-styles.css" rel="stylesheet">
+    <link href="/assets/css/dashboard_update.css" rel="stylesheet">
+    
+    <style>
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #d6dee1;
+            border-radius: 20px;
+            border: 6px solid transparent;
+            background-clip: content-box;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #a8bbbf;
+        }
+    </style>
+
+    <script defer src="/assets/vendor/js/jquery-3.4.0.min.js"></script>
+    <script defer src="/assets/vendor/js/bootstrap.min.js"></script>
+    <script defer src="/assets/vendor/js/bootstrap-select.min.js"></script>
+    <script defer src="/assets/vendor/js/noty.min.js"></script>
+    <script defer src="/assets/vendor/js/pace.min.js"></script>
+    <script defer src="/assets/vendor/js/qrcode-with-logos-1.1.1.min.js"></script>
+    <script defer src="/assets/js/events.min.js"></script>
+    <script defer src="/assets/js/ajax.min.js"></script>
+    <script defer src="/assets/js/interface.min.js"></script>
+    <script defer src="/assets/js/countdown-timer.min.js"></script>
+
+    </head>
+
+<body>
+
+<div class="container-fluid navbar-interface">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fa fa-bars"></span>
+                </button>
+                <a class="brand-logo" href="/">
+                    <img loading="lazy" src="/images/svg/logo.svg" width="24" height="24" alt="website logo">
+                    <span>ARBITJET</span>
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+				
+                    <li class="color-stripe-success" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1.html">
+			    <i class="fa-solid fa-gauge"></i>
+                            Dashboard                        </a>
+                    </li>
+					<li class="dropdown color-stripe-danger" data-stripe="color-stripe-top">
+                        <a href="payees.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			   <i class="fa-solid fa-user"></i>
+                            My Account <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/profile.html">Edit Profile</a></li>
+                            <li class=""><a href="/settings.html">Preferences</a></li>
+                            <li class=""><a href="/security.html">Security</a></li>
+                            <li class=""><a href="/password.html">Change Password</a></li>
+							<li class=""><a href="/verify.html">
+								Verifications								<span class="badge badge-warning m-l-5">4</span>								</a>
+							</li>
+			     
+                       </ul>
+                    </li>
+                    <li class="dropdown active color-stripe-top color-stripe-info" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1/finance.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			                <i class="fa-solid fa-wallet"></i>
+                            Finance <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/finance.html">Finance</a></li>
+			     
+                            <li class=""><a href="deposit.html">Deposit Funds</a></li>
+                            <li class=""><a href="withdraw.html">Withdraw Funds</a></li>
+                            <li class=""><a href="ledger.html">History</a></li>
+                            <li class="active"><a href="payees.html">Payee Accounts</a></li>
+                                                    </ul>
+                    </li>
+                    <li class="dropdown color-stripe-success" data-stripe="color-stripe-top">
+                        <a href="payees.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			    <i class="fa-solid fa-users"></i>
+                            Affiliates <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/affiliates/downlines.html">My Affiliates</a></li>
+                            <li class=""><a href="/affiliates/tools.html">Invitation Links</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown color-stripe-warning" data-stripe="color-stripe-top">
+                        <a href="payees.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			                <i class="fa-solid fa-message"></i>
+                            Messaging <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/inbox.html">Inbox (0)</a></li>
+                            <li class=""><a href="/inbox/compose.html">Compose</a></li>
+                        </ul>
+                    </li>
+                    <li class="color-stripe-info">
+                        <a href="/account/88b55f9b234080c236c1%3Ftour.html" style="color: #4596E8;font-weight: 700;">
+                            <i class="fa-solid fa-circle-info"></i>
+                            GUIDE
+                        </a>
+                    </li>
+                    <li class="color-stripe-info" data-stripe="color-stripe-top">
+                        <a href="/signout.html">
+			                <i class="fa-solid fa-right-from-bracket"></i>
+                            Sign out                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</div>
+<div class="container-fluid ticker hidden-xs">
+    <div class="row">
+        <div class="col-sm-9">
+            <ul class="list-inline ticker-nav">
+				<li class=""><a href="/account/88b55f9b234080c236c1/inbox.html">Inbox<span class="badge badge-info m-l-5">0</span></a></li>
+                                <li class=""><a href="deposit.html">Deposit Funds</a></li>
+				<li class=""><a href="/account/88b55f9b234080c236c1/affiliates/downlines.html">My Affiliates</a></li>
+				<li class=""><a href="/callback.html">Request Call Back</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-3 text-right time">
+            <small>23 Jun 2025 08:26 AM <i class="fa-regular fa-clock"></i></small>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid content">
+    <div class="inner">
+        <div class="row">
+    <div class="col-sm-3 col-lg-2 hidden-xs">
+        
+        <div class="">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="">
+                    <a href="/account/88b55f9b234080c236c1/finance.html">
+                        Finance                    </a>
+                </li>
+                <li class="">
+                    <a href="deposit.html">
+                        Deposit Funds                    </a>
+                </li>
+                <li class="">
+                    <a href="withdraw.html">
+                        Withdraw Funds                    </a>
+                </li>
+                <li class="">
+                    <a href="ledger.html">
+                        History                    </a>
+                </li>
+				<li class="active">
+					<a href="payees.html">
+						Payee Accounts					</a>
+				</li>
+                            </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 col-lg-10">
+        <form method="post" action="payees.html" class="form-horizontal xhr-form">
+            <input type="hidden" name="action" value="save">
+            <input type="hidden" name="585bfe01422a" value="5abb8343fd012ba47259566d27d2ebe6b2e088e6">
+            <input type="hidden" name="cd9d3462dae5" value="bf39b2c200c5ce6b6cf0baf22360b01ec6fcdca1">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Payee Accounts</h3>
+                </div>
+                <div class="panel-body">
+                                            <div class="form-group">
+                            <label class="control-label col-sm-4 col-md-3 col-lg-2">Bitcoin (BTC)</label>
+                                                            <div class="col-sm-6 col-md-5 col-lg-5">
+                                    <input type="text" name="gateway_1"
+                                           placeholder="Deposit account"
+                                           data-onload-value="" class="form-control">
+                                </div>
+                                                    </div>
+                                            <div class="form-group">
+                            <label class="control-label col-sm-4 col-md-3 col-lg-2">Ethereum (ETH)</label>
+                                                            <div class="col-sm-6 col-md-5 col-lg-5">
+                                    <input type="text" name="gateway_2"
+                                           placeholder="Deposit account"
+                                           data-onload-value="" class="form-control">
+                                </div>
+                                                    </div>
+                                            <div class="form-group">
+                            <label class="control-label col-sm-4 col-md-3 col-lg-2">Tether (USDT)</label>
+                                                            <div class="col-sm-6 col-md-5 col-lg-5">
+                                    <input type="text" name="gateway_4"
+                                           placeholder="Deposit account"
+                                           data-onload-value="" class="form-control">
+                                </div>
+                                                    </div>
+                                        <hr>
+                    
+                <div class="form-group">
+                    <label class="control-label col-sm-4 col-md-3 col-lg-2 text-white">Existing Password</label>
+                    <div class="col-sm-6 col-md-5 col-lg-5">
+                        <input type="password" maxlength="32" placeholder="Existing Password" name="91d68516fe6e" data-onload-value="" class="form-control">
+                    </div>
+                </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="submit" class="btn btn-danger">Save Changes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</div>
+</div>
+<div class="footer-fixer"></div>
+<div class="footer" style="position: absolute; bottom:0; width: 100%; background-color: #0F0F12; padding-top: 1rem; margin-top: 5rem;">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-5 col-xs-12">
+                <div style="">
+                    <a class="brand-logo" href="/">
+                        <img loading="lazy" src="/images/svg/logo.svg" width="24" height="24" alt="website logo">
+                        <span>ARBITJET</span>
+                    </a>
+                     <span class="copyrights" style="font-size: 14px;font-weight:400;">Copyright &copy;2025 Arbitjet All rights reserved.</span>
+                </div>
+
+        <div class="social-icons"><p>
+		    <a href="https://t.me/Arbitjet_Arbitrage" class="flex items-center gap-2 mb-1">
+                <img loading="lazy" src="/images/telegram.webp"  target="_blank" alt="Facebook" width="25">
+                <span class="text-white">Join Our Telegram Community</span>
+            </a>
+            <a href="https://www.youtube.com/@ArbitJet" class="flex items-center gap-2 mb-1">
+                <img loading="lazy" src="/images/youtube.webp"  target="_blank" alt="Facebook" width="25">
+                <span class="text-white">Youtube Channel</span>
+            </a>
+		    <!--
+		    <a href="https://www.facebook.com/"><img src="/images/social_icons-06.png"  target="_blank" alt="Facebook" width="25"></a>
+		    <a href="https://twitter.com/"><img src="/images/social_icons-07.png" target="_blank" alt="Twitter" width="25"></a>
+		    <a href="#"><img src="/images/social_icons-08.png" target="_blank" alt="LinkedIn" width="25"></a>
+		    <a href="#"><img src="/images/social_icons-09.png" target="_blank" alt="Google+" width="25"></a>
+		    <a href="#"><img src="/images/social_icons-10.png" target="_blank" alt="Youtube" width="25"></a>
+		    -->
+		</div>
+
+        </div>
+            <div class="col-sm-3 col-sm-offset-1 col-xs-6">
+
+                <h4>Legal</h4>
+                <ul class="footer-sitemap">
+                    <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+                    <li><a href="/privacy.html"> Privacy Policy</a></li>
+                    <li><a href="/spam.html">No-SPAM Policy</a></li>
+                    <li><a href="/disclaimer.html">Disclaimer</a></li>
+                </ul>
+
+                
+                <h4>OUR PARTNERS</h4>
+                <ul class="footer-sitemap">
+                    <li><a href="https://www.moonpay.com/buy" target="_blank">Moonpay Buy Crypto</a></li>
+                    <li><a href="https://www.moonpay.com/sell" target="_blank">Moonpay Sell Crypto</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <h4>About us</h4>
+                <ul class="footer-sitemap">
+                    <li><a href="/about.html">About us</a></li>
+                    		                        <li><a href="/security.html">Security</a></li>
+                    <li><a href="/faq.html">F.A.Q.</a></li>
+                    <li><a href="/how_arbitrage_works.html">How Arbitrage Works</a></li>
+                </ul>
+
+            </div>
+
+     
+    </div>
+</div>
+</div>
+<!-- Notifications -->
+
+<link href="/assets/css/notifications-widget.css" rel="stylesheet">
+<div class="notifications-widget">
+   
+</div>
+<!--<script src="/assets/js/notifications-widget.min.js" type="module"></script>-->
+<script defer  src="/assets/js/notifications-widget.min.js"></script>
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/67dc08a7b85872190f4482a3/1impo3jl5';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<div class="hidden">
+    {knit file="partials/_icons.knit"}
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

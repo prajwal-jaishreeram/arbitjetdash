@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>My Affiliates | Cryptocurrency Arbitrage Investment Pool</title>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/animations.css" rel="stylesheet">
+    <link href="/assets/css/interface.css" rel="stylesheet">
+	<link href="/assets/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/assets/css/pace/purple/pace-theme-flash.css" rel="stylesheet">
+    <link href="/assets/css/new-styles.css" rel="stylesheet">
+    <link href="/assets/css/dashboard_update.css" rel="stylesheet">
+    
+    <style>
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #d6dee1;
+            border-radius: 20px;
+            border: 6px solid transparent;
+            background-clip: content-box;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #a8bbbf;
+        }
+
+        @media (min-width: 992px) {
+          .social-rewards {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 20px !important;
+          }
+        }
+        @media (max-width: 991px) {
+          .social-rewards {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        .social-card {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+        .social-card .claim-btn {
+          margin-top: auto;
+        }
+        @media (max-width: 340px) {
+            .affiliates-section {
+                padding: 4px !important;
+                border-radius: 6px !important;
+            }
+            .affiliate-card {
+                padding: 4px !important;
+                border-radius: 4px !important;
+                margin-bottom: 6px !important;
+            }
+            .affiliate-header {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 2px !important;
+                margin-bottom: 4px !important;
+            }
+            .affiliate-badge {
+                font-size: 0.65em !important;
+                padding: 2px 6px !important;
+                border-radius: 8px !important;
+                margin-bottom: 2px !important;
+            }
+            .affiliate-email {
+                font-size: 0.8em !important;
+                max-width: 90vw !important;
+                word-break: break-all !important;
+            }
+            .affiliate-header > div:last-child {
+                font-size: 0.7em !important;
+                max-width: 90vw !important;
+                word-break: break-all !important;
+            }
+            .affiliate-stats {
+                display: flex !important;
+                flex-direction: column !important;
+                grid-template-columns: none !important;
+                gap: 4px !important;
+            }
+            .stat-item {
+                padding: 4px !important;
+                font-size: 10px !important;
+                margin-bottom: 2px !important;
+            }
+            .stat-label {
+                font-size: 0.7em !important;
+            }
+            .stat-value {
+                font-size: 0.95em !important;
+            }
+            .crypto-breakdown {
+                gap: 2px !important;
+                margin-top: 2px !important;
+            }
+            .crypto-icon {
+                width: 10px !important;
+                height: 10px !important;
+            }
+            .crypto-amount {
+                font-size: 0.7em !important;
+            }
+            .section-title {
+                font-size: 1em !important;
+                margin-bottom: 8px !important;
+            }
+        }
+    </style>
+
+    <script defer src="/assets/vendor/js/jquery-3.4.0.min.js"></script>
+    <script defer src="/assets/vendor/js/bootstrap.min.js"></script>
+    <script defer src="/assets/vendor/js/bootstrap-select.min.js"></script>
+    <script defer src="/assets/vendor/js/noty.min.js"></script>
+    <script defer src="/assets/vendor/js/pace.min.js"></script>
+    <script defer src="/assets/vendor/js/qrcode-with-logos-1.1.1.min.js"></script>
+    <script defer src="/assets/js/events.min.js"></script>
+    <script defer src="/assets/js/ajax.min.js"></script>
+    <script defer src="/assets/js/interface.min.js"></script>
+    <script defer src="/assets/js/countdown-timer.min.js"></script>
+
+    </head>
+
+<body>
+
+<div class="container-fluid navbar-interface">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fa fa-bars"></span>
+                </button>
+                <a class="brand-logo" href="/">
+                    <img loading="lazy" src="/images/svg/logo.svg" width="24" height="24" alt="website logo">
+                    <span>ARBITJET</span>
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+				
+                    <li class="color-stripe-success" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1.html">
+			    <i class="fa-solid fa-gauge"></i>
+                            Dashboard                        </a>
+                    </li>
+					<li class="dropdown color-stripe-danger" data-stripe="color-stripe-top">
+                        <a href="downlines.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			   <i class="fa-solid fa-user"></i>
+                            My Account <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/profile.html">Edit Profile</a></li>
+                            <li class=""><a href="/settings.html">Preferences</a></li>
+                            <li class=""><a href="/security.html">Security</a></li>
+                            <li class=""><a href="/password.html">Change Password</a></li>
+							<li class=""><a href="/verify.html">
+								Verifications								<span class="badge badge-warning m-l-5">4</span>								</a>
+							</li>
+			     
+                       </ul>
+                    </li>
+                    <li class="dropdown color-stripe-info" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1/finance.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			                <i class="fa-solid fa-wallet"></i>
+                            Finance <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/finance.html">Finance</a></li>
+			     
+                            <li class=""><a href="/finance/deposit.html">Deposit Funds</a></li>
+                            <li class=""><a href="/finance/withdraw.html">Withdraw Funds</a></li>
+                            <li class=""><a href="/finance/ledger.html">History</a></li>
+                            <li class=""><a href="/finance/payees.html">Payee Accounts</a></li>
+                                                    </ul>
+                    </li>
+                    <li class="dropdown active color-stripe-top color-stripe-success" data-stripe="color-stripe-top">
+                        <a href="downlines.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			    <i class="fa-solid fa-users"></i>
+                            Affiliates <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="active"><a href="downlines.html">My Affiliates</a></li>
+                            <li class=""><a href="tools.html">Invitation Links</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown color-stripe-warning" data-stripe="color-stripe-top">
+                        <a href="downlines.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			                <i class="fa-solid fa-message"></i>
+                            Messaging <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/inbox.html">Inbox (0)</a></li>
+                            <li class=""><a href="/inbox/compose.html">Compose</a></li>
+                        </ul>
+                    </li>
+                    <li class="color-stripe-info">
+                        <a href="/account/88b55f9b234080c236c1%3Ftour.html" style="color: #4596E8;font-weight: 700;">
+                            <i class="fa-solid fa-circle-info"></i>
+                            GUIDE
+                        </a>
+                    </li>
+                    <li class="color-stripe-info" data-stripe="color-stripe-top">
+                        <a href="/signout.html">
+			                <i class="fa-solid fa-right-from-bracket"></i>
+                            Sign out                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</div>
+<div class="container-fluid ticker hidden-xs">
+    <div class="row">
+        <div class="col-sm-9">
+            <ul class="list-inline ticker-nav">
+				<li class=""><a href="/account/88b55f9b234080c236c1/inbox.html">Inbox<span class="badge badge-info m-l-5">0</span></a></li>
+                                <li class=""><a href="/finance/deposit.html">Deposit Funds</a></li>
+				<li class="active"><a href="downlines.html">My Affiliates</a></li>
+				<li class=""><a href="/callback.html">Request Call Back</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-3 text-right time">
+            <small>23 Jun 2025 08:26 AM <i class="fa-regular fa-clock"></i></small>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid content">
+    <div class="inner">
+        <div class="row">
+	<div class="col-sm-3 col-lg-2 hidden-xs">
+        
+        <div class="">
+            <ul class="nav nav-pills nav-stacked">
+                <li class=" active">
+                    <a href="downlines.html">
+                        My Affiliates                    </a>
+                </li>
+                <li class="">
+                    <a href="tools.html">
+                        Invitation Links                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 col-lg-10 col-xs-12">
+        <!-- Modern My Affiliates Section Start -->
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h1 class="title" style="font-size: 1.8em; font-weight: 700; background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">My Affiliates</h1>
+            </div>
+            <!-- Affiliate Stats -->
+            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 30px;">
+                <div class="stat-card" style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 20px; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div class="stat-level" style="font-size: 0.9em; color: #9CA3AF; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        1st Level
+                        <i class="fa-regular fa-circle-question tooltip-icon" style="color: #4596E8; cursor: help; opacity: 0.7; transition: opacity 0.3s ease;" title="Level 1: Earn 8% on deposits made by users you refer directly."></i>
+                    </div>
+                    <div class="stat-count" style="font-size: 2.5em; font-weight: 700; background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">2</div>
+                    <div class="stat-commission" style="font-size: 0.8em; color: #78EA43; font-weight: 600; margin-top: 8px;">8% commission</div>
+                </div>
+                <div class="stat-card" style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 20px; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div class="stat-level" style="font-size: 0.9em; color: #9CA3AF; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        2nd Level
+                        <i class="fa-regular fa-circle-question tooltip-icon" style="color: #4596E8; cursor: help; opacity: 0.7; transition: opacity 0.3s ease;" title="Level 2: Earn 4% on deposits made by your Level 1 referrals."></i>
+                    </div>
+                    <div class="stat-count" style="font-size: 2.5em; font-weight: 700; background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">0</div>
+                    <div class="stat-commission" style="font-size: 0.8em; color: #78EA43; font-weight: 600; margin-top: 8px;">4% commission</div>
+                </div>
+                <div class="stat-card" style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 20px; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div class="stat-level" style="font-size: 0.9em; color: #9CA3AF; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        3rd Level
+                        <i class="fa-regular fa-circle-question tooltip-icon" style="color: #4596E8; cursor: help; opacity: 0.7; transition: opacity 0.3s ease;" title="Level 3: Earn 2% on deposits made by Level 2 referrals."></i>
+                    </div>
+                    <div class="stat-count" style="font-size: 2.5em; font-weight: 700; background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">0</div>
+                    <div class="stat-commission" style="font-size: 0.8em; color: #78EA43; font-weight: 600; margin-top: 8px;">2% commission</div>
+                </div>
+                <div class="stat-card" style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 20px; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div class="stat-level" style="font-size: 0.9em; color: #9CA3AF; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        4th Level
+                        <i class="fa-regular fa-circle-question tooltip-icon" style="color: #4596E8; cursor: help; opacity: 0.7; transition: opacity 0.3s ease;" title="Level 4: Earn 1% on deposits made by Level 3 referrals."></i>
+                    </div>
+                    <div class="stat-count" style="font-size: 2.5em; font-weight: 700; background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">0</div>
+                    <div class="stat-commission" style="font-size: 0.8em; color: #78EA43; font-weight: 600; margin-top: 8px;">1% commission</div>
+			</div>
+                            </div>
+            <!-- Social Media Rewards -->
+            <div class="social-rewards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                <div class="social-card" style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 24px; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div class="social-header" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <div class="social-icon instagram" style="width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5em; color: white; background: linear-gradient(135deg, #E4405F, #C13584, #833AB4);">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="social-info">
+                            <h3 style="font-size: 1.2em; font-weight: 600; margin-bottom: 4px;">Instagram</h3>
+                            <p style="color: #9CA3AF; font-size: 0.9em;">@instagram</p>
+                        </div>
+                    </div>
+                    <div class="social-description" style="color: #CCCCCC; font-size: 0.9em; line-height: 1.5; margin-bottom: 16px;">
+                        Create a video lasting at least 20 seconds that must feature the logo and name of our platform. Show the main page and personal cabinet on our site. Don't forget to add your referral link to the publication description.
+                    </div>
+                    <div class="reward-range" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <span class="reward-from" style="font-weight: 600; color: #78EA43;">from $1</span>
+                        <span class="reward-to" style="font-weight: 600; color: #3B82F6;">to $1000</span>
+                    </div>
+                    <div class="reward-bar" style="height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden; margin-bottom: 20px;">
+                        <div class="reward-progress" style="height: 100%; background: linear-gradient(90deg, #78EA43, #3B82F6); border-radius: 3px; width: 100%; position: relative;"></div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/1733ocXAdUyAREFrrTimIC8Va8pf5W_L32XX-BJUdTjw/preview" class="claim-btn" target="_blank" style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); border: none; color: white; padding: 12px 24px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; width: 100%; font-size: 0.9em; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);">
+                        <i class="fas fa-gift"></i>
+                        Claim Reward
+                    </a>
+                </div>
+                <div class="social-card" style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 24px; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div class="social-header" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <div class="social-icon tiktok" style="width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5em; color: white; background: linear-gradient(135deg, #000000, #25F4EE);">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <div class="social-info">
+                            <h3 style="font-size: 1.2em; font-weight: 600; margin-bottom: 4px;">TikTok</h3>
+                            <p style="color: #9CA3AF; font-size: 0.9em;">@tiktok.com</p>
+                        </div>
+                    </div>
+                    <div class="social-description" style="color: #CCCCCC; font-size: 0.9em; line-height: 1.5; margin-bottom: 16px;">
+                        Record a video of at least 15 seconds, tell about our site in any format convenient for you. Be sure to include your referral link in the description.
+                    </div>
+                    <div class="reward-range" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <span class="reward-from" style="font-weight: 600; color: #78EA43;">from $1</span>
+                        <span class="reward-to" style="font-weight: 600; color: #3B82F6;">to $2000</span>
+                    </div>
+                    <div class="reward-bar" style="height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden; margin-bottom: 20px;">
+                        <div class="reward-progress" style="height: 100%; background: linear-gradient(90deg, #78EA43, #3B82F6); border-radius: 3px; width: 100%; position: relative;"></div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/1733ocXAdUyAREFrrTimIC8Va8pf5W_L32XX-BJUdTjw/preview" class="claim-btn" target="_blank" style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); border: none; color: white; padding: 12px 24px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; width: 100%; font-size: 0.9em; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);">
+                        <i class="fas fa-gift"></i>
+                        Claim Reward
+                    </a>
+                            </div>
+                <div class="social-card" style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 24px; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div class="social-header" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <div class="social-icon telegram" style="width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5em; color: white; background: linear-gradient(135deg, #0088CC, #229ED9);">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <div class="social-info">
+                            <h3 style="font-size: 1.2em; font-weight: 600; margin-bottom: 4px;">Telegram</h3>
+                            <p style="color: #9CA3AF; font-size: 0.9em;">@telegram</p>
+                        </div>
+                    </div>
+                    <div class="social-description" style="color: #CCCCCC; font-size: 0.9em; line-height: 1.5; margin-bottom: 16px;">
+                        Share our platform in relevant crypto and investment groups. Include your referral link and a brief description of our services.
+                    </div>
+                    <div class="reward-range" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <span class="reward-from" style="font-weight: 600; color: #78EA43;">from $1</span>
+                        <span class="reward-to" style="font-weight: 600; color: #3B82F6;">to $500</span>
+                    </div>
+                    <div class="reward-bar" style="height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden; margin-bottom: 20px;">
+                        <div class="reward-progress" style="height: 100%; background: linear-gradient(90deg, #78EA43, #3B82F6); border-radius: 3px; width: 100%; position: relative;"></div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/1733ocXAdUyAREFrrTimIC8Va8pf5W_L32XX-BJUdTjw/preview" class="claim-btn" target="_blank" style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); border: none; color: white; padding: 12px 24px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; width: 100%; font-size: 0.9em; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);">
+                        <i class="fas fa-gift"></i>
+                        Claim Reward
+                    </a>
+                            </div>
+                <div class="social-card" style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 24px; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div class="social-header" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <div class="social-icon youtube" style="width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5em; color: white; background: linear-gradient(135deg, #FF0000, #CC0000);">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="social-info">
+                            <h3 style="font-size: 1.2em; font-weight: 600; margin-bottom: 4px;">YouTube</h3>
+                            <p style="color: #9CA3AF; font-size: 0.9em;">@youtube</p>
+                        </div>
+                    </div>
+                    <div class="social-description" style="color: #CCCCCC; font-size: 0.9em; line-height: 1.5; margin-bottom: 16px;">
+                        Create a detailed review video about our platform, explaining features and benefits. Include your referral link in the description.
+                    </div>
+                    <div class="reward-range" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <span class="reward-from" style="font-weight: 600; color: #78EA43;">from $5</span>
+                        <span class="reward-to" style="font-weight: 600; color: #3B82F6;">to $3000</span>
+                    </div>
+                    <div class="reward-bar" style="height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden; margin-bottom: 20px;">
+                        <div class="reward-progress" style="height: 100%; background: linear-gradient(90deg, #78EA43, #3B82F6); border-radius: 3px; width: 100%; position: relative;"></div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/1733ocXAdUyAREFrrTimIC8Va8pf5W_L32XX-BJUdTjw/preview" class="claim-btn" target="_blank" style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); border: none; color: white; padding: 12px 24px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; width: 100%; font-size: 0.9em; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);">
+                        <i class="fas fa-gift"></i>
+                        Claim Reward
+                    </a>
+                            </div>
+                        </div>
+            <!-- Affiliate Details -->
+            <div class="affiliates-section" style="background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 24px; margin-top: 30px;">
+                <h2 class="section-title" style="font-size: 1.3em; font-weight: 600; margin-bottom: 20px; color: #ffffff;">Active Affiliates</h2>
+                <div class="affiliate-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 20px; margin-bottom: 16px; transition: all 0.3s ease;">
+                    <div class="affiliate-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <div class="affiliate-badge" style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.8em; font-weight: 600;">1st Level</div>
+                        <div class="affiliate-email" style="color: #60A5FA; font-weight: 500;">affilate1@gmail.com</div>
+                        <div style="font-size: 0.9em; color: #9CA3AF;">ID: BIT834880</div>
+                    </div>
+                    <div class="affiliate-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px;">
+                        <div class="stat-item" style="text-align: center; padding: 12px; background: rgba(255, 255, 255, 0.02); border-radius: 8px;">
+                            <div class="stat-label" style="font-size: 0.8em; color: #9CA3AF; margin-bottom: 4px;">Total Portfolio</div>
+                            <div class="stat-value" style="font-size: 1.1em; font-weight: 600; color: #78EA43;">$0.00</div>
+                            <div class="crypto-breakdown" style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                                <img src="/images/cryptoicons/SVG/btc.svg" alt="BTC" class="crypto-icon" style="width: 16px; height: 16px;">
+                                <span class="crypto-amount" style="font-size: 0.9em; color: #78EA43;">0 BTC</span>
+                            </div>
+                        </div>
+                        <div class="stat-item" style="text-align: center; padding: 12px; background: rgba(255, 255, 255, 0.02); border-radius: 8px;">
+                            <div class="stat-label" style="font-size: 0.8em; color: #9CA3AF; margin-bottom: 4px;">Total Commissions</div>
+                            <div class="stat-value" style="font-size: 1.1em; font-weight: 600; color: #78EA43;">$0.00</div>
+                            <div class="crypto-breakdown" style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                                <img src="/images/cryptoicons/SVG/eth.svg" alt="ETH" class="crypto-icon" style="width: 16px; height: 16px;">
+                                <span class="crypto-amount" style="font-size: 0.9em; color: #78EA43;">0 ETH</span>
+                            </div>
+                        </div>
+                        <div class="stat-item" style="text-align: center; padding: 12px; background: rgba(255, 255, 255, 0.02); border-radius: 8px;">
+                            <div class="stat-label" style="font-size: 0.8em; color: #9CA3AF; margin-bottom: 4px;">USDT Balance</div>
+                            <div class="stat-value" style="font-size: 1.1em; font-weight: 600; color: #78EA43;">$0.00</div>
+                            <div class="crypto-breakdown" style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                                <img src="/images/cryptoicons/SVG/usdt.svg" alt="USDT" class="crypto-icon" style="width: 16px; height: 16px;">
+                                <span class="crypto-amount" style="font-size: 0.9em; color: #78EA43;">0 USDT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="affiliate-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 20px; margin-bottom: 16px; transition: all 0.3s ease;">
+                    <div class="affiliate-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <div class="affiliate-badge" style="background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.8em; font-weight: 600;">1st Level</div>
+                        <div class="affiliate-email" style="color: #60A5FA; font-weight: 500;">affilate2@gmail.com</div>
+                        <div style="font-size: 0.9em; color: #9CA3AF;">ID: BIT799598</div>
+                        </div>
+                    <div class="affiliate-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px;">
+                        <div class="stat-item" style="text-align: center; padding: 12px; background: rgba(255, 255, 255, 0.02); border-radius: 8px;">
+                            <div class="stat-label" style="font-size: 0.8em; color: #9CA3AF; margin-bottom: 4px;">Total Portfolio</div>
+                            <div class="stat-value" style="font-size: 1.1em; font-weight: 600; color: #78EA43;">$0.00</div>
+                            <div class="crypto-breakdown" style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                                <img src="/images/cryptoicons/SVG/btc.svg" alt="BTC" class="crypto-icon" style="width: 16px; height: 16px;">
+                                <span class="crypto-amount" style="font-size: 0.9em; color: #78EA43;">0 BTC</span>
+                            </div>
+                        </div>
+                        <div class="stat-item" style="text-align: center; padding: 12px; background: rgba(255, 255, 255, 0.02); border-radius: 8px;">
+                            <div class="stat-label" style="font-size: 0.8em; color: #9CA3AF; margin-bottom: 4px;">Total Commissions</div>
+                            <div class="stat-value" style="font-size: 1.1em; font-weight: 600; color: #78EA43;">$0.00</div>
+                            <div class="crypto-breakdown" style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                                <img src="/images/cryptoicons/SVG/eth.svg" alt="ETH" class="crypto-icon" style="width: 16px; height: 16px;">
+                                <span class="crypto-amount" style="font-size: 0.9em; color: #78EA43;">0 ETH</span>
+                            </div>
+                        </div>
+                        <div class="stat-item" style="text-align: center; padding: 12px; background: rgba(255, 255, 255, 0.02); border-radius: 8px;">
+                            <div class="stat-label" style="font-size: 0.8em; color: #9CA3AF; margin-bottom: 4px;">USDT Balance</div>
+                            <div class="stat-value" style="font-size: 1.1em; font-weight: 600; color: #78EA43;">$0.00</div>
+                            <div class="crypto-breakdown" style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                                <img src="/images/cryptoicons/SVG/usdt.svg" alt="USDT" class="crypto-icon" style="width: 16px; height: 16px;">
+                                <span class="crypto-amount" style="font-size: 0.9em; color: #78EA43;">0 USDT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                    </div>
+        <!-- Modern My Affiliates Section End -->
+    </div>
+    
+</div>
+
+</div>
+</div>
+<div class="footer-fixer"></div>
+<div class="footer" style="position: absolute; bottom:0; width: 100%; background-color: #0F0F12; padding-top: 1rem; margin-top: 5rem;">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-5 col-xs-12">
+                <div style="">
+                    <a class="brand-logo" href="/">
+                        <img loading="lazy" src="/images/svg/logo.svg" width="24" height="24" alt="website logo">
+                        <span>ARBITJET</span>
+                    </a>
+                     <span class="copyrights" style="font-size: 14px;font-weight:400;">Copyright &copy;2025 Arbitjet All rights reserved.</span>
+                </div>
+
+        <div class="social-icons"><p>
+		    <a href="https://t.me/Arbitjet_Arbitrage" class="flex items-center gap-2 mb-1">
+                <img loading="lazy" src="/images/telegram.webp"  target="_blank" alt="Facebook" width="25">
+                <span class="text-white">Join Our Telegram Community</span>
+            </a>
+            <a href="https://www.youtube.com/@ArbitJet" class="flex items-center gap-2 mb-1">
+                <img loading="lazy" src="/images/youtube.webp"  target="_blank" alt="Facebook" width="25">
+                <span class="text-white">Youtube Channel</span>
+            </a>
+		    <!--
+		    <a href="https://www.facebook.com/"><img src="/images/social_icons-06.png"  target="_blank" alt="Facebook" width="25"></a>
+		    <a href="https://twitter.com/"><img src="/images/social_icons-07.png" target="_blank" alt="Twitter" width="25"></a>
+		    <a href="#"><img src="/images/social_icons-08.png" target="_blank" alt="LinkedIn" width="25"></a>
+		    <a href="#"><img src="/images/social_icons-09.png" target="_blank" alt="Google+" width="25"></a>
+		    <a href="#"><img src="/images/social_icons-10.png" target="_blank" alt="Youtube" width="25"></a>
+		    -->
+		</div>
+
+        </div>
+            <div class="col-sm-3 col-sm-offset-1 col-xs-6">
+
+                <h4>Legal</h4>
+                <ul class="footer-sitemap">
+                    <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+                    <li><a href="/privacy.html"> Privacy Policy</a></li>
+                    <li><a href="/spam.html">No-SPAM Policy</a></li>
+                    <li><a href="/disclaimer.html">Disclaimer</a></li>
+                </ul>
+
+                
+                <h4>OUR PARTNERS</h4>
+                <ul class="footer-sitemap">
+                    <li><a href="https://www.moonpay.com/buy" target="_blank">Moonpay Buy Crypto</a></li>
+                    <li><a href="https://www.moonpay.com/sell" target="_blank">Moonpay Sell Crypto</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <h4>About us</h4>
+                <ul class="footer-sitemap">
+                    <li><a href="/about.html">About us</a></li>
+                    		                        <li><a href="/security.html">Security</a></li>
+                    <li><a href="/faq.html">F.A.Q.</a></li>
+                    <li><a href="/how_arbitrage_works.html">How Arbitrage Works</a></li>
+                </ul>
+
+            </div>
+
+     
+    </div>
+</div>
+</div>
+<!-- Notifications -->
+
+<link href="/assets/css/notifications-widget.css" rel="stylesheet">
+<div class="notifications-widget">
+   
+</div>
+<!--<script src="/assets/js/notifications-widget.min.js" type="module"></script>-->
+<script defer  src="/assets/js/notifications-widget.min.js"></script>
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/67dc08a7b85872190f4482a3/1impo3jl5';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<div class="hidden">
+    {knit file="partials/_icons.knit"}
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

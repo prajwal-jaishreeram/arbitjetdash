@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Verification Center | Cryptocurrency Arbitrage Investment Pool</title>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/animations.css" rel="stylesheet">
+    <link href="/assets/css/interface.css" rel="stylesheet">
+	<link href="/assets/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/assets/css/pace/purple/pace-theme-flash.css" rel="stylesheet">
+    <link href="/assets/css/new-styles.css" rel="stylesheet">
+    <link href="/assets/css/dashboard_update.css" rel="stylesheet">
+    
+    <style>
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #d6dee1;
+            border-radius: 20px;
+            border: 6px solid transparent;
+            background-clip: content-box;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #a8bbbf;
+        }
+        
+        .verification-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.01);
+        }
+        
+        .title-icon {
+            font-size: 1.2em;
+            color: #3B82F6;
+        }
+        
+        .card-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .status-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .status-label {
+            font-weight: 500;
+            color: #a0a0a0;
+            font-size: 0.95em;
+        }
+        
+        .status-value {
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        
+        .verified {
+            color: #10B981;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .verified::before {
+            content: '✓';
+            font-size: 1.1em;
+            color: #10B981;
+        }
+        
+        .email-value {
+            color: #ffffff;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9em;
+        }
+        
+        .warning-alert {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 12px;
+            padding: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            animation: slideUp 0.6s ease-out 0.2s both;
+        }
+        
+        .warning-icon {
+            color: #F59E0B;
+            font-size: 1.1em;
+            margin-top: 2px;
+        }
+        
+        .warning-text {
+            color: #FCD34D;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        .documents-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+        
+        .documents-table th {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 16px;
+            text-align: center;
+            font-weight: 600;
+            color: #3B82F6;
+            font-size: 0.9em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .documents-table td {
+            padding: 16px;
+            text-align: center;
+            color: #a0a0a0;
+            font-style: italic;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            background: rgba(255, 255, 255, 0.07);
+        }
+        
+        .form-control option {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+        
+        select.form-control {
+            z-index: 1000;
+            position: relative;
+        }
+        
+        /* Ensure dropdown options are visible */
+        select.form-control:focus {
+            z-index: 1001;
+        }
+        
+        /* Fix for dropdown overflow */
+        .form-group {
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .form-group:has(select:focus) {
+            z-index: 1000;
+        }
+        
+        /* Force dropdown visibility */
+        select.form-control {
+            z-index: 9999 !important;
+            position: relative !important;
+        }
+        
+        /* Ensure dropdown options are visible */
+        select.form-control option {
+            background: #1a1a1a !important;
+            color: #ffffff !important;
+            z-index: 9999 !important;
+        }
+        
+        /* Override any parent overflow */
+        .verification-container {
+            overflow: visible !important;
+        }
+        
+        .verification-card {
+            overflow: visible !important;
+        }
+        
+        .card-body {
+            overflow: visible !important;
+        }
+        
+        /* Additional select fixes */
+        select[name="591183f2f0ce"] {
+            z-index: 9999 !important;
+            position: relative !important;
+        }
+        
+        /* Ensure the form container doesn't clip */
+        #verify-upload {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Force dropdown to be above everything */
+        select:focus {
+            z-index: 10000 !important;
+        }
+        
+        .verification-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            overflow: visible;
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .file-input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        .file-input-display {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .file-input-display:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .file-input-display.has-file {
+            border-color: #3B82F6;
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        .file-icon {
+            color: #3B82F6;
+            font-size: 1.1em;
+        }
+        
+        .file-text {
+            color: #a0a0a0;
+            font-size: 0.9em;
+        }
+        
+        .file-text.selected {
+            color: #ffffff;
+        }
+        
+        .help-text {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            color: #a0a0a0;
+            font-size: 0.85em;
+            line-height: 1.4;
+            margin-top: 8px;
+        }
+        
+        .help-icon {
+            color: #3B82F6;
+            margin-top: 2px;
+        }
+        
+        .upload-btn {
+            background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+            margin-top: 12px;
+        }
+        
+        .upload-btn:hover {
+            background: linear-gradient(135deg, #B91C1C 0%, #991B1B 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(220, 38, 38, 0.3);
+        }
+        
+        .upload-btn:active {
+            transform: translateY(0);
+        }
+        
+        .upload-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .verification-card:nth-child(1) { animation-delay: 0s; }
+        .verification-card:nth-child(2) { animation-delay: 0.1s; }
+        .verification-card:nth-child(3) { animation-delay: 0.2s; }
+        .verification-card:nth-child(4) { animation-delay: 0.3s; }
+        
+        @keyframes successPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .upload-btn.success {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            animation: successPulse 0.6s ease-out;
+        }
+        
+        @media (max-width: 768px) {
+            .card-header {
+                padding: 20px;
+            }
+            
+            .card-body {
+                padding: 20px;
+            }
+            
+            .status-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+    </style>
+
+    <script defer src="/assets/vendor/js/jquery-3.4.0.min.js"></script>
+    <script defer src="/assets/vendor/js/bootstrap.min.js"></script>
+    <script defer src="/assets/vendor/js/bootstrap-select.min.js"></script>
+    <script defer src="/assets/vendor/js/noty.min.js"></script>
+    <script defer src="/assets/vendor/js/pace.min.js"></script>
+    <script defer src="/assets/vendor/js/qrcode-with-logos-1.1.1.min.js"></script>
+    <script defer src="/assets/js/events.min.js"></script>
+    <script defer src="/assets/js/ajax.min.js"></script>
+    <script defer src="/assets/js/interface.min.js"></script>
+    <script defer src="/assets/js/countdown-timer.min.js"></script>
+
+    </head>
+
+<body>
+
+<div class="container-fluid navbar-interface">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fa fa-bars"></span>
+                </button>
+                <a class="brand-logo" href="inbox/archived.html">
+                    <img loading="lazy" src="/images/svg/logo.svg" width="24" height="24" alt="website logo">
+                    <span>ARBITJET</span>
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+				
+                    <li class="color-stripe-success" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1.html">
+			    <i class="fa-solid fa-gauge"></i>
+                            Dashboard                        </a>
+                    </li>
+					<li class="dropdown active color-stripe-top color-stripe-danger" data-stripe="color-stripe-top">
+                        <a href="verify.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			   <i class="fa-solid fa-user"></i>
+                            My Account <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/profile.html">Edit Profile</a></li>
+                            <li class=""><a href="settings.html">Preferences</a></li>
+                            <li class=""><a href="security.html">Security</a></li>
+                            <li class=""><a href="password.html">Change Password</a></li>
+							<li class="active"><a href="verify.html">
+								Verifications								<span class="badge badge-warning m-l-5">4</span>								</a>
+							</li>
+			     
+                       </ul>
+                    </li>
+                    <li class="dropdown color-stripe-info" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1/finance.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			                <i class="fa-solid fa-wallet"></i>
+                            Finance <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/finance.html">Finance</a></li>
+			     
+                            <li class=""><a href="finance/deposit.html">Deposit Funds</a></li>
+                            <li class=""><a href="finance/withdraw.html">Withdraw Funds</a></li>
+                            <li class=""><a href="finance/ledger.html">History</a></li>
+                            <li class=""><a href="finance/payees.html">Payee Accounts</a></li>
+                                                    </ul>
+                    </li>
+                    <li class="dropdown color-stripe-success" data-stripe="color-stripe-top">
+                        <a href="verify.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			    <i class="fa-solid fa-users"></i>
+                            Affiliates <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href"/account/88b55f9b234080c236c1/affiliates/downlines.html">My Affiliates</a></li>
+                            <li class=""><a href="affiliates/tools.html">Invitation Links</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown color-stripe-warning" data-stripe="color-stripe-top">
+                        <a href="verify.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			                <i class="fa-solid fa-message"></i>
+                            Messaging <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/inbox.html">Inbox (0)</a></li>
+                            <li class=""><a href="inbox/compose.html">Compose</a></li>
+                        </ul>
+                    </li>
+                    <li class="color-stripe-info">
+                        <a href="/account/88b55f9b234080c236c1%3Ftour.html" style="color: #4596E8;font-weight: 700;">
+                            <i class="fa-solid fa-circle-info"></i>
+                            GUIDE
+                        </a>
+                    </li>
+                    <li class="color-stripe-info" data-stripe="color-stripe-top">
+                        <a href="signout.html">
+			                <i class="fa-solid fa-right-from-bracket"></i>
+                            Sign out                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</div>
+<div class="container-fluid ticker hidden-xs">
+    <div class="row">
+        <div class="col-sm-9">
+            <ul class="list-inline ticker-nav">
+				<li class=""><a href="/account/88b55f9b234080c236c1/inbox.html">Inbox<span class="badge badge-info m-l-5">0</span></a></li>
+                                <li class=""><a href="finance/deposit.html">Deposit Funds</a></li>
+				<li class=""><a href"/account/88b55f9b234080c236c1/affiliates/downlines.html">My Affiliates</a></li>
+				<li class=""><a href="callback.html">Request Call Back</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-3 text-right time">
+            <small>23 Jun 2025 08:26 AM <i class="fa-regular fa-clock"></i></small>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid content">
+    <div class="inner">
+        <div class="row">
+	<div class="col-sm-3 col-lg-2 hidden-xs">
+        
+        <div class="">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="">
+                    <a href="/account/88b55f9b234080c236c1/profile.html">
+                        Edit Profile                    </a>
+                </li>
+                <li class="">
+                    <a href="settings.html">
+                        Preferences                    </a>
+                </li>
+                <li class="">
+                    <a href="security.html">
+                        Security                    </a>
+                </li>
+                <li class="">
+                    <a href="password.html">
+                        Change Password                    </a>
+                </li>
+				
+				<li class="active">
+					<a href="verify.html">
+						Verifications						<span class="badge badge-warning m-l-5">4</span>					</a>
+				</li>
+				
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-9 col-lg-10 col-xs-12">
+        <div class="verification-container">
+            <!-- Email Verification Status -->
+            <div class="verification-card">
+                <div class="card-header">
+                    <i class="fa-solid fa-envelope-circle-check title-icon"></i>
+                    <h2 class="card-title">Email Address</h2>
+                            </div>
+                <div class="card-body">
+                    <div class="status-row">
+                        <span class="status-label">Status</span>
+                        <span class="status-value verified">Verified</span>
+                        </div>
+                    <div class="status-row">
+                        <span class="status-label">Email Address</span>
+                        <span class="status-value email-value">test@gmail.com</span>
+                            </div>
+                        </div>
+            </div>
+            
+            <!-- Warning Alert -->
+            <div class="warning-alert">
+                <i class="fa-solid fa-exclamation-triangle warning-icon"></i>
+                <div class="warning-text">
+                    Please note that investments above $25,000 USD require verification. For amounts below this threshold, verification is not necessary.
+                            		</div>
+				</div>
+            
+            <!-- Uploaded Documents -->
+            <div class="verification-card">
+                <div class="card-header">
+                    <i class="fa-solid fa-file-lines title-icon"></i>
+                    <h2 class="card-title">Uploaded Documents</h2>
+                </div>
+                <div class="card-body">
+                    <table class="documents-table">
+                        <thead>
+                        <tr>
+                                <th>Document</th>
+                                <th>Filename</th>
+                                <th>Date/Time</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                                                    <tr>
+                                <td colspan="3">No documents uploaded yet</td>
+                            </tr>
+                                                </tbody>
+                    </table>
+                </div>
+                </div>
+				
+            <!-- Upload Document Form -->
+            <div class="verification-card">
+                <div class="card-header">
+                    <i class="fa-solid fa-cloud-arrow-up title-icon"></i>
+                    <h2 class="card-title">Upload Document</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="verify.html" id="verify-upload">
+                    <input type="hidden" name="action" value="upload">
+                    <input type="hidden" name="c882899dedb0" value="5abb8343fd012ba47259566d27d2ebe6b2e088e6">
+                    <input type="hidden" name="80bc587db36c" value="2a55b426d695b7423ef5aae12561b23371d9245e">
+					
+                    <div class="form-group">
+                            <label class="form-label">Document Type</label>
+                            <select class="form-control" name="591183f2f0ce" required>
+                                <option value="" disabled selected>Select document type</option>
+                                <option value="id">Identity Document</option>
+                                <option value="address">Proof of Residence</option>
+                            </select>
+                        </div>
+                        
+                    <div class="form-group">
+                            <label class="form-label">Choose File</label>
+                            <div class="file-input-wrapper">
+                                <input type="file" name="a321315154e4" accept=".jpg,.jpeg,.png,.pdf" class="file-input" required>
+                                <div class="file-input-display" id="file-display">
+                                    <i class="fa-solid fa-upload file-icon"></i>
+                                    <span class="file-text">Click to select file or drag and drop</span>
+                        </div>
+                    </div>
+                            <div class="help-text">
+                                <i class="fa-regular fa-circle-question help-icon"></i>
+                                <span>Upload files must be JPG, PNG images or PDF documents not exceeding 5MB in size</span>
+                    </div>
+                        </div>
+                        
+                        <button type="submit" class="upload-btn" id="upload-btn">
+                            <i class="fa-solid fa-upload"></i>
+                            Upload Document
+                        </button>
+                </form>
+                </div>
+				</div>
+				</div>
+    </div>
+</div>
+
+</div>
+</div>
+<div class="footer-fixer"></div>
+<div class="footer" style="position: absolute; bottom:0; width: 100%; background-color: #0F0F12; padding-top: 1rem; margin-top: 5rem;">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-5 col-xs-12">
+                <div style="">
+                    <a class="brand-logo" href="inbox/archived.html">
+                        <img loading="lazy" src="/images/svg/logo.svg" width="24" height="24" alt="website logo">
+                        <span>ARBITJET</span>
+                    </a>
+                     <span class="copyrights" style="font-size: 14px;font-weight:400;">Copyright &copy;2025 Arbitjet All rights reserved.</span>
+                </div>
+
+        <div class="social-icons"><p>
+		    <a href="https://t.me/Arbitjet_Arbitrage" class="flex items-center gap-2 mb-1">
+                <img loading="lazy" src="/images/telegram.webp"  target="_blank" alt="Facebook" width="25">
+                <span class="text-white">Join Our Telegram Community</span>
+            </a>
+            <a href="https://www.youtube.com/@ArbitJet" class="flex items-center gap-2 mb-1">
+                <img loading="lazy" src="/images/youtube.webp"  target="_blank" alt="Facebook" width="25">
+                <span class="text-white">Youtube Channel</span>
+            </a>
+		    <!--
+		    <a href="https://www.facebook.com/"><img src="/images/social_icons-06.png"  target="_blank" alt="Facebook" width="25"></a>
+		    <a href="https://twitter.com/"><img src="/images/social_icons-07.png" target="_blank" alt="Twitter" width="25"></a>
+		    <a href="#"><img src="/images/social_icons-08.png" target="_blank" alt="LinkedIn" width="25"></a>
+		    <a href="#"><img src="/images/social_icons-09.png" target="_blank" alt="Google+" width="25"></a>
+		    <a href="#"><img src="/images/social_icons-10.png" target="_blank" alt="Youtube" width="25"></a>
+		    -->
+		</div>
+
+        </div>
+            <div class="col-sm-3 col-sm-offset-1 col-xs-6">
+
+                <h4>Legal</h4>
+                <ul class="footer-sitemap">
+                    <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+                    <li><a href="/privacy.html"> Privacy Policy</a></li>
+                    <li><a href="/spam.html">No-SPAM Policy</a></li>
+                    <li><a href="/disclaimer.html">Disclaimer</a></li>
+                </ul>
+
+                
+                <h4>OUR PARTNERS</h4>
+                <ul class="footer-sitemap">
+                    <li><a href="https://www.moonpay.com/buy" target="_blank">Moonpay Buy Crypto</a></li>
+                    <li><a href="https://www.moonpay.com/sell" target="_blank">Moonpay Sell Crypto</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <h4>About us</h4>
+                <ul class="footer-sitemap">
+                    <li><a href="/about.html">About us</a></li>
+                    		                        <li><a href="/security.html">Security</a></li>
+                    <li><a href="/faq.html">F.A.Q.</a></li>
+                    <li><a href="/how_arbitrage_works.html">How Arbitrage Works</a></li>
+                </ul>
+
+            </div>
+
+     
+    </div>
+</div>
+</div>
+<!-- Notifications -->
+
+<link href="/assets/css/notifications-widget.css" rel="stylesheet">
+<div class="notifications-widget">
+   
+</div>
+<!--<script src="/assets/js/notifications-widget.min.js" type="module"></script>-->
+<script defer  src="/assets/js/notifications-widget.min.js"></script>
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/67dc08a7b85872190f4482a3/1impo3jl5';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+    <script>
+        // File input handling
+        const fileInput = document.querySelector('.file-input');
+        const fileDisplay = document.getElementById('file-display');
+        const fileText = fileDisplay.querySelector('.file-text');
+        
+        fileInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                fileDisplay.classList.add('has-file');
+                fileText.classList.add('selected');
+                fileText.textContent = file.name;
+            } else {
+                fileDisplay.classList.remove('has-file');
+                fileText.classList.remove('selected');
+                fileText.textContent = 'Click to select file or drag and drop';
+            }
+        });
+        
+        // Drag and drop functionality
+        fileDisplay.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            fileDisplay.style.background = 'rgba(59, 130, 246, 0.1)';
+            fileDisplay.style.borderColor = '#3B82F6';
+        });
+        
+        fileDisplay.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            fileDisplay.style.background = 'rgba(255, 255, 255, 0.05)';
+            fileDisplay.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+        });
+        
+        fileDisplay.addEventListener('drop', function(e) {
+            e.preventDefault();
+            fileDisplay.style.background = 'rgba(255, 255, 255, 0.05)';
+            fileDisplay.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                const event = new Event('change');
+                fileInput.dispatchEvent(event);
+            }
+        });
+        
+        // Form submission handling
+        document.getElementById('verify-upload').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('upload-btn');
+            const originalContent = btn.innerHTML;
+            
+            // Loading state
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Uploading...';
+            btn.disabled = true;
+            
+            // Simulate upload
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Uploaded Successfully!';
+                btn.classList.add('success');
+                
+                // Reset after 3 seconds
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.remove('success');
+                    btn.disabled = false;
+                    
+                    // Reset form
+                    this.reset();
+                    fileDisplay.classList.remove('has-file');
+                    fileText.classList.remove('selected');
+                    fileText.textContent = 'Click to select file or drag and drop';
+                }, 3000);
+            }, 2000);
+        });
+        
+        // Fix for select dropdown visibility
+        const selectElement = document.querySelector('select[name="591183f2f0ce"]');
+        if (selectElement) {
+            selectElement.addEventListener('focus', function() {
+                this.style.zIndex = '10000';
+                this.style.position = 'relative';
+            });
+            
+            selectElement.addEventListener('blur', function() {
+                this.style.zIndex = '9999';
+            });
+        }
+    </script>
+
+<div class="hidden">
+    {knit file="partials/_icons.knit"}
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Dashboard | Cryptocurrency Arbitrage Investment Pool</title>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/animations.css" rel="stylesheet">
+    <link href="/assets/css/interface.css" rel="stylesheet">
+	<link href="/assets/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/assets/css/pace/purple/pace-theme-flash.css" rel="stylesheet">
+    <link href="/assets/css/new-styles.css" rel="stylesheet">
+    <link href="/assets/css/dashboard_update.css" rel="stylesheet">
+    
+    <style>
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #d6dee1;
+            border-radius: 20px;
+            border: 6px solid transparent;
+            background-clip: content-box;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #a8bbbf;
+        }
+    </style>
+
+    <script defer src="/assets/vendor/js/jquery-3.4.0.min.js"></script>
+    <script defer src="/assets/vendor/js/bootstrap.min.js"></script>
+    <script defer src="/assets/vendor/js/bootstrap-select.min.js"></script>
+    <script defer src="/assets/vendor/js/noty.min.js"></script>
+    <script defer src="/assets/vendor/js/pace.min.js"></script>
+    <script defer src="/assets/vendor/js/qrcode-with-logos-1.1.1.min.js"></script>
+    <script defer src="/assets/js/events.min.js"></script>
+    <script defer src="/assets/js/ajax.min.js"></script>
+    <script defer src="/assets/js/interface.min.js"></script>
+    <script defer src="/assets/js/countdown-timer.min.js"></script>
+
+    </head>
+
+<body>
+
+<div class="container-fluid navbar-interface">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fa fa-bars"></span>
+                </button>
+                <a class="brand-logo" href="/">
+                    <img loading="lazy" src="/images/svg/logo.svg" width="24" height="24" alt="website logo">
+                    <span>ARBITJET</span>
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+				
+                    <li class="active color-stripe-top color-stripe-success" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1.html">
+			    <i class="fa-solid fa-gauge"></i>
+                            Dashboard                        </a>
+                    </li>
+					<li class="dropdown color-stripe-danger" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1%3Ftour.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			   <i class="fa-solid fa-user"></i>
+                            My Account <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/profile.html">Edit Profile</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/settings.html">Preferences</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/security.html">Security</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/password.html">Change Password</a></li>
+							<li class=""><a href="/account/88b55f9b234080c236c1/verify.html">
+								Verifications								<span class="badge badge-warning m-l-5">4</span>								</a>
+							</li>
+			     
+                       </ul>
+                    </li>
+                    <li class="dropdown color-stripe-info" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1/finance.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			                <i class="fa-solid fa-wallet"></i>
+                            Finance <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/finance.html">Finance</a></li>
+			     
+                            <li class=""><a href="/account/88b55f9b234080c236c1/finance/deposit.html">Deposit Funds</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/finance/withdraw.html">Withdraw Funds</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/finance/ledger.html">History</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/finance/payees.html">Payee Accounts</a></li>
+                                                    </ul>
+                    </li>
+                    <li class="dropdown color-stripe-success" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1%3Ftour.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			    <i class="fa-solid fa-users"></i>
+                            Affiliates <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/affiliates/downlines.html">My Affiliates</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/affiliates/tools.html">Invitation Links</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown color-stripe-warning" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1%3Ftour.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			                <i class="fa-solid fa-message"></i>
+                            Messaging <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/inbox.html">Inbox (0)</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/inbox/compose.html">Compose</a></li>
+                        </ul>
+                    </li>
+                    <li class="color-stripe-info">
+                        <a href="/account/88b55f9b234080c236c1%3Ftour.html" style="color: #4596E8;font-weight: 700;">
+                            <i class="fa-solid fa-circle-info"></i>
+                            GUIDE
+                        </a>
+                    </li>
+                    <li class="color-stripe-info" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1/signout.html">
+			                <i class="fa-solid fa-right-from-bracket"></i>
+                            Sign out                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</div>
+<div class="container-fluid ticker hidden-xs">
+    <div class="row">
+        <div class="col-sm-9">
+            <ul class="list-inline ticker-nav">
+				<li class=""><a href="/account/88b55f9b234080c236c1/inbox.html">Inbox<span class="badge badge-info m-l-5">0</span></a></li>
+                                <li class=""><a href="/account/88b55f9b234080c236c1/finance/deposit.html">Deposit Funds</a></li>
+				<li class=""><a href="/account/88b55f9b234080c236c1/affiliates/downlines.html">My Affiliates</a></li>
+				<li class=""><a href="/account/88b55f9b234080c236c1/callback.html">Request Call Back</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-3 text-right time">
+            <small>23 Jun 2025 08:26 AM <i class="fa-regular fa-clock"></i></small>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid content">
+    <div class="inner">
+        <div class="row bg-dark">
+    <div class="col-sm-8">
+                <div class="panel panel-default trading-bot-panel">
+            
+<link href="/assets/css/trading-bot-widget.css" rel="stylesheet">
+<div class="trading-bot-widget">
+    <h3 class="animate-pulse">Live Trading Bot</h3>
+    <div id="exchange-diffs">
+      <div class="trading-bot-container" style="opacity: 0;">
+         
+      <div class="tranding-bot-field trading-bot-buy">
+          <div class="flex items-center" style="margin-right: 1rem;">
+              <img class="coin-logo" src="/images/cryptoicons/SVG/btc.svg" alt="coin logo">
+              <span></span>
+          </div>
+          <div class="flex items-center" style="margin-right: 5px;">
+              <img class="coin-logo" src="/images/cryptoicons/SVG/btc.svg" alt="coin logo">
+              <span class="limit"></span>
+              <span></span>
+          </div>
+      </div>
+
+      <div class="tranding-bot-field trading-bot-sell">
+          <div class="" style="margin-right: 1rem;">
+              <img class="coin-logo" src="/images/cryptoicons/SVG/btc.svg" alt="coin logo">
+              <span></span>
+          </div>
+          <div class="flex items-center" style="margin-right: 5px;">
+              
+              <span class="limit"></span>
+              <span></span>
+          </div>
+      </div>
+  
+      <div class="tranding-bot-field trading-bot-diff">
+        <div style="margin-right: 1rem;">
+            <span></span>
+        </div>
+        <div>
+            <span>%</span>
+        </div>
+      </div>
+    
+  
+  </div>
+    </div>
+</div>
+<script defer src="/assets/js/trading-bot-widget.min.js" type="module"></script>
+        </div>
+        <div class="panel panel-default active-deposit-panel">
+            <div class="panel-heading flex justify-between" style="padding: 1rem 0rem 2rem;">
+                <h3 class="panel-title"> Active Deposits</h3>
+                <a href="/account/88b55f9b234080c236c1/portfolio.html" style="color: #4596E8;"><i class="fa-regular fa-circle-question"></i> Explore Plans</a>
+            </div>
+            <div class="panel-body" style="padding:0">
+                <div class="flex justify-between">
+                    <div class="" style="font-size: 1.2em;">
+                    <img loading="lazy" src="/images/icons/mini_plan.gif" width="34" height="34" alt="invest plan logo" >
+                        Mini                        <span class="">(50%)</span> <i class="fa-regular fa-circle-question" style="color: #4596E8;" data-toggle="tooltip" title="Mini Plan? $50–$999 | 50% share of whatever we make each day | 30-day term."></i>
+                    </div>
+                    <div class="text-right " style="font-size: 1.2em;">
+                                                <img loading="lazy" src="/images/icons/medi_plan.gif" width="34" height="34" alt="invest plan logo">
+                            Medi                            <span class="">(60%)</span> <i class="fa-regular fa-circle-question" style="color: #4596E8;" data-toggle="tooltip" title="Medi Plan? $1000–$4999 | 60% share of whatever we make each day | 45-day term."></i>
+                                            </div>
+                </div>
+                <div class="m-t-10 col-xs-12" style="padding: 0">
+                    <div class="progress active text-center glow-image-wrapper" style="margin-bottom: 0;background: #797979;">
+                        <div class="progress-bar progress-bar-striped" role="progressbar"
+                             aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"
+                             style="background-color: #4596E8;width: 99%; position: relative; z-index: 10;">
+                        </div>
+                        <div style="position: absolute; left: 50%; transform: translateX(-50%);z-index: 10;">
+                            <span class="" style="font-weight:bold;">
+                                99%
+                            </span>
+                            <small>Progress to <span style="font-weight:bold;text-transform:uppercase;">Medi</span> plan</small>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap justify-between">
+                        <div class="text-muted">
+                            <small style="color:#78ea43;font-weight:bold;"><span class="">999.25</span> USD</small>
+                        </div>
+                        <div class="text-center text-muted">
+                            
+                        </div>
+                        <div class="text-right text-muted">
+                            <small style="color: #FFBE35;font-weight:bold;"><span class="animate-pulse">1000</span> USD</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-table-container">
+                                <details class="ui-details">
+                    <summary class="flex justify-between gap-1">
+
+                        <span class="badge" 
+                                style="height:fit-content;min-width:5rem; background-image: linear-gradient(to right, #60a5fa, #2563eb);    ">
+                            Active                        </span>
+
+                        <div class="ui-small-card flex-1">
+                            <span class="ui-small-card-label">Running Capital</span>
+                            <div class="flex items-center gap-1p"><img loading="lazy" src="/images/cryptoicons/SVG/eth.svg" alt="crypto currency logo" class="logo-bg" width="14" height="14">&nbsp;0.0275543673</div><div style="color:#78ea43;font-weight:bold;">$62.29</div>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-82 flex-1">
+                            <span class="ui-small-card-label">Paid</span>
+                            <div class="flex items-center gap-1p"><img loading="lazy" src="/images/cryptoicons/SVG/eth.svg" alt="crypto currency logo" class="logo-bg" width="14" height="14">&nbsp;0.004387757446</div><div style="color:#78ea43;font-weight:bold;">$9.91</div>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-108 flex-1">
+                            <span class="ui-small-card-label">ROI</span>
+                            <span>15.9240%</span>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-122 flex-1">
+                            <span class="ui-small-card-label">Expires</span>
+                            <span>29-07-2025 09:57 AM</span>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-48 flex-1">
+                            <span class="ui-small-card-label">Next ROI (±3m)</span>
+                            <div class="live-timer-countdown" style="white-space: nowrap;" data-end-time="1750674031">2h 53m 46s</div>
+                        </div>
+
+                        <div class="flex flex-col gap-1">
+                           <a href="/account/88b55f9b234080c236c1/finance/deposit/details%3F93.html" data-placement="left"
+                                data-toggle="tooltip"
+                                title="Details"
+                                class="btn btn-default ui-btn-icon"><i class="fa-solid fa-gear"></i></a>
+                                                        <a href="/account/88b55f9b234080c236c1/finance/deposit/cancel%3F93.html" data-placement="left"
+                                data-toggle="tooltip"
+                                title="Cancel"
+                                class="btn btn-default ui-btn-icon"><i class="fa-solid fa-trash-can" style="color:red"></i></a>
+                                                    </div>
+
+                    </summary>
+
+                    <div class="ui-details-content ui-row flex flex-col gap-2">
+
+                        <div class="ui-small-card flex-1">
+                            <span class="ui-small-card-label">Gateway</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>My Balance</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-82">
+                            <span class="ui-small-card-label">Paid</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <div class="flex items-center gap-1p"><img loading="lazy" src="/images/cryptoicons/SVG/eth.svg" alt="crypto currency logo" class="logo-bg" width="14" height="14">&nbsp;0.004387757446</div>
+                                <div style="color:#78ea43;font-weight:bold;">$9.91</div>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-108">
+                            <span class="ui-small-card-label">ROI</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>15.9240%</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1">
+                            <span class="ui-small-card-label">Deposited On</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>14-06-2025 09:57 AM</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-122">
+                            <span class="ui-small-card-label">Expires</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>29-07-2025 09:57 AM</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-48">
+                            <span class="ui-small-card-label">Next ROI (±3m)</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <div class="live-timer-countdown" style="white-space: nowrap;" data-end-time="1750674031">2h 53m 46s</div>
+                            </div>
+                        </div>
+                       
+
+                    </div>
+                </details>
+                                <details class="ui-details">
+                    <summary class="flex justify-between gap-1">
+
+                        <span class="badge" 
+                                style="height:fit-content;min-width:5rem; background-image: linear-gradient(to right, #60a5fa, #2563eb);    ">
+                            Active                        </span>
+
+                        <div class="ui-small-card flex-1">
+                            <span class="ui-small-card-label">Running Capital</span>
+                            <div class="flex items-center gap-1p"><img loading="lazy" src="/images/cryptoicons/SVG/btc.svg" alt="crypto currency logo" class="logo-bg" width="14" height="14">&nbsp;0.00472429</div><div style="color:#78ea43;font-weight:bold;">$481.34</div>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-82 flex-1">
+                            <span class="ui-small-card-label">Paid</span>
+                            <div class="flex items-center gap-1p"><img loading="lazy" src="/images/cryptoicons/SVG/btc.svg" alt="crypto currency logo" class="logo-bg" width="14" height="14">&nbsp;0.000767319178</div><div style="color:#78ea43;font-weight:bold;">$78.18</div>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-108 flex-1">
+                            <span class="ui-small-card-label">ROI</span>
+                            <span>16.2420%</span>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-122 flex-1">
+                            <span class="ui-small-card-label">Expires</span>
+                            <span>29-07-2025 07:33 AM</span>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-48 flex-1">
+                            <span class="ui-small-card-label">Next ROI (±3m)</span>
+                            <div class="live-timer-countdown" style="white-space: nowrap;" data-end-time="1750666540">0h 48m 55s</div>
+                        </div>
+
+                        <div class="flex flex-col gap-1">
+                           <a href="/account/88b55f9b234080c236c1/finance/deposit/details%3F90.html" data-placement="left"
+                                data-toggle="tooltip"
+                                title="Details"
+                                class="btn btn-default ui-btn-icon"><i class="fa-solid fa-gear"></i></a>
+                                                        <a href="/account/88b55f9b234080c236c1/finance/deposit/cancel%3F90.html" data-placement="left"
+                                data-toggle="tooltip"
+                                title="Cancel"
+                                class="btn btn-default ui-btn-icon"><i class="fa-solid fa-trash-can" style="color:red"></i></a>
+                                                    </div>
+
+                    </summary>
+
+                    <div class="ui-details-content ui-row flex flex-col gap-2">
+
+                        <div class="ui-small-card flex-1">
+                            <span class="ui-small-card-label">Gateway</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>My Balance</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-82">
+                            <span class="ui-small-card-label">Paid</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <div class="flex items-center gap-1p"><img loading="lazy" src="/images/cryptoicons/SVG/btc.svg" alt="crypto currency logo" class="logo-bg" width="14" height="14">&nbsp;0.000767319178</div>
+                                <div style="color:#78ea43;font-weight:bold;">$78.18</div>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-108">
+                            <span class="ui-small-card-label">ROI</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>16.2420%</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1">
+                            <span class="ui-small-card-label">Deposited On</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>14-06-2025 07:33 AM</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-122">
+                            <span class="ui-small-card-label">Expires</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>29-07-2025 07:33 AM</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-48">
+                            <span class="ui-small-card-label">Next ROI (±3m)</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <div class="live-timer-countdown" style="white-space: nowrap;" data-end-time="1750666540">0h 48m 55s</div>
+                            </div>
+                        </div>
+                       
+
+                    </div>
+                </details>
+                                <details class="ui-details">
+                    <summary class="flex justify-between gap-1">
+
+                        <span class="badge" 
+                                style="height:fit-content;min-width:5rem; background-image: linear-gradient(to right, #60a5fa, #2563eb);    ">
+                            Active                        </span>
+
+                        <div class="ui-small-card flex-1">
+                            <span class="ui-small-card-label">Running Capital</span>
+                            <div class="flex items-center gap-1p"><img loading="lazy" src="/images/cryptoicons/SVG/eth.svg" alt="crypto currency logo" class="logo-bg" width="14" height="14">&nbsp;0.00154355514</div><div style="color:#78ea43;font-weight:bold;">$3.48</div>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-82 flex-1">
+                            <span class="ui-small-card-label">Paid</span>
+                            <div class="flex items-center gap-1p"><img loading="lazy" src="/images/cryptoicons/SVG/eth.svg" alt="crypto currency logo" class="logo-bg" width="14" height="14">&nbsp;0.0001358888</div><div style="color:#78ea43;font-weight:bold;">$0.30</div>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-108 flex-1">
+                            <span class="ui-small-card-label">ROI</span>
+                            <span>54.6980%</span>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-122 flex-1">
+                            <span class="ui-small-card-label">Expires</span>
+                            <span>04-07-2025 08:54 AM</span>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-48 flex-1">
+                            <span class="ui-small-card-label">Next ROI (±3m)</span>
+                            <div class="live-timer-countdown" style="white-space: nowrap;" data-end-time="1750669230">1h 33m 45s</div>
+                        </div>
+
+                        <div class="flex flex-col gap-1">
+                           <a href="/account/88b55f9b234080c236c1/finance/deposit/details%3F51.html" data-placement="left"
+                                data-toggle="tooltip"
+                                title="Details"
+                                class="btn btn-default ui-btn-icon"><i class="fa-solid fa-gear"></i></a>
+                                                        <a href="/account/88b55f9b234080c236c1/finance/deposit/cancel%3F51.html" data-placement="left"
+                                data-toggle="tooltip"
+                                title="Cancel"
+                                class="btn btn-default ui-btn-icon"><i class="fa-solid fa-trash-can" style="color:red"></i></a>
+                                                    </div>
+
+                    </summary>
+
+                    <div class="ui-details-content ui-row flex flex-col gap-2">
+
+                        <div class="ui-small-card flex-1">
+                            <span class="ui-small-card-label">Gateway</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>Ethereum</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-82">
+                            <span class="ui-small-card-label">Paid</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <div class="flex items-center gap-1p"><img loading="lazy" src="/images/cryptoicons/SVG/eth.svg" alt="crypto currency logo" class="logo-bg" width="14" height="14">&nbsp;0.0001358888</div>
+                                <div style="color:#78ea43;font-weight:bold;">$0.30</div>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-108">
+                            <span class="ui-small-card-label">ROI</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>54.6980%</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1">
+                            <span class="ui-small-card-label">Deposited On</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>20-05-2025 08:54 AM</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-122">
+                            <span class="ui-small-card-label">Expires</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>04-07-2025 08:54 AM</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-48">
+                            <span class="ui-small-card-label">Next ROI (±3m)</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <div class="live-timer-countdown" style="white-space: nowrap;" data-end-time="1750669230">1h 33m 45s</div>
+                            </div>
+                        </div>
+                       
+
+                    </div>
+                </details>
+                                <details class="ui-details">
+                    <summary class="flex justify-between gap-1">
+
+                        <span class="badge" 
+                                style="height:fit-content;min-width:5rem; background-image: linear-gradient(to right, #60a5fa, #2563eb);    ">
+                            Active                        </span>
+
+                        <div class="ui-small-card flex-1">
+                            <span class="ui-small-card-label">Running Capital</span>
+                            <div class="flex items-center gap-1p"><img loading="lazy" src="/images/cryptoicons/SVG/eth.svg" alt="crypto currency logo" class="logo-bg" width="14" height="14">&nbsp;0.2</div><div style="color:#78ea43;font-weight:bold;">$452.14</div>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-82 flex-1">
+                            <span class="ui-small-card-label">Paid</span>
+                            <div class="flex items-center gap-1p"><img loading="lazy" src="/images/cryptoicons/SVG/eth.svg" alt="crypto currency logo" class="logo-bg" width="14" height="14">&nbsp;0.113198</div><div style="color:#78ea43;font-weight:bold;">$255.91</div>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-108 flex-1">
+                            <span class="ui-small-card-label">ROI</span>
+                            <span>56.5990%</span>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-122 flex-1">
+                            <span class="ui-small-card-label">Expires</span>
+                            <span>04-07-2025 06:34 AM</span>
+                        </div>
+
+                        <div class="ui-small-card ui-hide-48 flex-1">
+                            <span class="ui-small-card-label">Next ROI (±3m)</span>
+                            <div class="live-timer-countdown" style="white-space: nowrap;" data-end-time="1750746633">23h 3m 48s</div>
+                        </div>
+
+                        <div class="flex flex-col gap-1">
+                           <a href="/account/88b55f9b234080c236c1/finance/deposit/details%3F50.html" data-placement="left"
+                                data-toggle="tooltip"
+                                title="Details"
+                                class="btn btn-default ui-btn-icon"><i class="fa-solid fa-gear"></i></a>
+                                                        <a href="/account/88b55f9b234080c236c1/finance/deposit/cancel%3F50.html" data-placement="left"
+                                data-toggle="tooltip"
+                                title="Cancel"
+                                class="btn btn-default ui-btn-icon"><i class="fa-solid fa-trash-can" style="color:red"></i></a>
+                                                    </div>
+
+                    </summary>
+
+                    <div class="ui-details-content ui-row flex flex-col gap-2">
+
+                        <div class="ui-small-card flex-1">
+                            <span class="ui-small-card-label">Gateway</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>My Balance</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-82">
+                            <span class="ui-small-card-label">Paid</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <div class="flex items-center gap-1p"><img loading="lazy" src="/images/cryptoicons/SVG/eth.svg" alt="crypto currency logo" class="logo-bg" width="14" height="14">&nbsp;0.113198</div>
+                                <div style="color:#78ea43;font-weight:bold;">$255.91</div>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-108">
+                            <span class="ui-small-card-label">ROI</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>56.5990%</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1">
+                            <span class="ui-small-card-label">Deposited On</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>20-05-2025 06:34 AM</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-122">
+                            <span class="ui-small-card-label">Expires</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <span>04-07-2025 06:34 AM</span>
+                            </div>
+                        </div>
+
+                        <div class="ui-small-card flex-1 ui-hide-48">
+                            <span class="ui-small-card-label">Next ROI (±3m)</span>
+                            <div class="ui-small-card-divider flex-1"></div>
+                            <div class="ui-small-card-content">
+                                <div class="live-timer-countdown" style="white-space: nowrap;" data-end-time="1750746633">23h 3m 48s</div>
+                            </div>
+                        </div>
+                       
+
+                    </div>
+                </details>
+                            </div>
+        </div>
+        <!--- calendar //-->
+        <div class="panel panel-default calendar-panel" style="padding: 0;">
+            <div class="panel-heading flex justify-between" style="padding: 1rem;">
+                <h3 class="panel-title">Chart</h3>
+
+                            <style>
+                            .toggle-container {
+                                background: #fff;
+                                border: 2px solid #1e2a38;
+                                border-radius: 50px;
+                                display: flex;
+                                height: fit-content;
+                                position: relative;
+                                padding: 0 0.25rem;
+                                box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+                                }
+                                .toggle-button {
+                                flex: 1;
+                                text-align: center;
+                                min-width: 8ch;
+                                cursor: pointer;
+                                z-index: 1;
+                                font-weight: 600;
+                                color: #1e2a38;
+                                transition: color 0.3s ease;
+                                }
+
+                                .toggle-indicator {
+                                position: absolute;
+                                top: 2px;
+                                bottom: 2px;
+                                width: 50%;
+                                background-image: linear-gradient(to right, #60a5fa, #2563eb);
+                                border-radius: 50px;
+                                z-index: 0;
+                                transition: transform 0.3s ease;
+                                }
+
+                                .toggle-button.active {
+                                color: #fff;
+                                }
+
+                                .calendar-active .toggle-indicator {
+                                transform: translateX(0%);
+                                }
+
+                                .chart-active .toggle-indicator {
+                                transform: translateX(calc(100% - 0.5rem));
+                                }
+                            </style>
+                            <div id="toggle" class="toggle-container chart-active">
+                                <div class="toggle-indicator"></div>
+                                <div class="toggle-button " data-mode="calendar">Calendar</div>
+                                <div class="toggle-button active" data-mode="chart">Chart</div>
+                            </div>
+            </div>
+
+            <link rel="stylesheet" href="/assets/css/calendar_update.css">
+            <div class="panel-body" id="calendar-container" style="padding:0;display: none;">
+                
+<div id="calendar-wrapper">
+    
+
+    <div class="calendar" data-month="6">
+        <!-- Month and Year Header -->
+        <div class="calendar-header">
+                            <a href="javascript:void(0);" data-month="5" class="calendar-switch"><i class="fa-solid fa-chevron-left"></i></a>
+                        <span>June 2025</span>
+                            <div></div>
+                    </div>
+
+        <!-- Days of the Week -->
+        <div class="calendar-days">
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+            <div>Sun</div>
+        </div>
+
+        <!-- Calendar Dates -->
+        <div class="calendar-dates">
+                                                        <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">1</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">1.33%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.6650%</span>
+                                                                                                </div>
+                        </div>
+                                                                            <div class="">
+                            <span class="calendar-date">2</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">2.41%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.2050%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">3</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">1.16%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.5800%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">4</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">1.67%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.8350%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">5</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">1.12%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.5600%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">6</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">1.52%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.7600%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">7</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">2.72%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.3600%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">8</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">2.59%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.2950%</span>
+                                                                                                </div>
+                        </div>
+                                                                            <div class="">
+                            <span class="calendar-date">9</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">3.16%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.5800%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">10</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">3.98%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.9900%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">11</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">4.62%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">2.3100%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">12</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">4.76%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">2.3800%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">13</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">5.23%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">2.6150%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">14</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">5.08%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">2.5400%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">15</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">2.39%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.4340%</span>
+                                                                                                </div>
+                        </div>
+                                                                            <div class="">
+                            <span class="calendar-date">16</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">1.51%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.9060%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">17</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">5.78%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">3.4680%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">18</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">5.27%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">3.1620%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">19</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">3.31%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.9860%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">20</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">2.66%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.5960%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">21</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">2.71%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.6260%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">22</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">3.18%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.9080%</span>
+                                                                                                </div>
+                        </div>
+                                                                            <div class=" today">
+                            <span class="calendar-date">23</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">5.08%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">2.5400%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">24</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">0.00%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">0%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.0000%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">25</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">0.00%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">0%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.0000%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">26</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">0.00%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">0%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.0000%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">27</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">0.00%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">0%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.0000%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">28</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">0.00%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">0%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.0000%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">29</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">0.00%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">0%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.0000%</span>
+                                                                                                </div>
+                        </div>
+                                                                            <div class="">
+                            <span class="calendar-date">30</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">0.00%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">0%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.0000%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                        </div>
+    </div>
+
+</div>
+    
+            </div>
+
+            <div class="panel-body" id="chart-container" style="padding:0;">
+                
+<style>
+ .chart-container {
+  position: relative;
+ }
+ .chart-bg-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
+ }
+ .chart-bg-logo img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+ }
+</style>
+<div class="chart-container">
+  <div class="chart-bg-logo"><img src="/images/svg/logo.svg" alt="website logo"> <h2 style="text-align: center;">Arbitjet</h2></div>
+  <div id="chart">
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+<script>
+const chartDataRaw = [{"id":941,"date":"2025-05-24","amount_fiat":"9.76","roi_arb":"3.09","roi_user":"1.854","roi_share":60,"active_deposits":4},{"id":942,"date":"2025-05-25","amount_fiat":"5.48","roi_arb":"1.74","roi_user":"1.044","roi_share":60,"active_deposits":4},{"id":943,"date":"2025-05-26","amount_fiat":"8.23","roi_arb":"3.13","roi_user":"1.565","roi_share":50,"active_deposits":4},{"id":944,"date":"2025-05-27","amount_fiat":"6.17","roi_arb":"2.35","roi_user":"1.175","roi_share":50,"active_deposits":4},{"id":945,"date":"2025-05-28","amount_fiat":"5.49","roi_arb":"2.09","roi_user":"1.045","roi_share":50,"active_deposits":4},{"id":946,"date":"2025-05-29","amount_fiat":"5.83","roi_arb":"2.22","roi_user":"1.11","roi_share":50,"active_deposits":4},{"id":947,"date":"2025-05-30","amount_fiat":"5.28","roi_arb":"2.01","roi_user":"1.005","roi_share":50,"active_deposits":4},{"id":948,"date":"2025-05-31","amount_fiat":"5.88","roi_arb":"2.24","roi_user":"1.12","roi_share":50,"active_deposits":4},{"id":949,"date":"2025-06-01","amount_fiat":"3.49","roi_arb":"1.33","roi_user":"0.665","roi_share":50,"active_deposits":4},{"id":950,"date":"2025-06-02","amount_fiat":"6.33","roi_arb":"2.41","roi_user":"1.205","roi_share":50,"active_deposits":4},{"id":951,"date":"2025-06-03","amount_fiat":"3.04","roi_arb":"1.16","roi_user":"0.58","roi_share":50,"active_deposits":4},{"id":952,"date":"2025-06-04","amount_fiat":"4.38","roi_arb":"1.67","roi_user":"0.835","roi_share":50,"active_deposits":4},{"id":953,"date":"2025-06-05","amount_fiat":"2.94","roi_arb":"1.12","roi_user":"0.56","roi_share":50,"active_deposits":4},{"id":954,"date":"2025-06-06","amount_fiat":"3.99","roi_arb":"1.52","roi_user":"0.76","roi_share":50,"active_deposits":4},{"id":955,"date":"2025-06-07","amount_fiat":"7.15","roi_arb":"2.72","roi_user":"1.36","roi_share":50,"active_deposits":4},{"id":956,"date":"2025-06-08","amount_fiat":"6.80","roi_arb":"2.59","roi_user":"1.295","roi_share":50,"active_deposits":2},{"id":957,"date":"2025-06-09","amount_fiat":"8.31","roi_arb":"3.16","roi_user":"1.58","roi_share":50,"active_deposits":2},{"id":958,"date":"2025-06-10","amount_fiat":"10.47","roi_arb":"3.98","roi_user":"1.99","roi_share":50,"active_deposits":2},{"id":959,"date":"2025-06-11","amount_fiat":"12.15","roi_arb":"4.62","roi_user":"2.31","roi_share":50,"active_deposits":2},{"id":960,"date":"2025-06-12","amount_fiat":"12.52","roi_arb":"4.76","roi_user":"2.38","roi_share":50,"active_deposits":2},{"id":961,"date":"2025-06-13","amount_fiat":"13.75","roi_arb":"5.23","roi_user":"2.615","roi_share":50,"active_deposits":2},{"id":962,"date":"2025-06-14","amount_fiat":"13.37","roi_arb":"5.08","roi_user":"2.54","roi_share":50,"active_deposits":2},{"id":963,"date":"2025-06-15","amount_fiat":"15.82","roi_arb":"2.39","roi_user":"1.434","roi_share":60,"active_deposits":4},{"id":964,"date":"2025-06-16","amount_fiat":"10.89","roi_arb":"1.51","roi_user":"0.906","roi_share":60,"active_deposits":4},{"id":965,"date":"2025-06-17","amount_fiat":"38.29","roi_arb":"5.78","roi_user":"3.468","roi_share":60,"active_deposits":4},{"id":966,"date":"2025-06-18","amount_fiat":"34.91","roi_arb":"5.27","roi_user":"3.162","roi_share":60,"active_deposits":4},{"id":1668,"date":"2025-06-19","amount_fiat":"21.91","roi_arb":"3.31","roi_user":"1.986","roi_share":60,"active_deposits":4},{"id":1686,"date":"2025-06-20","amount_fiat":"17.61","roi_arb":"2.66","roi_user":"1.596","roi_share":60,"active_deposits":4},{"id":1704,"date":"2025-06-21","amount_fiat":"17.94","roi_arb":"2.71","roi_user":"1.626","roi_share":60,"active_deposits":4},{"id":1721,"date":"2025-06-22","amount_fiat":"20.83","roi_arb":"3.18","roi_user":"1.908","roi_share":60,"active_deposits":4},{"id":1736,"date":"2025-06-23","amount_fiat":"13.35","roi_arb":"5.08","roi_user":"2.54","roi_share":50,"active_deposits":1}];
+
+
+const series = [
+    {
+        name: 'My Earnings',
+        data: [],
+        // color: "#FF1654",
+
+    },
+    {
+        hidden: true,
+        name: 'ROI',
+        data: [],
+        // color: "#FF1654",
+
+    },
+    {
+        hidden: true,
+        name: 'Deposits',
+        data: [],
+        // color: "#FF1654",
+    },
+]
+
+const categories = []
+chartDataRaw.forEach(item => {
+    categories.push(item.date)
+    series[0].data.push(item.amount_fiat)
+    series[1].data.push(item.roi_user)
+    series[2].data.push(item.active_deposits)
+})
+
+const year = new Date().getFullYear();
+
+var options = {
+  chart: {
+    type: 'line',
+    background: 'transparent',
+    height: 400,
+    
+  dropShadow: {
+    enabled: true,
+    color: '#000',
+    top: 18,
+    left: 7,
+    blur: 10,
+    opacity: 0.5
+    },
+  },
+  theme: {
+    mode: 'dark'
+  },
+    stroke: {
+        curve: 'smooth'
+    },
+  series,
+  xaxis: {
+    categories,
+    tickAmount: 3,
+    labels: {
+        formatter: function (value) {
+            return value?.replace(`${year}-`, '')
+        }
+    }
+  },
+yaxis: [
+  {
+    tickAmount: 3,
+    // floating: true,
+
+    labels: {
+      style: {
+        // colors: "#FF1654"
+      },
+      formatter: function (value) {
+            return "$" + numeral(value).format('0.0a')
+        }
+      }
+  },
+  {
+    tickAmount: 0,
+    floating: true,
+    labels: {
+        show: false,
+      style: {
+        colors: "#247BA0"
+      },
+        formatter: function (value) {
+            return parseFloat(value).toFixed(2) + '%'
+        }
+    }
+  },
+  {
+    tickAmount: 0,
+    floating: true,
+    labels: {
+      show: false,
+      showAlways: false,
+      style: {
+        colors: "#247BA0",
+      },
+        formatter: function (value) {
+            return parseInt(value)
+        }
+    },
+  }
+],
+}
+
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+chart.render();
+
+</script>
+
+
+            </div>
+
+             <script>
+                const toggle = document.getElementById('toggle');
+                const buttons = toggle.querySelectorAll('.toggle-button');
+                const calEl = document.querySelector('#calendar-container')
+                const chrEl = document.querySelector('#chart-container')
+                const panelTitleEl = toggle.parentElement.querySelector('.panel-title')
+
+                buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const mode = btn.getAttribute('data-mode');
+                    toggle.classList.toggle('calendar-active', mode === 'calendar');
+                    toggle.classList.toggle('chart-active', mode === 'chart');
+
+                    if(mode === 'calendar') {
+                        calEl.style.display = 'block'
+                        chrEl.style.display = 'none'
+                        panelTitleEl.textContent = 'Calendar'
+                    }else{
+                        calEl.style.display = 'none'
+                        chrEl.style.display = 'block'
+                        panelTitleEl.textContent = 'Chart'
+                    }
+
+                });
+                });
+            </script>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading" >
+                <h3 class="panel-title"><i
+                            class="fa"></i> My Balance</h3>
+            </div>
+            <div class="table-responsive" style="border: 1px solid #ffffff7b;">
+                <table class="table table-bordered table-striped table-hover">
+                    <tbody>
+                                            <tr>
+                            <td width="50%" class="text-left">Bitcoin</td>
+                            <td width="50%" class="text-right">
+                                <div><img loading="lazy" src="/images/cryptoicons/SVG/btc.svg" alt="crypto currency logo" class="logo-bg" width="20" height="20">&nbsp;<span class="ml-2p">0.00076732</span></div>
+                                <div style="color:#78ea43;font-weight:bold;">$78.18</div>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td width="50%" class="text-left">Ethereum</td>
+                            <td width="50%" class="text-right">
+                                <div><img loading="lazy" src="/images/cryptoicons/SVG/eth.svg" alt="crypto currency logo" class="logo-bg" width="20" height="20">&nbsp;<span class="ml-2p">0.0416863709</span></div>
+                                <div style="color:#78ea43;font-weight:bold;">$94.24</div>
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td width="50%" class="text-left">Tether</td>
+                            <td width="50%" class="text-right">
+                                <div><img loading="lazy" src="/images/cryptoicons/SVG/usdt.svg" alt="crypto currency logo" class="logo-bg" width="20" height="20">&nbsp;<span class="ml-2p">1.519092</span></div>
+                                <div style="color:#78ea43;font-weight:bold;">$1.51</div>
+                            </td>
+                        </tr>
+                                        </tbody>
+                </table>
+            </div>
+        </div>
+                <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa"></i>
+                    Partner Program                </h3>
+            </div>
+            <div class="table-responsive" style="border: 1px solid #ffffff7b;">
+                <table class="table table-bordered table-striped table-hover table-condensed">
+                    <thead>
+                    <tr>
+                                                <th colspan="5" class="text-center" style="font-size:1.2em !important;">
+                            You are:
+                            <strong style="color: #78ea43;">
+                                    Affiliate                            </strong>
+                        </th>
+                                                    </tr>
+                    <tr>
+                        <th class="text-center">Tier</th>
+                        <th class="text-center">1 <i class="fa-regular fa-circle-question" style="color: #4596E8;" data-toggle="tooltip" title="Level 1? Earn 8% on deposits made by users you refer directly."></i></th>
+                        <th class="text-center">2 <i class="fa-regular fa-circle-question" style="color: #4596E8;" data-toggle="tooltip" title="Level 2? Earn 4% on deposits made by your Level 1 referrals."></i></th>
+                        <th class="text-center">3 <i class="fa-regular fa-circle-question" style="color: #4596E8;" data-toggle="tooltip" title="Level 3? Earn 2% on deposits made by Level 2 referrals."></i></th>
+                        <th class="text-center">4 <i class="fa-regular fa-circle-question" style="color: #4596E8;" data-toggle="tooltip" title="Level 4? Earn 1% on deposits made by Level 3 referrals."></i></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="text-center">Commission</td>
+                        <td class="text-center">8%</td>
+                        <td class="text-center">4%</td>
+                        <td class="text-center">2%</td>
+                        <td class="text-center">1%</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+                            <div class="panel-body" style="border-radius: 10px;margin-top:1rem;">
+                                            <div class="alert alert-info m-b-5">
+                            <p><i class="fa-solid fa-users"></i></i>
+                                <strong>Your Upline:</strong>
+                            </p>
+                            <hr>
+                            <p>Name: <strong>John</strong><br>
+                                E-mail: <strong>upline@gmail.com</strong><br>
+                                Affiliate ID: <strong>sdjlvsdjlvn</strong>
+                            </p>
+                        </div>
+                                    </div>
+                    </div>
+
+
+        
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa"></i> Recent Activity                </h3>
+            </div>
+            <div class="table-responsive"  style="border: 1px solid #ffffff7b;">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                    <tr class="bg-info">
+                        <th class="text-left">Activity</th>
+                        <th class="text-left">IP Address</th>
+                        <th class="text-right">On</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                                            <tr>
+                            <td class="text-left">Signed In</td>
+                            <td class="text-left">127.0.0.1</td>
+                            <td class="text-right">23-Jun-2025 07:47 AM</td>
+                        </tr>
+                                            <tr>
+                            <td class="text-left">Signed In</td>
+                            <td class="text-left">127.0.0.1</td>
+                            <td class="text-right">21-Jun-2025 04:34 PM</td>
+                        </tr>
+                                            <tr>
+                            <td class="text-left">Signed In</td>
+                            <td class="text-left">127.0.0.1</td>
+                            <td class="text-right">20-Jun-2025 04:25 PM</td>
+                        </tr>
+                                            <tr>
+                            <td class="text-left">Signed In</td>
+                            <td class="text-left">127.0.0.1</td>
+                            <td class="text-right">20-Jun-2025 04:24 PM</td>
+                        </tr>
+                                            <tr>
+                            <td class="text-left">Signed In</td>
+                            <td class="text-left">127.0.0.1</td>
+                            <td class="text-right">20-Jun-2025 01:59 PM</td>
+                        </tr>
+                                        </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+
+    </div>
+</div>
+
+<script defer >
+var dpl = [];
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    let delay = 0
+    dpl.forEach(item => {
+        if(item.type === "roi" || item.type === "roicom") {
+            setTimeout(function() {
+                issueNoty("success", item.log, "bottomLeft")
+    
+            }, delay)
+            delay+= 100
+        }
+
+    })
+});
+
+
+</script>
+
+
+</div>
+</div>
+<div class="footer-fixer"></div>
+<div class="footer" style="position: absolute; bottom:0; width: 100%; background-color: #0F0F12; padding-top: 1rem; margin-top: 5rem;">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-5 col-xs-12">
+                <div style="">
+                    <a class="brand-logo" href="/">
+                        <img loading="lazy" src="/images/svg/logo.svg" width="24" height="24" alt="website logo">
+                        <span>ARBITJET</span>
+                    </a>
+                     <span class="copyrights" style="font-size: 14px;font-weight:400;">Copyright &copy;2025 Arbitjet All rights reserved.</span>
+                </div>
+
+        <div class="social-icons"><p>
+		    <a href="https://t.me/Arbitjet_Arbitrage" class="flex items-center gap-2 mb-1">
+                <img loading="lazy" src="/images/telegram.webp"  target="_blank" alt="Facebook" width="25">
+                <span class="text-white">Join Our Telegram Community</span>
+            </a>
+            <a href="https://www.youtube.com/@ArbitJet" class="flex items-center gap-2 mb-1">
+                <img loading="lazy" src="/images/youtube.webp"  target="_blank" alt="Facebook" width="25">
+                <span class="text-white">Youtube Channel</span>
+            </a>
+		    <!--
+		    <a href="https://www.facebook.com/"><img src="/images/social_icons-06.png"  target="_blank" alt="Facebook" width="25"></a>
+		    <a href="https://twitter.com/"><img src="/images/social_icons-07.png" target="_blank" alt="Twitter" width="25"></a>
+		    <a href="#"><img src="/images/social_icons-08.png" target="_blank" alt="LinkedIn" width="25"></a>
+		    <a href="#"><img src="/images/social_icons-09.png" target="_blank" alt="Google+" width="25"></a>
+		    <a href="#"><img src="/images/social_icons-10.png" target="_blank" alt="Youtube" width="25"></a>
+		    -->
+		</div>
+
+        </div>
+            <div class="col-sm-3 col-sm-offset-1 col-xs-6">
+
+                <h4>Legal</h4>
+                <ul class="footer-sitemap">
+                    <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+                    <li><a href="/privacy.html"> Privacy Policy</a></li>
+                    <li><a href="/spam.html">No-SPAM Policy</a></li>
+                    <li><a href="/disclaimer.html">Disclaimer</a></li>
+                </ul>
+
+                
+                <h4>OUR PARTNERS</h4>
+                <ul class="footer-sitemap">
+                    <li><a href="https://www.moonpay.com/buy" target="_blank">Moonpay Buy Crypto</a></li>
+                    <li><a href="https://www.moonpay.com/sell" target="_blank">Moonpay Sell Crypto</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <h4>About us</h4>
+                <ul class="footer-sitemap">
+                    <li><a href="/about.html">About us</a></li>
+                    		                        <li><a href="/security.html">Security</a></li>
+                    <li><a href="/faq.html">F.A.Q.</a></li>
+                    <li><a href="/how_arbitrage_works.html">How Arbitrage Works</a></li>
+                </ul>
+
+            </div>
+
+     
+    </div>
+</div>
+</div>
+<!-- Notifications -->
+
+<link href="/assets/css/notifications-widget.css" rel="stylesheet">
+<div class="notifications-widget">
+   
+</div>
+<!--<script src="/assets/js/notifications-widget.min.js" type="module"></script>-->
+<script defer  src="/assets/js/notifications-widget.min.js"></script>
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/67dc08a7b85872190f4482a3/1impo3jl5';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<div class="hidden">
+    {knit file="partials/_icons.knit"}
+</div>
+
+
+
+
+
+
+<link href="/assets/vendor/css/shepherd-11.2.0.css" rel="stylesheet">
+  <style>
+
+    .shepherd-element {
+        background: #0F0F0F;
+        border: 1px solid white;
+        border-radius: 10px;
+    }
+    .shepherd-arrow::before {
+        background: #9C1B1D;
+    }
+
+    .shepherd-content {
+        background: #0F0F0F;
+        border-radius: 10px;
+        font-size: 1.2em;
+    }
+
+    .shepherd-text {
+        font-family: "Gantari", serif, sans-serif;
+        background: transparent;
+        color: #fff;
+    }
+    /* Custom style example */
+    .shepherd-text h3 {
+        margin-top:0;
+        font-weight: 700;
+        font-size: 2em;
+    }
+    .shepherd-text p {
+        margin: 0;
+        margin-bottom: 4px;
+        font-size: 1.2em;
+    }
+    .shepherd-text li {
+        margin: 0;
+        margin-bottom: 4px;
+        font-size: 1.2em;
+    }
+    .shepherd-text p:last-child {
+        margin-bottom: 1rem;
+    }
+
+    .shepherd-modal-overlay-container.shepherd-modal-is-visible {
+        fill: #45454A;
+        opacity: 0.7;
+    }
+    footer.shepherd-footer {
+        position: relative;
+        background: transparent;
+    }
+
+    .shepherd-button {
+        color: #fff;
+        font-weight: 500;
+    }
+
+    .btn-tour-cancel,
+    .btn-tour-cancel:hover,
+    .btn-tour-cancel:active,
+    .btn-tour-cancel:focus {
+        background-color: #d9534f !important;
+        border-color: #d43f3a !important;
+        color: #fff !important;
+    }
+
+    .btn-tour-back,
+    .btn-tour-back:hover,
+    .btn-tour-back:active,
+    .btn-tour-back:focus {
+        background-color: #47474C !important;
+        border-color: #47474C !important;
+        color: #fff !important;
+    }
+
+    .btn-tour-next,
+    .btn-tour-next:hover,
+    .btn-tour-next:active,
+    .btn-tour-next:focus {
+        background-color: #0080FA !important;
+        border-color: #0080FA !important;
+        color: #fff !important;
+    }
+  </style>
+  <script>
+    const authToken = "/account/88b55f9b234080c236c1";
+    const cancelButton = `<i class="fa-regular fa-circle-xmark"></i> <span>Cancel</span>`
+    const backButton = `<i class="fa-regular fa-circle-left"></i> <span>Back</span>`
+    const nextButton = `<span>Next</span> <i class="fa-regular fa-circle-right"></i>`
+  </script>
+<script defer src="/assets/vendor/js/shepherd-11.2.0.min.js"></script>
+<script defer src="/assets/js/dashboard_tour.min.js" ></script>
+
+
+</body>
+</html>

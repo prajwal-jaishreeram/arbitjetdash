@@ -1,0 +1,2064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Arbitjet Deposit - Start Your Investment">
+    <meta name="author" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Deposit - Arbitjet</title>
+    
+    <!-- Bootstrap and other CSS -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/animations.css" rel="stylesheet">
+    <link href="/assets/css/interface.css" rel="stylesheet">
+	<link href="/assets/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/assets/css/pace/purple/pace-theme-flash.css" rel="stylesheet">
+    <link href="/assets/css/new-styles.css" rel="stylesheet">
+    <link href="/assets/css/dashboard_update.css" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+            color: #ffffff;
+            line-height: 1.5;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                       radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 20px 16px;
+        }
+
+        /* Desktop Layout */
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 800px;
+                padding: 8px 8px;
+                height: auto;
+                overflow: visible;
+                margin: 0 auto;
+            }
+
+            .desktop-grid {
+                display: block;
+                width: 100%;
+            }
+
+            .left-column {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .right-column {
+                display: none;
+            }
+
+            /* Desktop Plan Grid - 4 columns */
+            .plan-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+                margin-bottom: 12px;
+            }
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            margin-bottom: 0;
+        }
+
+        .navbar .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            color: #ffffff;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .brand-logo .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            border-radius: 8px;
+            margin-right: 12px;
+        }
+
+        /* Progress Indicator */
+        .progress-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 16px;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #9ca3af;
+            position: relative;
+        }
+
+        .progress-step.active {
+            color: #ffffff;
+        }
+
+        .progress-step.completed {
+            color: #10b981;
+        }
+
+        .progress-step::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-step.active::before {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .progress-step.completed::before {
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-color: #10b981;
+            content: '✓';
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Crypto Tabs */
+        .crypto-tabs {
+            display: flex;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 6px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .crypto-tab {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 12px;
+            border-radius: 12px;
+            border: none;
+            background: transparent;
+            color: #9ca3af;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .crypto-tab.active {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .crypto-tab:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e5e7eb;
+        }
+
+        .crypto-tab img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Plan Selection - MOBILE: Single row with 4 columns */
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .plan-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 12px 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plan-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .plan-card:hover::before {
+            opacity: 1;
+        }
+
+        .plan-card.selected {
+            border-color: rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+        }
+
+        .plan-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .plan-icon {
+            width: 32px;
+            height: 32px;
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .plan-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .plan-name {
+            font-weight: 700;
+            font-size: 12px;
+            color: #ffffff;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Desktop responsive for plan cards */
+        @media (min-width: 1024px) {
+            .plan-grid {
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+
+            .plan-card {
+                padding: 28px 20px;
+            }
+
+            .plan-icon {
+                width: 64px;
+                height: 64px;
+                margin-bottom: 18px;
+            }
+
+            .plan-name {
+                font-size: 18px;
+            }
+        }
+
+        /* Selected Plan Info */
+        .selected-plan-info {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .plan-range {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .plan-profit, .plan-duration {
+            font-size: 14px;
+            color: #d1d5db;
+            font-weight: 500;
+        }
+
+        /* Merged Plan Info & Return Estimates */
+        .merged-plan-info {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .plan-details {
+            flex: 1;
+            text-align: left;
+        }
+
+        .plan-range {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .plan-profit, .plan-duration {
+            font-size: 14px;
+            color: #d1d5db;
+            font-weight: 500;
+        }
+
+        .return-estimates {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .return-section {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            padding: 16px 12px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.1));
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .return-section:hover {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(5, 150, 105, 0.15));
+            border-color: rgba(16, 185, 129, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .return-label {
+            font-size: 12px;
+            color: #10b981;
+            font-weight: 600;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .return-value {
+            font-size: 18px;
+            font-weight: 800;
+            color: #10b981;
+        }
+
+        /* Mobile responsive for merged section */
+        @media (max-width: 768px) {
+            .merged-plan-info {
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
+            }
+
+            .plan-details {
+                text-align: center;
+            }
+
+            .return-estimates {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .return-section {
+                min-width: 100px;
+                flex: 1;
+            }
+        }
+
+        /* Form Groups */
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 15px;
+            color: #f3f4f6;
+        }
+
+        /* Amount Input */
+        .amount-input {
+            position: relative;
+        }
+
+        .amount-input input {
+            width: 100%;
+            padding: 18px 18px 18px 54px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .amount-input input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+        }
+
+        .amount-input input::placeholder {
+            color: #9ca3af;
+        }
+
+        .amount-input .crypto-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Preset Amount Buttons */
+        .preset-amounts {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .preset-btn {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 8px 16px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .preset-btn:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        /* Payment Methods */
+        .payment-method {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .payment-method:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+        }
+
+        .payment-method input[type="radio"] {
+            margin-right: 14px;
+            width: 18px;
+            height: 18px;
+            accent-color: #ffffff;
+        }
+
+        .payment-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+        }
+        .payment-content > div:first-child {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .payment-title {
+            font-weight: 600;
+            margin-bottom: 2px;
+            color: #ffffff;
+            font-size: 16px;
+        }
+        .payment-balance {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #d1d5db;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+        .balance-usd {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 16px;
+            align-self: flex-start;
+            margin-top: 2px;
+        }
+        .payment-balance img {
+            width: 12px;
+            height: 12px;
+        }
+
+        /* Summary */
+        .summary {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        .summary-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .summary-row span:first-child {
+            color: #d1d5db;
+            font-weight: 500;
+        }
+
+        .summary-value {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .summary-value img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .usd-value {
+            color: #ffffff;
+            font-weight: 700;
+            margin-left: 4px;
+        }
+
+        /* Live Return Display */
+        .live-return {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.1));
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .live-return-label {
+            font-size: 14px;
+            color: #10b981;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .live-return-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: #10b981;
+        }
+
+        /* Reinvesting */
+        .reinvest-help {
+            font-size: 13px;
+            color: #9ca3af;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .reinvest-select {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .reinvest-select:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+        }
+
+        .reinvest-select option {
+            background: #1f2937;
+            color: #ffffff;
+        }
+
+        /* Continue Button */
+        .continue-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #fff;
+            border: none;
+            border-radius: 16px;
+            font-weight: 800;
+            font-size: 18px;
+            padding: 20px 32px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+        }
+        .continue-btn:hover, .continue-btn:focus {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.35);
+            color: #fff;
+            outline: none;
+            transform: translateY(-2px);
+        }
+
+        .continue-btn:active {
+            transform: translateY(0);
+        }
+
+        .continue-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .continue-btn.loading {
+            color: transparent;
+        }
+
+        .continue-btn.loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top: 2px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .continue-btn.success {
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-color: #10b981;
+        }
+
+        .continue-btn.success::before {
+            content: '✓';
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Error Notification */
+        .error-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            z-index: 10000;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 8px 32px rgba(239, 68, 68, 0.3);
+            max-width: 300px;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Desktop Styles - Optimized for no-scroll */
+        @media (min-width: 1024px) {
+            .progress-indicator {
+                padding: 12px;
+                margin-bottom: 20px;
+            }
+
+            .crypto-tabs {
+                padding: 6px;
+                margin-bottom: 20px;
+            }
+
+            .crypto-tab {
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            .selected-plan-info {
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+
+            .plan-range {
+                font-size: 13px;
+                margin-bottom: 4px;
+            }
+
+            .plan-profit, .plan-duration {
+                font-size: 11px;
+            }
+
+            .form-group {
+                margin-bottom: 10px;
+            }
+
+            .form-label {
+                font-size: 13px;
+                margin-bottom: 4px;
+            }
+
+            .amount-input input {
+                padding: 8px 8px 8px 36px;
+                font-size: 13px;
+                border-radius: 10px;
+            }
+
+            .amount-input .crypto-icon {
+                left: 16px;
+                width: 20px;
+                height: 20px;
+            }
+
+            .payment-method {
+                padding: 8px;
+                margin-bottom: 24px; /* Increased gap below payment method */
+                border-radius: 10px;
+            }
+
+            .payment-title {
+                font-size: 13px;
+            }
+
+            .payment-balance {
+                font-size: 11px;
+            }
+
+            .balance-usd {
+                font-size: 13px;
+            }
+
+            .summary {
+                padding: 8px;
+                margin-bottom: 10px;
+                border-radius: 10px;
+            }
+
+            .summary-row {
+                font-size: 12px;
+                margin-bottom: 6px;
+            }
+
+            .summary-value img {
+                width: 12px;
+                height: 12px;
+            }
+
+            .reinvest-help {
+                font-size: 12px;
+                padding: 12px;
+                margin-bottom: 12px;
+            }
+
+            .reinvest-select {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            .continue-btn {
+                padding: 20px 32px;
+                font-size: 18px;
+                border-radius: 16px;
+                font-weight: 800;
+                letter-spacing: 0.5px;
+                box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
+            }
+            
+            .continue-btn:hover, .continue-btn:focus {
+                box-shadow: 0 8px 32px rgba(16, 185, 129, 0.35);
+                transform: translateY(-2px);
+            }
+
+            /* Desktop Grid Improvements */
+            .right-column .form-group:last-of-type {
+                margin-bottom: 16px;
+            }
+
+            .summary {
+                margin-bottom: 16px;
+            }
+
+            /* Plan card desktop optimization */
+            .plan-card {
+                padding: 16px 12px;
+            }
+
+            .plan-icon {
+                width: 48px;
+                height: 48px;
+                margin-bottom: 12px;
+                border-radius: 10px;
+            }
+
+            .plan-name {
+                font-size: 14px;
+            }
+        }
+
+        /* Aggressive mobile optimizations for Deposit Funds at 320px width */
+        @media (max-width: 340px) {
+            .container {
+                max-width: 100vw !important;
+                padding: 8px 2px !important;
+        }
+            .plan-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 4px !important;
+                margin-bottom: 12px !important;
+        }
+            .plan-card {
+                padding: 6px 2px !important;
+                min-width: 0 !important;
+            }
+            .plan-icon {
+                width: 22px !important;
+                height: 22px !important;
+                margin-bottom: 4px !important;
+            }
+            .plan-name {
+                font-size: 10px !important;
+        }
+            .selected-plan-info {
+                padding: 10px 4px !important;
+                font-size: 12px !important;
+                margin-bottom: 10px !important;
+            }
+            .plan-range {
+                font-size: 13px !important;
+        }
+            .plan-profit, .plan-duration {
+                font-size: 11px !important;
+        }
+            .form-group {
+                margin-bottom: 10px !important;
+            }
+            .form-label {
+                font-size: 12px !important;
+                margin-bottom: 4px !important;
+            }
+            .amount-input input {
+                padding: 8px 8px 8px 32px !important;
+                font-size: 12px !important;
+            }
+            .amount-input .crypto-icon {
+                left: 8px !important;
+                width: 14px !important;
+                height: 14px !important;
+        }
+            .preset-amounts {
+                gap: 4px !important;
+                margin-top: 6px !important;
+            }
+            .preset-btn {
+                padding: 4px 8px !important;
+                font-size: 11px !important;
+            }
+            .payment-method {
+                padding: 8px !important;
+                margin-bottom: 6px !important;
+            }
+            .payment-title, .balance-usd {
+                font-size: 12px !important;
+        }
+            .payment-balance {
+                font-size: 10px !important;
+            }
+            .summary {
+                padding: 8px !important;
+                margin-bottom: 8px !important;
+        }
+            .summary-row {
+                margin-bottom: 6px !important;
+                font-size: 11px !important;
+            }
+            .summary-value img {
+                width: 12px !important;
+                height: 12px !important;
+        }
+            .continue-btn {
+                padding: 8px !important;
+                font-size: 13px !important;
+            }
+            .reinvest-select {
+                padding: 8px !important;
+                font-size: 12px !important;
+            }
+            .live-return-label, .live-return-value {
+                font-size: 13px !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .currency-select { font-size: 15px; padding: 12px 10px; }
+        }
+        .currency-select-wrapper {
+            position: relative;
+            width: 100%;
+            margin-bottom: 24px;
+        }
+        .currency-select {
+            width: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+            backdrop-filter: blur(20px);
+            border: 1.5px solid rgba(255,255,255,0.13);
+            border-radius: 16px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 44px 16px 14px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            outline: none;
+            transition: border 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .currency-select:focus {
+            border-color: rgba(59,130,246,0.5);
+            box-shadow: 0 0 0 2px rgba(59,130,246,0.15);
+        }
+        .currency-select option {
+            background: #181824;
+            color: #fff;
+            font-size: 15px;
+        }
+        .currency-select-arrow {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+        }
+        @media (max-width: 600px) {
+            .currency-select { font-size: 15px; padding: 12px 38px 12px 10px; }
+            .currency-select-arrow { right: 12px; }
+        }
+
+        /* Selectors Row Layout */
+        .selectors-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .currency-select-wrapper {
+            flex: 1;
+            position: relative;
+        }
+
+        .reinvest-source-wrapper {
+            flex: 1;
+            position: relative;
+        }
+
+        .currency-select, .reinvest-source-select {
+            width: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+            backdrop-filter: blur(20px);
+            border: 1.5px solid rgba(255,255,255,0.13);
+            border-radius: 16px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 44px 16px 14px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            outline: none;
+            transition: border 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .currency-select:focus, .reinvest-source-select:focus {
+            border-color: rgba(59,130,246,0.5);
+            box-shadow: 0 0 0 2px rgba(59,130,246,0.15);
+        }
+
+        .currency-select option, .reinvest-source-select option {
+            background: #181824;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .currency-select-arrow, .reinvest-source-arrow {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+        }
+
+        /* Move reinvest source arrow up a bit */
+        .reinvest-source-arrow {
+            top: 40%;
+        }
+
+        /* Mobile responsive for selectors */
+        @media (max-width: 768px) {
+            .selectors-row {
+                flex-direction: row;
+                gap: 12px;
+            }
+
+            .currency-select-wrapper,
+            .reinvest-source-wrapper {
+                flex: 1;
+            }
+
+            .currency-select, .reinvest-source-select {
+                font-size: 14px;
+                padding: 12px 32px 12px 10px;
+            }
+
+            .currency-select-arrow, .reinvest-source-arrow {
+                right: 10px;
+            }
+
+            .reinvest-source-arrow {
+                top: 35%;
+            }
+        }
+
+        /* Amount and Reinvesting Row Layout */
+        .amount-reinvest-row {
+                display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .amount-wrapper {
+            flex: 2;
+        }
+
+        .reinvest-wrapper {
+            flex: 1;
+        }
+
+        .amount-wrapper .form-label,
+        .reinvest-wrapper .form-label {
+            margin-bottom: 8px;
+        }
+
+        .amount-wrapper .amount-input {
+            margin-bottom: 12px;
+        }
+
+        .reinvest-wrapper .reinvest-select {
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        /* Mobile responsive for amount-reinvest row */
+        @media (max-width: 768px) {
+            .amount-reinvest-row {
+                flex-direction: row;
+                gap: 12px;
+            }
+
+            .amount-wrapper {
+                flex: 2;
+            }
+
+            .reinvest-wrapper {
+                flex: 1;
+            }
+
+            .amount-wrapper .amount-input {
+                margin-bottom: 8px;
+            }
+
+            .preset-amounts {
+                gap: 4px;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+            }
+
+            .preset-btn {
+                padding: 6px 8px;
+                font-size: 11px;
+                flex: 1;
+                min-width: 0;
+                white-space: nowrap;
+            }
+        }
+
+        /* New Deposits Section Styles */
+        .deposits-section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 16px;
+            margin-top: 16px;
+            width: 100%;
+            max-width: 100%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Center deposits section on desktop */
+        @media (min-width: 1024px) {
+            .deposits-section {
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .deposits-header {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+        }
+
+        .deposit-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .deposit-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .deposit-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .status-badge {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+        }
+
+        .deposit-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-btn {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #9ca3af;
+            padding: 8px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .action-btn:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .action-btn.danger {
+            color: #f87171;
+            border-color: rgba(248, 113, 113, 0.3);
+        }
+
+        .action-btn.danger:hover {
+            background: linear-gradient(135deg, rgba(248, 113, 113, 0.2), rgba(239, 68, 68, 0.1));
+            border-color: rgba(248, 113, 113, 0.5);
+            color: #ffffff;
+        }
+
+        .deposit-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 8px;
+        }
+
+        .stat-item {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .stat-label {
+            color: #9ca3af;
+            font-size: 10px;
+            font-weight: 500;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            font-size: 12px;
+            color: #ffffff;
+        }
+
+        .stat-value.green {
+            color: #10b981;
+        }
+
+        .stat-value.orange {
+            color: #f59e0b;
+        }
+
+        .capital-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .capital-icon {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+        }
+
+        .tooltip {
+            position: relative;
+            cursor: help;
+        }
+
+        .tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(20px);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .tooltip:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 115%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+    </style>
+
+    <script defer src="/assets/vendor/js/jquery-3.4.0.min.js"></script>
+    <script defer src="/assets/vendor/js/bootstrap.min.js"></script>
+    <script defer src="/assets/vendor/js/bootstrap-select.min.js"></script>
+    <script defer src="/assets/vendor/js/noty.min.js"></script>
+    <script defer src="/assets/vendor/js/pace.min.js"></script>
+    <script defer src="/assets/vendor/js/qrcode-with-logos-1.1.1.min.js"></script>
+    <script defer src="/assets/js/events.min.js"></script>
+    <script defer src="/assets/js/ajax.min.js"></script>
+    <script defer src="/assets/js/interface.min.js"></script>
+    <script defer src="/assets/js/countdown-timer.min.js"></script>
+
+    </head>
+
+<body>
+
+<div class="container-fluid navbar-interface">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fa fa-bars"></span>
+                </button>
+                <a class="brand-logo" href="inbox/archived.html">
+                    <img loading="lazy" src="/images/svg/logo.svg" width="24" height="24" alt="website logo">
+                    <span>ARBITJET</span>
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="color-stripe-success" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1.html">
+			    <i class="fa-solid fa-gauge"></i>
+                            Dashboard                        </a>
+                    </li>
+					<li class="dropdown color-stripe-danger" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1/finance.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			   <i class="fa-solid fa-user"></i>
+                            My Account <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/profile.html">Edit Profile</a></li>
+                            <li class=""><a href="settings.html">Preferences</a></li>
+                            <li class=""><a href="security.html">Security</a></li>
+                            <li class=""><a href="password.html">Change Password</a></li>
+                            <li class=""><a href="verify.html">
+                                Verifications                                <span class="badge badge-warning m-l-5">4</span>                                </a>
+							</li>
+                       </ul>
+                    </li>
+                    <li class="dropdown active color-stripe-top color-stripe-info" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1/finance.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			                <i class="fa-solid fa-wallet"></i>
+                            Finance <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/finance.html">Finance</a></li>
+                            <li class="active"><a href="finance/deposit.html">Deposit Funds</a></li>
+                            <li class=""><a href="finance/withdraw.html">Withdraw Funds</a></li>
+                            <li class=""><a href="finance/ledger.html">History</a></li>
+                            <li class=""><a href="finance/payees.html">Payee Accounts</a></li>
+                                                    </ul>
+                    </li>
+                    <li class="dropdown color-stripe-success" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1/finance.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			    <i class="fa-solid fa-users"></i>
+                            Affiliates <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/affiliates/downlines.html">My Affiliates</a></li>
+                            <li class=""><a href="affiliates/tools.html">Invitation Links</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown color-stripe-warning" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1/finance.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			                <i class="fa-solid fa-message"></i>
+                            Messaging <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/inbox.html">Inbox (0)</a></li>
+                            <li class=""><a href="inbox/compose.html">Compose</a></li>
+                        </ul>
+                    </li>
+                    <li class="color-stripe-info">
+                        <a href="/account/88b55f9b234080c236c1%3Ftour.html" style="color: #4596E8;font-weight: 700;">
+                            <i class="fa-solid fa-circle-info"></i>
+                            GUIDE
+                        </a>
+                    </li>
+                    <li class="color-stripe-info" data-stripe="color-stripe-top">
+                        <a href="signout.html">
+			                <i class="fa-solid fa-right-from-bracket"></i>
+                            Sign out                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container-fluid ticker hidden-xs">
+    <div class="row">
+        <div class="col-sm-9">
+            <ul class="list-inline ticker-nav">
+				<li class=""><a href="/account/88b55f9b234080c236c1/inbox.html">Inbox<span class="badge badge-info m-l-5">0</span></a></li>
+                <li class=""><a href="finance/deposit.html">Deposit Funds</a></li>
+				<li class=""><a href="/account/88b55f9b234080c236c1/affiliates/downlines.html">My Affiliates</a></li>
+                <li class=""><a href="callback.html">Request Call Back</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-3 text-right time">
+            <small>05 Jul 2025 06:46 AM <i class="fa-regular fa-clock"></i></small>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid content">
+    <div class="inner">
+        <div class="row">
+    <div class="col-sm-3 col-lg-2 hidden-xs">
+        <div class="">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="">
+                    <a href="/account/88b55f9b234080c236c1/finance.html">
+                        Finance                    </a>
+                </li>
+                        <li class="active">
+                            <a href="finance/deposit.html">
+                        Deposit Funds                    </a>
+                </li>
+                <li class="">
+                            <a href="finance/withdraw.html">
+                        Withdraw Funds                    </a>
+                </li>
+                <li class="">
+                            <a href="finance/ledger.html">
+                        History                    </a>
+                </li>
+				<li class="">
+                            <a href="finance/payees.html">
+                                Payee Accounts                    </a>
+				</li>
+                            </ul>
+        </div>
+    </div>
+            <div class="col-sm-9 col-lg-10 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading flex justify-between"><h3 class="panel-title">Deposit Funds</h3></div>
+                    
+                    <div class="panel-body">
+                        <div class="container">
+        <div class="desktop-grid">
+            <div class="left-column">
+                <!-- Progress Indicator -->
+                <!-- Removed progress-indicator as requested -->
+
+
+
+                <!-- Currency and Reinvesting Source Selectors -->
+                <div class="selectors-row">
+                    <div class="currency-select-wrapper">
+                        <select class="currency-select" id="currency-select">
+                            <option value="btc">BTC</option>
+                            <option value="eth">ETH</option>
+                            <option value="usdt">USDT</option>
+                            <option value="usdc">USDC</option>
+                            <option value="xaut">Tether Gold (XAUT)</option>
+                            <option value="usdt_tron">USDT (TRON)</option>
+                        </select>
+                        <span class="currency-select-arrow">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 8L10 12L14 8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                </div>
+
+                    <div class="reinvest-source-wrapper">
+                        <select class="reinvest-source-select" id="reinvest-source-select">
+                            <option value="external">External Wallet</option>
+                            <option value="balance">From Balance</option>
+                        </select>
+                        <span class="reinvest-source-arrow">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 8L10 12L14 8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Plan Selection - Mobile: 4 columns in one row -->
+                <div class="plan-grid">
+                    <div class="plan-card selected" data-plan="mini">
+                        <div class="plan-icon">
+                            <img src="/images/icons/mini_plan.svg" alt="Mini Plan">
+            </div>
+                        <div class="plan-name">MINI</div>
+                                </div>
+                    <div class="plan-card" data-plan="medi">
+                        <div class="plan-icon">
+                            <img src="/images/icons/medi_plan.svg" alt="Medi Plan">
+                                                    </div>
+                        <div class="plan-name">MEDI</div>
+                    </div>
+                    <div class="plan-card" data-plan="maxi">
+                        <div class="plan-icon">
+                            <img src="/images/icons/maxi_plan.png" alt="Maxi Plan">
+                            </div>
+                        <div class="plan-name">MAXI</div>
+                        </div>
+                    <div class="plan-card" data-plan="pro">
+                        <div class="plan-icon">
+                            <img src="/images/icons/pro_plan.png" alt="Pro Plan">
+                    </div>
+                        <div class="plan-name">PRO</div>
+                        </div>
+                    </div>
+
+                <!-- Merged Plan Info & Return Estimates -->
+                <div class="merged-plan-info">
+                    <div class="plan-details">
+                    <div class="plan-range">50 to 999 USD</div>
+                    <div class="plan-profit">50% of our daily profit</div>
+                    <div class="plan-duration">expires in 30 days</div>
+                    </div>
+                    <div class="return-estimates">
+                        <div class="return-section">
+                            <div class="return-label">Daily Return</div>
+                            <div class="return-value" id="daily-return-value">$0.00</div>
+                        </div>
+                        <div class="return-section">
+                            <div class="return-label">Weekly Return</div>
+                            <div class="return-value" id="weekly-return-value">$0.00</div>
+                        </div>
+                        <div class="return-section">
+                            <div class="return-label">Monthly Return</div>
+                            <div class="return-value" id="monthly-return-value">$0.00</div>
+                        </div>
+                    </div>
+                        </div>
+
+                <!-- Amount and Reinvesting Row -->
+                <div class="amount-reinvest-row">
+                    <div class="amount-wrapper">
+                    <label class="form-label">Amount</label>
+                    <div class="amount-input">
+                        <img src="/images/cryptoicons/SVG/btc.svg" alt="BTC" class="crypto-icon">
+                        <input type="text" placeholder="0.0000" id="amount-input">
+                        </div>
+                    <!-- Preset Amount Buttons -->
+                    <div class="preset-amounts">
+                        <button type="button" class="preset-btn" data-amount="100">$100</button>
+                        <button type="button" class="preset-btn" data-amount="500">$500</button>
+                        <button type="button" class="preset-btn" data-amount="1000">$1,000</button>
+                        <button type="button" class="preset-btn" data-amount="5000">$5,000</button>
+                        </div>
+                    </div>
+
+                    <div class="reinvest-wrapper">
+                        <label class="form-label">Reinvesting</label>
+                        <select class="reinvest-select" id="reinvest-select">
+                            <option value="0">0%</option>
+                            <option value="10">10%</option>
+                            <option value="20">20%</option>
+                            <option value="30">30%</option>
+                            <option value="40">40%</option>
+                            <option value="50">50%</option>
+                            <option value="60">60%</option>
+                            <option value="70">70%</option>
+                            <option value="80">80%</option>
+                            <option value="90">90%</option>
+                            <option value="100">100%</option>
+                        </select>
+                        </div>
+                    </div>
+
+                <!-- Summary -->
+                <div class="summary">
+                    <div class="summary-row">
+                        <span>Minimum deposit</span>
+                        <div class="summary-value">
+                            <img src="/images/cryptoicons/SVG/btc.svg" alt="BTC">
+                            <span>0.0004685</span>
+                            <span class="usd-value">$49.98</span>
+                        </div>
+                    </div>
+                    <div class="summary-row">
+                        <span>Fee</span>
+                        <div class="summary-value">
+                            <img src="/images/cryptoicons/SVG/btc.svg" alt="BTC">
+                            <span>0.0000</span>
+            </div>
+        </div>
+                    <div class="summary-row">
+                        <span>You'll receive</span>
+                        <div class="summary-value">
+                            <img src="/images/cryptoicons/SVG/btc.svg" alt="BTC">
+                            <span>0.0000</span>
+            </div>
+                        </div>
+                        </div>
+
+                <!-- Continue Button -->
+                <button class="continue-btn" id="continue-btn">Continue</button>
+
+                            </div>
+                        </div>
+
+            <div class="right-column">
+                <!-- Right column is now empty -->
+                            </div>
+                        </div>
+
+        <!-- New Deposits Section - Full Width -->
+        <div class="deposits-section">
+            <div class="deposits-header">Your Active Investments</div>
+
+            <div class="deposit-card">
+                <div class="deposit-header">
+                    <div class="status-badge">Active</div>
+                                <div class="deposit-actions">
+                        <button class="action-btn tooltip" data-tooltip="Settings">
+                            <i class="fa-solid fa-gear"></i>
+                        </button>
+                        <button class="action-btn danger tooltip" data-tooltip="Stop Investment">
+                            <i class="fa-solid fa-stop"></i>
+                        </button>
+                            </div>
+                        </div>
+
+                <div class="deposit-stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Running Capital</div>
+                        <div class="capital-info">
+                            <div class="capital-icon"></div>
+                            <div class="stat-value green">$51.00</div>
+                            </div>
+                        </div>
+
+                    <div class="stat-item">
+                        <div class="stat-label">Total Paid</div>
+                        <div class="capital-info">
+                            <div class="capital-icon"></div>
+                            <div class="stat-value green">$19.17</div>
+                    </div>
+                        </div>
+
+                    <div class="stat-item">
+                        <div class="stat-label">ROI</div>
+                        <div class="stat-value green">376000%</div>
+                        </div>
+
+                    <div class="stat-item">
+                        <div class="stat-label">Expires</div>
+                        <div class="stat-value">17-07-2025</div>
+                        </div>
+
+                    <div class="stat-item">
+                        <div class="stat-label">Next ROI</div>
+                        <div class="stat-value orange">6h 42m 40s</div>
+                        </div>
+                                                    </div>
+                        </div>
+                                                    </div>
+
+    <script>
+        const cryptoTabs = document.querySelectorAll('.crypto-tab');
+        const planCards = document.querySelectorAll('.plan-card');
+        const amountInput = document.getElementById('amount-input');
+        const cryptoIcon = document.querySelector('.crypto-icon');
+        const selectedPlanInfo = document.querySelector('.selected-plan-info');
+        const dailyReturnEl = document.getElementById('daily-return-value');
+        const weeklyReturnEl = document.getElementById('weekly-return-value');
+        const monthlyReturnEl = document.getElementById('monthly-return-value');
+        const continueBtn = document.getElementById('continue-btn');
+        const presetBtns = document.querySelectorAll('.preset-btn');
+        const reinvestSelect = document.getElementById('reinvest-select');
+        const currencySelect = document.getElementById('currency-select');
+        const reinvestSourceSelect = document.getElementById('reinvest-source-select');
+
+        const planData = {
+            mini: { 
+                range: '50 to 999 USD', 
+                profit: '50% of our daily profit', 
+                duration: 'expires in 30 days',
+                minAmount: 50,
+                maxAmount: 999,
+                profitRate: 0.5
+            },
+            medi: { 
+                range: '1,000 to 4,999 USD', 
+                profit: '60% of our daily profit', 
+                duration: 'expires in 45 days',
+                minAmount: 1000,
+                maxAmount: 4999,
+                profitRate: 0.6
+            },
+            maxi: { 
+                range: '5,000 to 24,999 USD', 
+                profit: '65% of our daily profit', 
+                duration: 'expires in 60 days',
+                minAmount: 5000,
+                maxAmount: 24999,
+                profitRate: 0.65
+            },
+            pro: { 
+                range: '25,000 to 250,000 USD', 
+                profit: '70% of our daily profit', 
+                duration: 'expires in 120 days',
+                minAmount: 25000,
+                maxAmount: 250000,
+                profitRate: 0.7
+            }
+        };
+
+        const cryptoIcons = {
+            btc: '/images/cryptoicons/SVG/btc.svg',
+            eth: '/images/cryptoicons/SVG/eth.svg',
+            usdt: '/images/cryptoicons/SVG/usdt.svg',
+            usdc: '/images/icons/usdc.svg',
+            xaut: '/images/icons/xaut.svg',
+            usdt_tron: '/images/icons/usdt.svg',
+        };
+
+        let currentCrypto = 'btc';
+        let currentPlan = 'mini';
+
+        // Update return calculations
+        function updateReturns() {
+            const amount = parseFloat(amountInput.value) || 0;
+            const plan = planData[currentPlan];
+            
+            // Calculate returns
+            const dailyReturn = amount * plan.profitRate / 100;
+            const weeklyReturn = dailyReturn * 7;
+            const monthlyReturn = dailyReturn * 30;
+            
+            // Update display
+            dailyReturnEl.textContent = `$${dailyReturn.toFixed(2)}`;
+            weeklyReturnEl.textContent = `$${weeklyReturn.toFixed(2)}`;
+            monthlyReturnEl.textContent = `$${monthlyReturn.toFixed(2)}`;
+            
+            // Update progress
+            updateProgress();
+        }
+
+        // Update progress indicator
+        function updateProgress() {
+            const amount = parseFloat(amountInput.value) || 0;
+            const plan = planData[currentPlan];
+            
+            const steps = document.querySelectorAll('.progress-step');
+            
+            if (amount >= plan.minAmount) {
+                steps[0].classList.add('completed');
+                steps[1].classList.add('active');
+            } else {
+                steps[0].classList.remove('completed');
+                steps[1].classList.remove('active');
+            }
+        }
+
+        // Show error notification
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-notification';
+            errorDiv.textContent = message;
+            document.body.appendChild(errorDiv);
+            
+            setTimeout(() => {
+                errorDiv.style.animation = 'slideIn 0.3s ease reverse';
+                setTimeout(() => errorDiv.remove(), 300);
+            }, 3000);
+        }
+
+        // Validate form
+        function validateForm() {
+            const amount = parseFloat(amountInput.value);
+            const plan = planData[currentPlan];
+            
+            if (!amount || amount < plan.minAmount) {
+                showError(`Minimum amount for ${currentPlan.toUpperCase()} plan is $${plan.minAmount}`);
+                return false;
+            }
+            
+            if (amount > plan.maxAmount) {
+                showError(`Maximum amount for ${currentPlan.toUpperCase()} plan is $${plan.maxAmount}`);
+                return false;
+            }
+            
+            return true;
+        }
+
+        // Plan selection
+        planCards.forEach(card => {
+            card.addEventListener('click', () => {
+                planCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                
+                currentPlan = card.dataset.plan;
+                const data = planData[currentPlan];
+                
+                const planDetails = document.querySelector('.plan-details');
+                planDetails.innerHTML = `
+                    <div class="plan-range">${data.range}</div>
+                    <div class="plan-profit">${data.profit}</div>
+                    <div class="plan-duration">${data.duration}</div>
+                `;
+                
+                updateReturns();
+            });
+        });
+
+        // Amount input handling
+        amountInput.addEventListener('input', (e) => {
+            // Only allow numbers and decimal point
+            e.target.value = e.target.value.replace(/[^0-9.]/g, '');
+            updateReturns();
+        });
+
+        // Preset amount buttons
+        presetBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const amount = btn.dataset.amount;
+                amountInput.value = amount;
+                updateReturns();
+            });
+        });
+
+        // Continue button handling
+        continueBtn.addEventListener('click', async () => {
+            if (!validateForm()) return;
+            
+            // Show loading state
+            continueBtn.classList.add('loading');
+            continueBtn.disabled = true;
+            
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // Show success state
+            continueBtn.classList.remove('loading');
+            continueBtn.classList.add('success');
+            continueBtn.textContent = 'Investment Started!';
+            
+            // Update progress
+            const steps = document.querySelectorAll('.progress-step');
+            steps[1].classList.add('completed');
+            steps[2].classList.add('active');
+            
+            // Reset after 3 seconds
+            setTimeout(() => {
+                continueBtn.classList.remove('success');
+                continueBtn.textContent = 'Continue';
+                continueBtn.disabled = false;
+            }, 3000);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key >= '1' && e.key <= '4') {
+                const planIndex = parseInt(e.key) - 1;
+                const planCard = planCards[planIndex];
+                if (planCard) {
+                    planCard.click();
+                }
+            }
+        });
+
+        // Initialize
+        updateReturns();
+
+        // Deposit filter logic (dropdown)
+        document.addEventListener('DOMContentLoaded', function() {
+        const filterDropdownBtn = document.getElementById('filterDropdownBtn');
+        const filterDropdownMenu = document.getElementById('filterDropdownMenu');
+            
+            if (!filterDropdownBtn || !filterDropdownMenu) {
+                console.error('Filter dropdown elements not found');
+                return;
+            }
+            
+        const filterDropdownItems = filterDropdownMenu.querySelectorAll('.filter-dropdown-item');
+        const currentFilterLabel = document.getElementById('currentFilterLabel');
+        const depositCards = document.querySelectorAll('.deposit-card');
+
+            // Add click event to filter button
+            filterDropdownBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+            e.stopPropagation();
+                console.log('Filter button clicked');
+            filterDropdownMenu.classList.toggle('show');
+        });
+
+            // Add click events to filter items
+        filterDropdownItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Remove active class from all items
+                    filterDropdownItems.forEach(i => i.classList.remove('active'));
+                    
+                    // Add active class to clicked item
+                item.classList.add('active');
+                    
+                const filter = item.dataset.filter;
+                currentFilterLabel.textContent = item.textContent.trim();
+                    
+                    // Filter deposit cards
+                depositCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = '';
+                    } else if (card.classList.contains(filter)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                    
+                    // Hide dropdown
+                filterDropdownMenu.classList.remove('show');
+            });
+        });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+            if (!filterDropdownMenu.contains(e.target) && !filterDropdownBtn.contains(e.target)) {
+                filterDropdownMenu.classList.remove('show');
+            }
+        });
+        });
+
+        // Currency select event listener
+        if (currencySelect) {
+            currencySelect.addEventListener('change', function() {
+                currentCrypto = this.value;
+                if (cryptoIcon) cryptoIcon.src = cryptoIcons[currentCrypto] || '';
+            });
+        }
+
+        // Reinvest source select event listener
+        if (reinvestSourceSelect) {
+            reinvestSourceSelect.addEventListener('change', function() {
+                const source = this.value;
+                console.log('Reinvesting source changed to:', source);
+                // Add any logic needed when reinvesting source changes
+            });
+        }
+    </script>
+            </div>
+            </div>
+    </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

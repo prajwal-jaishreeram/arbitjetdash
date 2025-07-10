@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Dashboard | Cryptocurrency Arbitrage Investment Pool</title>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/animations.css" rel="stylesheet">
+    <link href="/assets/css/interface.css" rel="stylesheet">
+	<link href="/assets/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/assets/css/pace/purple/pace-theme-flash.css" rel="stylesheet">
+    <link href="/assets/css/new-styles.css" rel="stylesheet">
+    <link href="/assets/css/dashboard_update.css" rel="stylesheet">
+    
+    <style>
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #d6dee1;
+            border-radius: 20px;
+            border: 6px solid transparent;
+            background-clip: content-box;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #a8bbbf;
+        }
+    </style>
+
+    <script defer src="/assets/vendor/js/jquery-3.4.0.min.js"></script>
+    <script defer src="/assets/vendor/js/bootstrap.min.js"></script>
+    <script defer src="/assets/vendor/js/bootstrap-select.min.js"></script>
+    <script defer src="/assets/vendor/js/noty.min.js"></script>
+    <script defer src="/assets/vendor/js/pace.min.js"></script>
+    <script defer src="/assets/vendor/js/qrcode-with-logos-1.1.1.min.js"></script>
+    <script defer src="/assets/js/events.min.js"></script>
+    <script defer src="/assets/js/ajax.min.js"></script>
+    <script defer src="/assets/js/interface.min.js"></script>
+    <script defer src="/assets/js/countdown-timer.min.js"></script>
+
+    <!-- BEGIN: Active Deposits Modern Redesign -->
+    <style>
+        .main-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 16px 18px 16px 18px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-bottom: 24px;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .title {
+            font-size: 1.4em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .explore-btn {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #3B82F6;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .explore-btn:hover {
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateY(-1px);
+        }
+        .plans-row {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        .plan-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .plan-item.current { justify-self: start; }
+        .plan-item.target { justify-self: end; }
+        .plan-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(59, 130, 246, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        .plan-icon i { font-size: 16px; color: #3B82F6; }
+        .plan-icon.target { background: rgba(107, 114, 128, 0.1); border-color: rgba(107, 114, 128, 0.2); }
+        .plan-icon.target i { color: #9CA3AF; }
+        .plan-details h4 { font-size: 1em; font-weight: 600; margin-bottom: 2px; }
+        .plan-details .rate { font-size: 0.8em; opacity: 0.7; }
+        .current .plan-details h4 { color: #3B82F6; }
+        .target .plan-details h4 { color: #9CA3AF; }
+        .progress-section { position: relative; margin-bottom: 14px; }
+        .progress-track { background: rgba(255, 255, 255, 0.05); height: 8px; border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
+        .progress-fill { background: linear-gradient(90deg, #3B82F6, #6B7280); height: 100%; width: 5%; border-radius: 4px; transition: width 0.8s ease; position: relative; }
+        .progress-fill::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); animation: shimmer 2s infinite; }
+        @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        .progress-info { display: flex; justify-content: space-between; align-items: center; font-size: 0.9em; }
+        .current-amount { color: #3B82F6; font-weight: 600; }
+        .target-amount { color: #9CA3AF; font-weight: 600; }
+        .upgrade-text { text-align: center; margin-bottom: 10px; font-size: 0.9em; color: rgba(255, 255, 255, 0.7); }
+        .upgrade-highlight { color: #3B82F6; font-weight: 600; }
+        .upgrade-cta { background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); border: none; color: white; padding: 10px 16px; border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; width: 100%; margin-bottom: 14px; font-size: 0.95em; box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3); display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .upgrade-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(59, 130, 246, 0.4); }
+        .deposits-section { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px; }
+        .section-title { font-size: 1.1em; font-weight: 600; margin-bottom: 10px; color: rgba(255, 255, 255, 0.9); }
+        .deposits-grid { display: grid; gap: 8px; }
+        .deposit-row { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 10px 12px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; transition: all 0.3s ease; }
+        .deposit-row:hover { background: rgba(255, 255, 255, 0.05); transform: translateY(-1px); }
+        .status-indicator { width: 10px; height: 10px; background: #3B82F6; border-radius: 50%; box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .deposit-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 16px; align-items: center; }
+        .info-item { display: flex; flex-direction: column; gap: 4px; }
+        .info-label { font-size: 0.75em; color: rgba(255, 255, 255, 0.5); text-transform: uppercase; letter-spacing: 0.5px; }
+        .info-value { font-size: 0.95em; font-weight: 600; }
+        .info-value.blue { color: #3B82F6; }
+        .info-value.grey { color: #9CA3AF; }
+        .actions { display: flex; gap: 8px; }
+        .action-btn { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.7); padding: 8px; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; }
+        .action-btn:hover { background: rgba(255, 255, 255, 0.1); color: #ffffff; transform: translateY(-1px); }
+        .action-btn.danger:hover { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+        .connect-line { height: 2px; background: linear-gradient(90deg, #3B82F6, #6B7280); border-radius: 1px; opacity: 0.3; }
+        @media (max-width: 768px) {
+            .card-header { flex-direction: column; gap: 16px; align-items: flex-start; }
+            .explore-btn { align-self: stretch; justify-content: center; }
+            .plans-row { grid-template-columns: 1fr; gap: 16px; }
+            .plan-item.target { justify-self: start; }
+            .connect-line { display: none; }
+            .deposit-info { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+    <!-- END: Active Deposits Modern Redesign -->
+
+    <!-- Add ApexCharts CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    </head>
+
+<body>
+
+<div class="container-fluid navbar-interface">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fa fa-bars"></span>
+                </button>
+                <a class="brand-logo" href="/">
+                    <img loading="lazy" src="/images/svg/logo.svg" width="24" height="24" alt="website logo">
+                    <span>ARBITJET</span>
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+				
+                    <li class="active color-stripe-top color-stripe-success" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1.html">
+			    <i class="fa-solid fa-gauge"></i>
+                            Dashboard                        </a>
+                    </li>
+					<li class="dropdown color-stripe-danger" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			   <i class="fa-solid fa-user"></i>
+                            My Account <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/profile.html">Edit Profile</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/settings.html">Preferences</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/security.html">Security</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/password.html">Change Password</a></li>
+							<li class=""><a href="/account/88b55f9b234080c236c1/verify.html">
+								Verifications								<span class="badge badge-warning m-l-5">4</span>								</a>
+							</li>
+			     
+                       </ul>
+                    </li>
+                    <li class="dropdown color-stripe-info" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1/finance.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			                <i class="fa-solid fa-wallet"></i>
+                            Finance <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/finance.html">Finance</a></li>
+			     
+                            <li class=""><a href="/account/88b55f9b234080c236c1/finance/deposit.html">Deposit Funds</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/finance/withdraw.html">Withdraw Funds</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/finance/ledger.html">History</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/finance/payees.html">Payee Accounts</a></li>
+                                                    </ul>
+                    </li>
+                    <li class="dropdown color-stripe-success" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			    <i class="fa-solid fa-users"></i>
+                            Affiliates <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/affiliates/downlines.html">My Affiliates</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/affiliates/tools.html">Invitation Links</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown color-stripe-warning" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			                <i class="fa-solid fa-message"></i>
+                            Messaging <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="/account/88b55f9b234080c236c1/inbox.html">Inbox (0)</a></li>
+                            <li class=""><a href="/account/88b55f9b234080c236c1/inbox/compose.html">Compose</a></li>
+                        </ul>
+                    </li>
+                    <li class="color-stripe-info">
+                        <a href="/account/88b55f9b234080c236c1%3Ftour.html" style="color: #4596E8;font-weight: 700;">
+                            <i class="fa-solid fa-circle-info"></i>
+                            GUIDE
+                        </a>
+                    </li>
+                    <li class="color-stripe-info" data-stripe="color-stripe-top">
+                        <a href="/account/88b55f9b234080c236c1/signout.html">
+			                <i class="fa-solid fa-right-from-bracket"></i>
+                            Sign out                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</div>
+<div class="container-fluid ticker hidden-xs">
+    <div class="row">
+        <div class="col-sm-9">
+            <ul class="list-inline ticker-nav">
+				<li class=""><a href="/account/88b55f9b234080c236c1/inbox.html">Inbox<span class="badge badge-info m-l-5">0</span></a></li>
+                                <li class=""><a href="/account/88b55f9b234080c236c1/finance/deposit.html">Deposit Funds</a></li>
+				<li class=""><a href="/account/88b55f9b234080c236c1/affiliates/downlines.html">My Affiliates</a></li>
+				<li class=""><a href="/account/88b55f9b234080c236c1/callback.html">Request Call Back</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-3 text-right time">
+            <small>23 Jun 2025 08:26 AM <i class="fa-regular fa-clock"></i></small>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid content">
+    <div class="inner">
+        <div class="row bg-dark">
+    <div class="col-sm-8">
+                <div class="panel panel-default trading-bot-panel">
+            
+<link href="/assets/css/trading-bot-widget.css" rel="stylesheet">
+<div class="trading-bot-widget">
+    <h3 class="animate-pulse">Live Trading Bot</h3>
+    <div id="exchange-diffs">
+      <div class="trading-bot-container" style="opacity: 0;">
+         
+      <div class="tranding-bot-field trading-bot-buy">
+          <div class="flex items-center" style="margin-right: 1rem;">
+              <img class="coin-logo" src="/images/cryptoicons/SVG/btc.svg" alt="coin logo">
+              <span></span>
+          </div>
+          <div class="flex items-center" style="margin-right: 5px;">
+              <img class="coin-logo" src="/images/cryptoicons/SVG/btc.svg" alt="coin logo">
+              <span class="limit"></span>
+              <span></span>
+          </div>
+      </div>
+
+      <div class="tranding-bot-field trading-bot-sell">
+          <div class="" style="margin-right: 1rem;">
+              <img class="coin-logo" src="/images/cryptoicons/SVG/btc.svg" alt="coin logo">
+              <span></span>
+          </div>
+          <div class="flex items-center" style="margin-right: 5px;">
+              
+              <span class="limit"></span>
+              <span></span>
+          </div>
+      </div>
+  
+      <div class="tranding-bot-field trading-bot-diff">
+        <div style="margin-right: 1rem;">
+            <span></span>
+        </div>
+        <div>
+            <span>%</span>
+        </div>
+      </div>
+    
+  
+  </div>
+    </div>
+</div>
+<script defer src="/assets/js/trading-bot-widget.min.js" type="module"></script>
+        </div>
+        <!-- BEGIN: Active Deposits Modern Redesign -->
+        <div class="main-card">
+            <div class="card-header">
+                <h1 class="title">Active Deposits</h1>
+                <a href="/account/88b55f9b234080c236c1/portfolio.html" class="explore-btn">
+                    <i class="fa-solid fa-compass"></i>
+                    Explore Plans
+                </a>
+            </div>
+            <div class="plans-row">
+                <div class="plan-item current">
+                    <div class="plan-icon">
+                        <img src="/images/icons/mini_plan.svg" alt="Mini Plan" style="width:28px;height:28px;object-fit:contain;filter:brightness(0.95) grayscale(0.2);">
+                    </div>
+                    <div class="plan-details">
+                        <h4>Mini Plan</h4>
+                        <div class="rate">50% daily</div>
+                                            </div>
+                </div>
+                <div class="connect-line"></div>
+                <div class="plan-item target">
+                    <div class="plan-details">
+                        <h4>Medi Plan</h4>
+                        <div class="rate">60% daily</div>
+                        </div>
+                    <div class="plan-icon target">
+                        <img src="/images/icons/medi_plan.svg" alt="Medi Plan" style="width:28px;height:28px;object-fit:contain;filter:brightness(0.95) grayscale(0.2);">
+                        </div>
+                    </div>
+                        </div>
+            <div class="progress-section">
+                <div class="progress-track">
+                    <div class="progress-fill"></div>
+                        </div>
+                <div class="progress-info">
+                    <span class="current-amount">$51.00</span>
+                    <span class="target-amount">$1,000</span>
+                        </div>
+                    </div>
+            <div class="upgrade-text">
+                Add <span class="upgrade-highlight">$949</span> to unlock <span class="upgrade-highlight">20% higher</span> daily returns
+                </div>
+            <button class="upgrade-cta" onclick="window.location.href='/account/88b55f9b234080c236c1/finance/deposit.html'">
+                <i class="fa-solid fa-arrow-up"></i>
+                Upgrade to Medi Plan
+            </button>
+            <div class="deposits-section">
+                <h3 class="section-title">Current Deposits</h3>
+                <div class="deposits-grid">
+                    <div class="deposit-row">
+                        <div class="status-indicator"></div>
+                        <div class="deposit-info">
+                            <div class="info-item">
+                                <div class="info-label">Capital</div>
+                                <div class="info-value blue">$51.00</div>
+            </div>
+                            <div class="info-item">
+                                <div class="info-label">Earned</div>
+                                <div class="info-value blue">$19.17</div>
+                        </div>
+                            <div class="info-item">
+                                <div class="info-label">ROI</div>
+                                <div class="info-value blue">376,000%</div>
+                        </div>
+                            <div class="info-item">
+                                <div class="info-label">Next</div>
+                                <div class="info-value grey">6h 42m</div>
+                        </div>
+                            <div class="info-item">
+                                <div class="info-label">Expires</div>
+                                <div class="info-value">Jul 17</div>
+                        </div>
+                        </div>
+                        <div class="actions">
+                            <button class="action-btn" title="Settings">
+                                <i class="fa-solid fa-gear"></i>
+                            </button>
+                            <button class="action-btn danger" title="Stop">
+                                <i class="fa-solid fa-stop"></i>
+                            </button>
+                                                    </div>
+                            </div>
+                        </div>
+                            </div>
+                        </div>
+        <!-- END: Active Deposits Modern Redesign -->
+        <!--- calendar //-->
+        <div class="panel panel-default calendar-panel" style="padding: 0;">
+            <div class="panel-heading flex justify-between" style="padding: 1rem;">
+                <h3 class="panel-title">Chart</h3>
+
+                            <style>
+                            .toggle-container {
+                                background: #fff;
+                                border: 2px solid #1e2a38;
+                                border-radius: 50px;
+                                display: flex;
+                                height: fit-content;
+                                position: relative;
+                                padding: 0 0.25rem;
+                                box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+                                }
+                                .toggle-button {
+                                flex: 1;
+                                text-align: center;
+                                min-width: 8ch;
+                                cursor: pointer;
+                                z-index: 1;
+                                font-weight: 600;
+                                color: #1e2a38;
+                                transition: color 0.3s ease;
+                                }
+
+                                .toggle-indicator {
+                                position: absolute;
+                                top: 2px;
+                                bottom: 2px;
+                                width: 50%;
+                                background-image: linear-gradient(to right, #60a5fa, #2563eb);
+                                border-radius: 50px;
+                                z-index: 0;
+                                transition: transform 0.3s ease;
+                                }
+
+                                .toggle-button.active {
+                                color: #fff;
+                                }
+
+                                .calendar-active .toggle-indicator {
+                                transform: translateX(0%);
+                                }
+
+                                .chart-active .toggle-indicator {
+                                transform: translateX(calc(100% - 0.5rem));
+                                }
+                            </style>
+                            <div id="toggle" class="toggle-container chart-active">
+                                <div class="toggle-indicator"></div>
+                                <div class="toggle-button " data-mode="calendar">Calendar</div>
+                                <div class="toggle-button active" data-mode="chart">Chart</div>
+                            </div>
+            </div>
+
+            <link rel="stylesheet" href="/assets/css/calendar_update.css">
+            <div class="panel-body" id="calendar-container" style="padding:0;display: none;">
+                
+<div id="calendar-wrapper">
+    
+
+    <div class="calendar" data-month="6">
+        <!-- Month and Year Header -->
+        <div class="calendar-header">
+                            <a href="javascript:void(0);" data-month="5" class="calendar-switch"><i class="fa-solid fa-chevron-left"></i></a>
+                        <span>June 2025</span>
+                            <div></div>
+                    </div>
+
+        <!-- Days of the Week -->
+        <div class="calendar-days">
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+            <div>Sun</div>
+        </div>
+
+        <!-- Calendar Dates -->
+        <div class="calendar-dates">
+                                                        <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">1</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">1.33%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.6650%</span>
+                                                                                                </div>
+                        </div>
+                                                                            <div class="">
+                            <span class="calendar-date">2</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">2.41%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.2050%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">3</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">1.16%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.5800%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">4</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">1.67%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.8350%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">5</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">1.12%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.5600%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">6</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">1.52%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.7600%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">7</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">2.72%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.3600%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">8</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">2.59%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.2950%</span>
+                                                                                                </div>
+                        </div>
+                                                                            <div class="">
+                            <span class="calendar-date">9</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">3.16%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.5800%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">10</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">3.98%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.9900%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">11</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">4.62%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">2.3100%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">12</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">4.76%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">2.3800%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">13</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">5.23%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">2.6150%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">14</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">5.08%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">2.5400%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">15</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">2.39%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.4340%</span>
+                                                                                                </div>
+                        </div>
+                                                                            <div class="">
+                            <span class="calendar-date">16</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">1.51%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.9060%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">17</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">5.78%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">3.4680%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">18</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">5.27%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">3.1620%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">19</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">3.31%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.9860%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">20</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">2.66%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.5960%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">21</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">2.71%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.6260%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">22</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">3.18%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">60%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">1.9080%</span>
+                                                                                                </div>
+                        </div>
+                                                                            <div class=" today">
+                            <span class="calendar-date">23</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">5.08%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">50%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">2.5400%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">24</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">0.00%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">0%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.0000%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">25</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">0.00%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">0%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.0000%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">26</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">0.00%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">0%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.0000%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">27</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">0.00%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">0%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.0000%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">28</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">0.00%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">0%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.0000%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="">
+                            <span class="calendar-date">29</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">0.00%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">0%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.0000%</span>
+                                                                                                </div>
+                        </div>
+                                                                            <div class="">
+                            <span class="calendar-date">30</span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                    <span class="help-cursor" data-toggle="tooltip" title="ROI (%) of the day">0.00%</span><br>
+                                                                                    <span class="help-cursor" data-toggle="tooltip" title="Your share (%) of ROI">0%</span><br>
+                                                                                                                    <span class="help-cursor" class="text-muted" data-toggle="tooltip" title="Your earnings (%)">0.0000%</span>
+                                                                                                </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                            <div class="empty">
+                            <span class="calendar-date"></span>
+                            <div class="calendar-date-additional-text">
+                                                                                                                                                                        </div>
+                        </div>
+                                        </div>
+    </div>
+
+</div>
+    
+            </div>
+
+            <!-- Modern Chart Section -->
+            <div class="panel-body" id="chart-container" style="padding:0;display: block;">
+                <div class="main-card" style="margin:0 0 24px 0;">
+                    <div class="card-header" style="border-bottom: 1px solid rgba(255,255,255,0.08);margin-bottom: 18px;">
+                        <h3 class="title" style="font-size:1.1em;">Portfolio ROI & Earnings</h3>
+  </div>
+                    <div id="apexchart-roi" style="width:100%;height:320px;"></div>
+</div>
+            </div>
+<script>
+            // Sample data for ApexCharts
+var options = {
+  chart: {
+                    type: 'area',
+                    height: 320,
+                    toolbar: { show: false },
+                    fontFamily: 'Inter, Segoe UI, sans-serif',
+                    foreColor: '#fff',
+    background: 'transparent',
+                },
+                grid: {
+                    borderColor: 'rgba(255,255,255,0.08)',
+                    strokeDashArray: 4,
+                },
+                colors: ['#3B82F6', '#F59E42'],
+                dataLabels: { enabled: false },
+                stroke: { curve: 'smooth', width: 3 },
+                series: [
+                    {
+                        name: 'ROI (%)',
+                        data: [1.33,2.41,1.16,1.67,1.12,1.52,2.72,2.59,3.16,3.98,4.62,2.1,1.8,2.2,2.5,2.1,1.9,2.3,2.7,2.2,2.0,2.1,2.4,2.6,2.3,2.2,2.1,2.0,2.2,2.3]
+                    },
+                    {
+                        name: 'Earnings (%)',
+                        data: [0.665,1.205,0.58,0.835,0.56,0.76,1.36,1.295,1.58,1.99,2.31,1.05,0.9,1.1,1.25,1.05,0.95,1.15,1.35,1.1,1.0,1.05,1.2,1.3,1.15,1.1,1.05,1.0,1.1,1.15]
+                    }
+                ],
+                xaxis: {
+                    categories: Array.from({length: 30}, (_, i) => i+1),
+                    title: { text: 'Day of Month', style: { color: '#9CA3AF' } },
+                    labels: { style: { colors: '#9CA3AF' } }
+                },
+                yaxis: {
+                    title: { text: 'Percent (%)', style: { color: '#9CA3AF' } },
+                    labels: { style: { colors: '#9CA3AF' } }
+                },
+                legend: {
+                    position: 'top',
+                    horizontalAlign: 'right',
+                    labels: { colors: '#fff' }
+                },
+                tooltip: {
+                    theme: 'dark',
+                    x: { show: true },
+                    y: { formatter: function(val) { return val + '%'; } }
+                },
+                fill: {
+                    type: 'gradient',
+                    gradient: {
+                        shade: 'dark',
+                        type: 'vertical',
+                        shadeIntensity: 0.2,
+                        gradientToColors: undefined,
+                        inverseColors: false,
+                        opacityFrom: 0.7,
+                        opacityTo: 0.2,
+                        stops: [0, 100]
+                    }
+                }
+            };
+            setTimeout(function() {
+                if (document.getElementById('apexchart-roi')) {
+                    new ApexCharts(document.querySelector("#apexchart-roi"), options).render();
+                }
+            }, 200);
+</script>
+
+             <script>
+                const toggle = document.getElementById('toggle');
+                const buttons = toggle.querySelectorAll('.toggle-button');
+                const calEl = document.querySelector('#calendar-container')
+                const chrEl = document.querySelector('#chart-container')
+                const panelTitleEl = toggle.parentElement.querySelector('.panel-title')
+
+                buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const mode = btn.getAttribute('data-mode');
+                    toggle.classList.toggle('calendar-active', mode === 'calendar');
+                    toggle.classList.toggle('chart-active', mode === 'chart');
+
+                    if(mode === 'calendar') {
+                        calEl.style.display = 'block'
+                        chrEl.style.display = 'none'
+                        panelTitleEl.textContent = 'Calendar'
+                    }else{
+                        calEl.style.display = 'none'
+                        chrEl.style.display = 'block'
+                        panelTitleEl.textContent = 'Chart'
+                    }
+
+                });
+                });
+            </script>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="balance-card" style="background: rgba(255,255,255,0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); margin-bottom: 24px;">
+            <div class="card-header" style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <i class="fa-solid fa-wallet title-icon" style="font-size: 1.2em; color: #3B82F6;"></i>
+                <h1 class="title" style="font-size: 1.2em; font-weight: 700; background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">My Balance</h1>
+            </div>
+            <table class="balance-table" style="width: 100%; border-collapse: collapse;">
+                    <tbody>
+                    <tr class="balance-row" style="border-bottom: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease;">
+                                                <td class="balance-cell" style="padding: 8px 0; vertical-align: middle;">
+                            <div class="crypto-name" style="font-size: 1em; font-weight: 600; color: #fff;">Bitcoin</div>
+                            </td>
+                        <td class="balance-cell" style="padding: 8px 0; vertical-align: middle;">
+                            <div class="balance-info" style="text-align: right;">
+                                <div class="crypto-amount" style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin-bottom: 2px;">
+                                    <span class="crypto-icon btc-icon" style="width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg, #f7931a 0%, #ff6b00 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">
+                                        <img src="/images/cryptoicons/SVG/btc.svg" alt="btc" style="width:14px;height:14px;vertical-align:middle;">
+                                    </span>
+                                    <span class="amount-text" style="font-size: 0.9em; color: #9CA3AF; font-weight: 500;">0.00076732</span>
+                                </div>
+                                <div class="usd-value" style="font-size: 1em; font-weight: 700; color: #3B82F6;">$78.18</div>
+                            </div>
+                            </td>
+                        </tr>
+                    <tr class="balance-row" style="border-bottom: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease;">
+                                                <td class="balance-cell" style="padding: 8px 0; vertical-align: middle;">
+                            <div class="crypto-name" style="font-size: 1em; font-weight: 600; color: #fff;">Ethereum</div>
+                            </td>
+                        <td class="balance-cell" style="padding: 8px 0; vertical-align: middle;">
+                            <div class="balance-info" style="text-align: right;">
+                                <div class="crypto-amount" style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin-bottom: 2px;">
+                                    <span class="crypto-icon eth-icon" style="width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg, #627eea 0%, #4b6cd1 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">
+                                        <img src="/images/cryptoicons/SVG/eth.svg" alt="eth" style="width:14px;height:14px;vertical-align:middle;">
+                                    </span>
+                                    <span class="amount-text" style="font-size: 0.9em; color: #9CA3AF; font-weight: 500;">0.0416863709</span>
+            </div>
+                                <div class="usd-value" style="font-size: 1em; font-weight: 700; color: #3B82F6;">$94.24</div>
+        </div>
+                        </td>
+                    </tr>
+                    <tr class="balance-row" style="border-bottom: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease;">
+                                                <td class="balance-cell" style="padding: 8px 0; vertical-align: middle;">
+                            <div class="crypto-name" style="font-size: 1em; font-weight: 600; color: #fff;">Tether</div>
+                        </td>
+                        <td class="balance-cell" style="padding: 8px 0; vertical-align: middle;">
+                            <div class="balance-info" style="text-align: right;">
+                                <div class="crypto-amount" style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; margin-bottom: 2px;">
+                                    <span class="crypto-icon usdt-icon" style="width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg, #26a17b 0%, #1e8a66 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">
+                                        <img src="/images/cryptoicons/SVG/usdt.svg" alt="usdt" style="width:14px;height:14px;vertical-align:middle;">
+                                    </span>
+                                    <span class="amount-text" style="font-size: 0.9em; color: #9CA3AF; font-weight: 500;">1.519092</span>
+            </div>
+                                <div class="usd-value" style="font-size: 1em; font-weight: 700; color: #3B82F6;">$1.51</div>
+                            </div>
+                        </td>
+                                                    </tr>
+                </tbody>
+            </table>
+            <table class="balance-table" style="width: 100%; border-collapse: collapse; margin-top: 8px;">
+                    <tbody>
+                    <tr class="total-row" style="background: rgba(59,130,246,0.05); border: 1px solid rgba(59,130,246,0.1); border-radius: 8px;">
+                        <td class="balance-cell" style="padding: 8px 12px;">
+                            <div class="total-label" style="font-size: 1.1em; font-weight: 700; color: #3B82F6;">Total Balance</div>
+                        </td>
+                        <td class="balance-cell" style="padding: 8px 12px;">
+                            <div class="total-amount" style="font-size: 1.2em; font-weight: 800; color: #3B82F6; text-align: right;">$173.93</div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+                <div class="main-card" style="background: rgba(255,255,255,0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.3); margin-bottom: 24px;">
+            <div class="header" style="background: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(59,130,246,0.05) 100%); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 10px; display: flex; align-items: center; gap: 6px;">
+                <div class="header-icon" style="width: 24px; height: 24px; background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.8em; color: white; box-shadow: 0 4px 20px rgba(59,130,246,0.3);">
+                    <i class="fa-solid fa-handshake"></i>
+                        </div>
+                                <div class="header-content">
+                    <h3 style="font-size: 1.2em; font-weight: 700; background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 2px;">Partner Program</h3>
+                    <div class="status-badge" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 2px 8px; border-radius: 16px; font-size: 0.8em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 10px rgba(16,185,129,0.3);">Affiliate</div>
+                                    </div>
+                    </div>
+
+            <div class="affiliate-link-area" style="margin: 18px 0 10px 0;">
+                <label for="affiliate-link" style="color: #fff; font-size: 1em; font-weight: 500;">Your Affiliate Link</label>
+                <div class="affiliate-link-box" style="display: flex; align-items: center; gap: 8px; margin-top: 6px;">
+                  <input type="text" id="affiliate-link" value="https://arbitjet.com/ref/yourcode" readonly style="flex: 1; background: #181c2b; border: none; color: #fff; padding: 8px 12px; border-radius: 6px; font-size: 1rem;">
+                  <button id="copy-link-btn" style="background: #2e8bff; color: #fff; border: none; border-radius: 6px; padding: 8px 14px; cursor: pointer; font-weight: 500; transition: background 0.2s;">Copy</button>
+                  <button id="share-link-btn" style="background: #10b981; color: #fff; border: none; border-radius: 6px; padding: 8px 14px; cursor: pointer; font-weight: 500; transition: background 0.2s;">Share</button>
+                </div>
+                <span id="copy-feedback" style="color: #2ecc40; font-size: 0.95em; margin-left: 8px; display:none;">Copied!</span>
+            </div>
+
+            <div class="tier-section" style="padding: 10px;">
+                <div class="tier-visual" style="display: flex; align-items: center; justify-content: center; margin-bottom: 8px; gap: 4px;">
+                    <div class="tier-node" style="width: 8px; height: 8px; border-radius: 50%; background: #3B82F6; box-shadow: 0 0 6px rgba(59,130,246,0.5); animation: pulse 2s infinite;"></div>
+                    <div class="tier-connector" style="width: 20px; height: 2px; background: linear-gradient(90deg, #3B82F6, #6B7280); opacity: 0.3;"></div>
+                    <div class="tier-node" style="width: 8px; height: 8px; border-radius: 50%; background: #3B82F6; box-shadow: 0 0 6px rgba(59,130,246,0.5); animation: pulse 2s infinite;"></div>
+                    <div class="tier-connector" style="width: 20px; height: 2px; background: linear-gradient(90deg, #3B82F6, #6B7280); opacity: 0.3;"></div>
+                    <div class="tier-node" style="width: 8px; height: 8px; border-radius: 50%; background: #3B82F6; box-shadow: 0 0 6px rgba(59,130,246,0.5); animation: pulse 2s infinite;"></div>
+                    <div class="tier-connector" style="width: 20px; height: 2px; background: linear-gradient(90deg, #3B82F6, #6B7280); opacity: 0.3;"></div>
+                    <div class="tier-node" style="width: 8px; height: 8px; border-radius: 50%; background: #3B82F6; box-shadow: 0 0 6px rgba(59,130,246,0.5); animation: pulse 2s infinite;"></div>
+                </div>
+                
+                <div class="tier-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-bottom: 10px;">
+                    <div class="tier-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <div class="tier-number" style="font-size: 1.3em; font-weight: 700; color: #3B82F6; margin-bottom: 3px; display: flex; align-items: center; justify-content: center; gap: 3px;">
+                            1
+                            <i class="fa-regular fa-circle-question tooltip-icon" style="color: #3B82F6; cursor: pointer; font-size: 0.8em; opacity: 0.7; transition: opacity 0.3s ease;" title="Level 1: Earn 8% on deposits made by users you refer directly."></i>
+            </div>
+                        <div class="tier-label" style="font-size: 0.75em; color: rgba(255,255,255,0.6); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Tier One</div>
+                        <div class="commission-rate" style="font-size: 1.3em; font-weight: 700; color: #ffffff; margin-bottom: 3px;">8%</div>
+                        <div class="tier-description" style="font-size: 0.75em; color: rgba(255,255,255,0.5); line-height: 1.2;">Direct referral commissions</div>
+                    </div>
+                    
+                    <div class="tier-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                                                <div class="tier-number" style="font-size: 1.3em; font-weight: 700; color: #3B82F6; margin-bottom: 3px; display: flex; align-items: center; justify-content: center; gap: 3px;">
+                            2
+                            <i class="fa-regular fa-circle-question tooltip-icon" style="color: #3B82F6; cursor: pointer; font-size: 0.8em; opacity: 0.7; transition: opacity 0.3s ease;" title="Level 2: Earn 4% on deposits made by your Level 1 referrals."></i>
+            </div>
+                        <div class="tier-label" style="font-size: 0.75em; color: rgba(255,255,255,0.6); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Tier Two</div>
+                        <div class="commission-rate" style="font-size: 1.3em; font-weight: 700; color: #ffffff; margin-bottom: 3px;">4%</div>
+                        <div class="tier-description" style="font-size: 0.75em; color: rgba(255,255,255,0.5); line-height: 1.2;">Second-level referral commissions</div>
+                    </div>
+                    
+                    <div class="tier-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <div class="tier-number" style="font-size: 1.3em; font-weight: 700; color: #3B82F6; margin-bottom: 3px; display: flex; align-items: center; justify-content: center; gap: 3px;">
+                            3
+                            <i class="fa-regular fa-circle-question tooltip-icon" style="color: #3B82F6; cursor: pointer; font-size: 0.8em; opacity: 0.7; transition: opacity 0.3s ease;" title="Level 3: Earn 2% on deposits made by Level 2 referrals."></i>
+                        </div>
+                        <div class="tier-label" style="font-size: 0.75em; color: rgba(255,255,255,0.6); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Tier Three</div>
+                        <div class="commission-rate" style="font-size: 1.3em; font-weight: 700; color: #ffffff; margin-bottom: 3px;">2%</div>
+                        <div class="tier-description" style="font-size: 0.75em; color: rgba(255,255,255,0.5); line-height: 1.2;">Third-level referral commissions</div>
+                    </div>
+                    
+                    <div class="tier-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <div class="tier-number" style="font-size: 1.3em; font-weight: 700; color: #3B82F6; margin-bottom: 3px; display: flex; align-items: center; justify-content: center; gap: 3px;">
+                            4
+                            <i class="fa-regular fa-circle-question tooltip-icon" style="color: #3B82F6; cursor: pointer; font-size: 0.8em; opacity: 0.7; transition: opacity 0.3s ease;" title="Level 4: Earn 1% on deposits made by Level 3 referrals."></i>
+                        </div>
+                        <div class="tier-label" style="font-size: 0.75em; color: rgba(255,255,255,0.6); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Tier Four</div>
+                        <div class="commission-rate" style="font-size: 1.3em; font-weight: 700; color: #ffffff; margin-bottom: 3px;">1%</div>
+                        <div class="tier-description" style="font-size: 0.75em; color: rgba(255,255,255,0.5); line-height: 1.2;">Fourth-level referral commissions</div>
+                    </div>
+                </div>
+                
+                <div class="performance-highlight" style="background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(16,185,129,0.05) 100%); border: 1px solid rgba(16,185,129,0.2); border-radius: 6px; padding: 8px; margin-top: 8px; text-align: center;">
+                    <div class="performance-text" style="font-size: 0.9em; color: #10b981; font-weight: 500;">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Multi-tier commission structure maximizes your earning potential
+                    </div>
+                </div>
+            </div>
+            
+            <div class="upline-section" style="background: rgba(59,130,246,0.05); border: 1px solid rgba(59,130,246,0.1); border-radius: 8px; padding: 8px; margin: 10px; margin-top: 0;">
+                <div class="upline-header" style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
+                    <div class="upline-icon" style="width: 20px; height: 20px; background: rgba(59,130,246,0.2); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #3B82F6;">
+                        <i class="fa-solid fa-users" style="font-size: 0.8em;"></i>
+                    </div>
+                    <div class="upline-title" style="font-size: 1em; font-weight: 600; color: #3B82F6;">Your Upline</div>
+                </div>
+                
+                <div class="upline-details" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-top: 8px;">
+                    <div class="upline-item" style="display: flex; flex-direction: column; gap: 3px;">
+                        <div class="upline-label" style="font-size: 0.8em; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px;">Name</div>
+                        <div class="upline-value" style="font-size: 0.95em; font-weight: 600; color: #ffffff;">John</div>
+                    </div>
+                    <div class="upline-item" style="display: flex; flex-direction: column; gap: 3px;">
+                        <div class="upline-label" style="font-size: 0.8em; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px;">Email</div>
+                        <div class="upline-value" style="font-size: 0.95em; font-weight: 600; color: #ffffff;">upline@gmail.com</div>
+                    </div>
+                    <div class="upline-item" style="display: flex; flex-direction: column; gap: 3px;">
+                        <div class="upline-label" style="font-size: 0.8em; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px;">Affiliate ID</div>
+                        <div class="upline-value" style="font-size: 0.95em; font-weight: 600; color: #ffffff;">sdjlvsdjlvn</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div class="activity-panel" style="background: rgba(255,255,255,0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.3); margin-bottom: 24px;">
+            <div class="panel-header" style="padding: 16px; background: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(59,130,246,0.05) 100%); border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; overflow: hidden;">
+                <h3 class="panel-title" style="margin: 0; font-size: 1.4rem; font-weight: 700; color: #ffffff; display: flex; align-items: center; gap: 10px;">
+                    <div class="title-icon" style="width: 32px; height: 32px; background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; box-shadow: 0 4px 20px rgba(59,130,246,0.3);">
+                        <i class="fa-solid fa-history"></i>
+                    </div>
+                    Recent Activity
+                </h3>
+            </div>
+            
+            <table class="activity-table" style="width: 100%; border-collapse: separate; border-spacing: 0;">
+                <thead class="table-header" style="background: linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(59,130,246,0.08) 100%); position: relative;">
+                    <tr>
+                        <th style="padding: 12px 20px; font-size: 0.9rem; font-weight: 600; color: #3B82F6; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid rgba(59,130,246,0.2); position: relative; z-index: 2; text-align: left;">Activity</th>
+                        <th style="padding: 12px 20px; font-size: 0.9rem; font-weight: 600; color: #3B82F6; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid rgba(59,130,246,0.2); position: relative; z-index: 2; text-align: center;">IP Address</th>
+                        <th style="padding: 12px 20px; font-size: 0.9rem; font-weight: 600; color: #3B82F6; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid rgba(59,130,246,0.2); position: relative; z-index: 2; text-align: right;">On</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="table-row" style="border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; position: relative;">
+                        <td class="table-cell activity-cell" style="padding: 14px 20px; vertical-align: middle; position: relative; text-align: left;" data-label="Activity">
+                            <div class="activity-content" style="display: flex; align-items: center; gap: 10px;">
+                                <div class="activity-indicator" style="width: 6px; height: 6px; background: #10B981; border-radius: 50%; box-shadow: 0 0 8px rgba(16,185,129,0.5); animation: pulse 2s infinite;"></div>
+                                <div class="activity-text" style="font-size: 0.85rem; font-weight: 500; color: #ffffff; display: flex; align-items: center; gap: 6px;">
+                                    <i class="fa-solid fa-sign-in-alt activity-icon" style="color: #3B82F6; font-size: 0.8rem;"></i>
+                                    Signed In
+                                    <span class="security-badge" style="display: inline-flex; align-items: center; gap: 3px; background: rgba(16,185,129,0.1); color: #10B981; padding: 1px 5px; border-radius: 3px; font-size: 0.65rem; font-weight: 500; border: 1px solid rgba(16,185,129,0.2); margin-left: 6px;">
+                                        <i class="fa-solid fa-shield-check"></i>
+                                        Secure
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="table-cell ip-cell" style="padding: 14px 20px; vertical-align: middle; position: relative; text-align: center;" data-label="IP Address">
+                            <div class="ip-address" style="font-family: 'Monaco', 'Menlo', monospace; font-size: 0.9rem; color: #9CA3AF; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); display: inline-block; transition: all 0.3s ease;">127.0.0.1</div>
+                        </td>
+                        <td class="table-cell timestamp-cell" style="padding: 14px 20px; vertical-align: middle; position: relative; text-align: right;" data-label="On">
+                            <div class="timestamp" style="font-size: 0.9rem; color: #ffffff; font-weight: 500; margin-bottom: 2px;">23-Jun-2025 07:47 AM</div>
+                            <div class="time-ago" style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">12 days ago</div>
+                        </td>
+                        </tr>
+                    
+                    <tr class="table-row" style="border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; position: relative;">
+                        <td class="table-cell activity-cell" style="padding: 14px 20px; vertical-align: middle; position: relative; text-align: left;" data-label="Activity">
+                            <div class="activity-content" style="display: flex; align-items: center; gap: 10px;">
+                                <div class="activity-indicator" style="width: 6px; height: 6px; background: #10B981; border-radius: 50%; box-shadow: 0 0 8px rgba(16,185,129,0.5); animation: pulse 2s infinite;"></div>
+                                <div class="activity-text" style="font-size: 0.85rem; font-weight: 500; color: #ffffff; display: flex; align-items: center; gap: 6px;">
+                                    <i class="fa-solid fa-sign-in-alt activity-icon" style="color: #3B82F6; font-size: 0.8rem;"></i>
+                                    Signed In
+                                    <span class="security-badge" style="display: inline-flex; align-items: center; gap: 3px; background: rgba(16,185,129,0.1); color: #10B981; padding: 1px 5px; border-radius: 3px; font-size: 0.65rem; font-weight: 500; border: 1px solid rgba(16,185,129,0.2); margin-left: 6px;">
+                                        <i class="fa-solid fa-shield-check"></i>
+                                        Secure
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="table-cell ip-cell" style="padding: 14px 20px; vertical-align: middle; position: relative; text-align: center;" data-label="IP Address">
+                            <div class="ip-address" style="font-family: 'Monaco', 'Menlo', monospace; font-size: 0.8rem; color: #9CA3AF; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); display: inline-block; transition: all 0.3s ease;">127.0.0.1</div>
+                        </td>
+                        <td class="table-cell timestamp-cell" style="padding: 14px 20px; vertical-align: middle; position: relative; text-align: right;" data-label="On">
+                            <div class="timestamp" style="font-size: 0.8rem; color: #ffffff; font-weight: 500; margin-bottom: 2px;">21-Jun-2025 04:34 PM</div>
+                            <div class="time-ago" style="font-size: 0.7rem; color: rgba(255,255,255,0.5);">14 days ago</div>
+                        </td>
+                        </tr>
+                    
+                    <tr class="table-row" style="border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; position: relative;">
+                        <td class="table-cell activity-cell" style="padding: 14px 20px; vertical-align: middle; position: relative; text-align: left;" data-label="Activity">
+                            <div class="activity-content" style="display: flex; align-items: center; gap: 10px;">
+                                <div class="activity-indicator" style="width: 6px; height: 6px; background: #10B981; border-radius: 50%; box-shadow: 0 0 8px rgba(16,185,129,0.5); animation: pulse 2s infinite;"></div>
+                                <div class="activity-text" style="font-size: 0.85rem; font-weight: 500; color: #ffffff; display: flex; align-items: center; gap: 6px;">
+                                    <i class="fa-solid fa-sign-in-alt activity-icon" style="color: #3B82F6; font-size: 0.8rem;"></i>
+                                    Signed In
+                                    <span class="security-badge" style="display: inline-flex; align-items: center; gap: 3px; background: rgba(16,185,129,0.1); color: #10B981; padding: 1px 5px; border-radius: 3px; font-size: 0.65rem; font-weight: 500; border: 1px solid rgba(16,185,129,0.2); margin-left: 6px;">
+                                        <i class="fa-solid fa-shield-check"></i>
+                                        Secure
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="table-cell ip-cell" style="padding: 14px 20px; vertical-align: middle; position: relative; text-align: center;" data-label="IP Address">
+                            <div class="ip-address" style="font-family: 'Monaco', 'Menlo', monospace; font-size: 0.8rem; color: #9CA3AF; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); display: inline-block; transition: all 0.3s ease;">127.0.0.1</div>
+                        </td>
+                        <td class="table-cell timestamp-cell" style="padding: 14px 20px; vertical-align: middle; position: relative; text-align: right;" data-label="On">
+                            <div class="timestamp" style="font-size: 0.8rem; color: #ffffff; font-weight: 500; margin-bottom: 2px;">20-Jun-2025 04:25 PM</div>
+                            <div class="time-ago" style="font-size: 0.7rem; color: rgba(255,255,255,0.5);">15 days ago</div>
+                        </td>
+                        </tr>
+                    
+                    <tr class="table-row" style="border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; position: relative;">
+                        <td class="table-cell activity-cell" style="padding: 14px 20px; vertical-align: middle; position: relative; text-align: left;" data-label="Activity">
+                            <div class="activity-content" style="display: flex; align-items: center; gap: 10px;">
+                                <div class="activity-indicator" style="width: 6px; height: 6px; background: #10B981; border-radius: 50%; box-shadow: 0 0 8px rgba(16,185,129,0.5); animation: pulse 2s infinite;"></div>
+                                <div class="activity-text" style="font-size: 0.85rem; font-weight: 500; color: #ffffff; display: flex; align-items: center; gap: 6px;">
+                                    <i class="fa-solid fa-sign-in-alt activity-icon" style="color: #3B82F6; font-size: 0.8rem;"></i>
+                                    Signed In
+                                    <span class="security-badge warning" style="display: inline-flex; align-items: center; gap: 3px; background: rgba(245,158,11,0.1); color: #F59E0B; padding: 1px 5px; border-radius: 3px; font-size: 0.65rem; font-weight: 500; border: 1px solid rgba(245,158,11,0.2); margin-left: 6px;">
+                                        <i class="fa-solid fa-exclamation-triangle"></i>
+                                        Multiple attempts
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="table-cell ip-cell" style="padding: 14px 20px; vertical-align: middle; position: relative; text-align: center;" data-label="IP Address">
+                            <div class="ip-address" style="font-family: 'Monaco', 'Menlo', monospace; font-size: 0.8rem; color: #9CA3AF; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); display: inline-block; transition: all 0.3s ease;">127.0.0.1</div>
+                        </td>
+                        <td class="table-cell timestamp-cell" style="padding: 14px 20px; vertical-align: middle; position: relative; text-align: right;" data-label="On">
+                            <div class="timestamp" style="font-size: 0.8rem; color: #ffffff; font-weight: 500; margin-bottom: 2px;">20-Jun-2025 04:24 PM</div>
+                            <div class="time-ago" style="font-size: 0.7rem; color: rgba(255,255,255,0.5);">15 days ago</div>
+                        </td>
+                        </tr>
+                    
+                    <tr class="table-row" style="border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; position: relative;">
+                        <td class="table-cell activity-cell" style="padding: 20px 24px; vertical-align: middle; position: relative; text-align: left;" data-label="Activity">
+                            <div class="activity-content" style="display: flex; align-items: center; gap: 12px;">
+                                <div class="activity-indicator" style="width: 8px; height: 8px; background: #10B981; border-radius: 50%; box-shadow: 0 0 10px rgba(16,185,129,0.5); animation: pulse 2s infinite;"></div>
+                                <div class="activity-text" style="font-size: 0.95rem; font-weight: 500; color: #ffffff; display: flex; align-items: center; gap: 8px;">
+                                    <i class="fa-solid fa-sign-in-alt activity-icon" style="color: #3B82F6; font-size: 0.9rem;"></i>
+                                    Signed In
+                                    <span class="security-badge" style="display: inline-flex; align-items: center; gap: 4px; background: rgba(16,185,129,0.1); color: #10B981; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: 500; border: 1px solid rgba(16,185,129,0.2); margin-left: 8px;">
+                                        <i class="fa-solid fa-shield-check"></i>
+                                        Secure
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="table-cell ip-cell" style="padding: 20px 24px; vertical-align: middle; position: relative; text-align: center;" data-label="IP Address">
+                            <div class="ip-address" style="font-family: 'Monaco', 'Menlo', monospace; font-size: 0.9rem; color: #9CA3AF; background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: inline-block; transition: all 0.3s ease;">127.0.0.1</div>
+                        </td>
+                        <td class="table-cell timestamp-cell" style="padding: 20px 24px; vertical-align: middle; position: relative; text-align: right;" data-label="On">
+                            <div class="timestamp" style="font-size: 0.9rem; color: #ffffff; font-weight: 500; margin-bottom: 4px;">20-Jun-2025 01:59 PM</div>
+                            <div class="time-ago" style="font-size: 0.75rem; color: rgba(255,255,255,0.5);">15 days ago</div>
+                        </td>
+                        </tr>
+                                        </tbody>
+                </table>
+        </div>
+
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+
+    </div>
+</div>
+
+<script defer >
+var dpl = [];
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    let delay = 0
+    dpl.forEach(item => {
+        if(item.type === "roi" || item.type === "roicom") {
+            setTimeout(function() {
+                issueNoty("success", item.log, "bottomLeft")
+    
+            }, delay)
+            delay+= 100
+        }
+
+    })
+});
+
+
+</script>
+
+
+</div>
+</div>
+<div class="footer-fixer"></div>
+<div class="footer" style="position: absolute; bottom:0; width: 100%; background-color: #0F0F12; padding-top: 1rem; margin-top: 5rem;">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-5 col-xs-12">
+                <div style="">
+                    <a class="brand-logo" href="/">
+                        <img loading="lazy" src="/images/svg/logo.svg" width="24" height="24" alt="website logo">
+                        <span>ARBITJET</span>
+                    </a>
+                     <span class="copyrights" style="font-size: 14px;font-weight:400;">Copyright &copy;2025 Arbitjet All rights reserved.</span>
+                </div>
+
+        <div class="social-icons"><p>
+		    <a href="https://t.me/Arbitjet_Arbitrage" class="flex items-center gap-2 mb-1">
+                <img loading="lazy" src="/images/telegram.webp"  target="_blank" alt="Facebook" width="25">
+                <span class="text-white">Join Our Telegram Community</span>
+            </a>
+            <a href="https://www.youtube.com/@ArbitJet" class="flex items-center gap-2 mb-1">
+                <img loading="lazy" src="/images/youtube.webp"  target="_blank" alt="Facebook" width="25">
+                <span class="text-white">Youtube Channel</span>
+            </a>
+		    <!--
+		    <a href="https://www.facebook.com/"><img src="/images/social_icons-06.png"  target="_blank" alt="Facebook" width="25"></a>
+		    <a href="https://twitter.com/"><img src="/images/social_icons-07.png" target="_blank" alt="Twitter" width="25"></a>
+		    <a href="#"><img src="/images/social_icons-08.png" target="_blank" alt="LinkedIn" width="25"></a>
+		    <a href="#"><img src="/images/social_icons-09.png" target="_blank" alt="Google+" width="25"></a>
+		    <a href="#"><img src="/images/social_icons-10.png" target="_blank" alt="Youtube" width="25"></a>
+		    -->
+		</div>
+
+        </div>
+            <div class="col-sm-3 col-sm-offset-1 col-xs-6">
+
+                <h4>Legal</h4>
+                <ul class="footer-sitemap">
+                    <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+                    <li><a href="/privacy.html"> Privacy Policy</a></li>
+                    <li><a href="/spam.html">No-SPAM Policy</a></li>
+                    <li><a href="/disclaimer.html">Disclaimer</a></li>
+                </ul>
+
+                
+                <h4>OUR PARTNERS</h4>
+                <ul class="footer-sitemap">
+                    <li><a href="https://www.moonpay.com/buy" target="_blank">Moonpay Buy Crypto</a></li>
+                    <li><a href="https://www.moonpay.com/sell" target="_blank">Moonpay Sell Crypto</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <h4>About us</h4>
+                <ul class="footer-sitemap">
+                    <li><a href="/about.html">About us</a></li>
+                    		                        <li><a href="/security.html">Security</a></li>
+                    <li><a href="/faq.html">F.A.Q.</a></li>
+                    <li><a href="/how_arbitrage_works.html">How Arbitrage Works</a></li>
+                </ul>
+
+            </div>
+
+     
+    </div>
+</div>
+</div>
+<!-- Notifications -->
+
+<link href="/assets/css/notifications-widget.css" rel="stylesheet">
+<div class="notifications-widget">
+   
+</div>
+<!--<script src="/assets/js/notifications-widget.min.js" type="module"></script>-->
+<script defer  src="/assets/js/notifications-widget.min.js"></script>
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/67dc08a7b85872190f4482a3/1impo3jl5';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<div class="hidden">
+    {knit file="partials/_icons.knit"}
+</div>
+
+<script>
+document.getElementById('copy-link-btn').onclick = function() {
+  const input = document.getElementById('affiliate-link');
+  input.select();
+  input.setSelectionRange(0, 99999); // For mobile
+  document.execCommand('copy');
+  const feedback = document.getElementById('copy-feedback');
+  feedback.style.display = 'inline';
+  setTimeout(() => feedback.style.display = 'none', 1500);
+};
+document.getElementById('share-link-btn').onclick = function() {
+  const link = document.getElementById('affiliate-link').value;
+  if (navigator.share) {
+    navigator.share({
+      title: 'Join me on Arbitjet!',
+      text: 'Check out Arbitjet and earn with me!',
+      url: link,
+    });
+  } else {
+    alert('Sharing is not supported on this device. Please copy the link instead.');
+  }
+};
+</script>
+
+</body>
+</html>

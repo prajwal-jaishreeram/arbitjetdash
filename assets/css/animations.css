@@ -1,0 +1,162 @@
+.slide-up {
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+}
+
+.slide-up.in-view {
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.anim-opac {
+    opacity: 0;
+    transition: background 0.5s ease-out;
+}
+
+.anim-opac.in-view {
+   opacity: 1;
+}
+
+.slide-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1s ease-out;
+}
+
+.slide-right.in-view {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.slide-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s ease-out;
+}
+
+.slide-left.in-view {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+@keyframes pulse {
+    50% {
+        opacity: .5;
+    }
+}
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8,0,1,1);
+    }
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0,0,0.2,1);
+    }
+}
+.animate-bounce {
+    animation: bounce 1s infinite;
+}
+
+@keyframes progress-coll {
+    0%, 100% {
+        /* transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8,0,1,1); */
+    }
+    50% {
+        /* transform: none;
+        animation-timing-function: cubic-bezier(0,0,0.2,1); */
+    }
+}
+
+.progress-cool {
+    animation: progress-coll 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.progress-cool::before {
+    position: absolute;
+    /* z-index: -1; */
+    left:0;
+    top:-1px;
+    content: "";
+    height: 22px;
+    width: 22px;
+    background-color: red;
+}
+
+.buy-field-anim {
+    opacity: 0;
+    border: 1px solid transparent;
+    animation-duration: 4s;
+    animation-name: buy-action;
+    animation-fill-mode: forwards;
+}
+
+.sel-field-anim {
+    opacity: 0;
+    border: 1px solid transparent;
+    animation-duration: 4s;
+    animation-delay: 4s;
+    animation-name: sel-action;
+    animation-fill-mode: forwards;
+}
+
+.diff-field-anim {
+    opacity: 0;
+    animation-duration: 0.5s;
+    animation-delay: 8s;
+    animation-name: fade-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+@keyframes buy-action {
+    0% { border: none; opacity: 0; }
+    50% { border: 1px solid green; opacity: 1; }
+    100% { border: none; opacity: 1; }
+}
+
+@keyframes sel-action {
+    0% { border: none; opacity: 0; }
+    50% { border: 1px solid red; opacity: 1; }
+    100% { border: none; opacity: 1; }
+}
+
+.glow-image-wrapper {
+  position: relative;
+  /* display: inline-block; */
+  /* overflow: hidden; */
+}
+
+.glow-image-wrapper::before {
+  content: '';
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  100% {
+    left: 150%;
+  }
+}
