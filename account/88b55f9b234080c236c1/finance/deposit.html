@@ -56,9 +56,17 @@
         }
 
         .container {
-            max-width: 420px;
+            max-width: 100%;
             margin: 0 auto;
             padding: 20px 16px;
+        }
+
+        /* Tablet Layout */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 600px;
+                padding: 20px 24px;
+            }
         }
 
         /* Desktop Layout */
@@ -112,6 +120,23 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        /* Mobile responsive for navigation */
+        @media (max-width: 768px) {
+            .navbar .nav-container {
+                padding: 0 1rem;
+            }
+
+            .brand-logo {
+                font-size: 1.25rem;
+            }
+
+            .brand-logo .logo-icon {
+                width: 28px;
+                height: 28px;
+                margin-right: 8px;
+            }
         }
 
         .brand-logo {
@@ -233,12 +258,84 @@
             height: 20px;
         }
 
+        /* Mobile responsive for crypto tabs */
+        @media (max-width: 768px) {
+            .crypto-tabs {
+                padding: 4px;
+                margin-bottom: 20px;
+            }
+
+            .crypto-tab {
+                padding: 10px 8px;
+                font-size: 12px;
+                gap: 6px;
+            }
+
+            .crypto-tab img {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .crypto-tab {
+                padding: 8px 6px;
+                font-size: 11px;
+                gap: 4px;
+            }
+
+            .crypto-tab img {
+                width: 14px;
+                height: 14px;
+            }
+        }
+
         /* Plan Selection - MOBILE: Single row with 4 columns */
         .plan-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 8px;
             margin-bottom: 24px;
+        }
+
+        /* Mobile responsive for plan grid */
+        @media (max-width: 768px) {
+            .plan-grid {
+                gap: 6px;
+                margin-bottom: 20px;
+            }
+
+            .plan-card {
+                padding: 10px 6px;
+            }
+
+            .plan-name {
+                font-size: 12px;
+            }
+
+            .plan-icon img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .plan-grid {
+                gap: 4px;
+            }
+
+            .plan-card {
+                padding: 8px 4px;
+            }
+
+            .plan-name {
+                font-size: 11px;
+            }
+
+            .plan-icon img {
+                width: 20px;
+                height: 20px;
+            }
         }
 
         .plan-card {
@@ -431,20 +528,71 @@
                 flex-direction: column;
                 text-align: center;
                 gap: 16px;
+                padding: 20px;
             }
 
             .plan-details {
                 text-align: center;
             }
 
+            .plan-range {
+                font-size: 16px;
+            }
+
+            .plan-profit, .plan-duration {
+                font-size: 13px;
+            }
+
             .return-estimates {
                 width: 100%;
                 justify-content: center;
+                gap: 12px;
             }
 
             .return-section {
-                min-width: 100px;
+                min-width: 90px;
                 flex: 1;
+                padding: 12px 8px;
+            }
+
+            .return-label {
+                font-size: 11px;
+            }
+
+            .return-value {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .merged-plan-info {
+                padding: 16px;
+                gap: 12px;
+            }
+
+            .plan-range {
+                font-size: 15px;
+            }
+
+            .plan-profit, .plan-duration {
+                font-size: 12px;
+            }
+
+            .return-estimates {
+                gap: 8px;
+            }
+
+            .return-section {
+                min-width: 80px;
+                padding: 10px 6px;
+            }
+
+            .return-label {
+                font-size: 10px;
+            }
+
+            .return-value {
+                font-size: 14px;
             }
         }
 
@@ -477,6 +625,43 @@
             font-size: 16px;
             font-weight: 600;
             transition: all 0.3s ease;
+        }
+
+        /* Mobile responsive for form elements */
+        @media (max-width: 768px) {
+            .amount-input input {
+                padding: 16px 16px 16px 48px;
+                font-size: 15px;
+            }
+
+            .amount-input .crypto-icon {
+                left: 16px;
+                width: 18px;
+                height: 18px;
+            }
+
+            .form-label {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .amount-input input {
+                padding: 14px 14px 14px 44px;
+                font-size: 14px;
+            }
+
+            .amount-input .crypto-icon {
+                left: 14px;
+                width: 16px;
+                height: 16px;
+            }
+
+            .form-label {
+                font-size: 13px;
+                margin-bottom: 5px;
+            }
         }
 
         .amount-input input:focus {
@@ -692,6 +877,23 @@
             color: #ffffff;
         }
 
+        /* Mobile responsive for reinvest select */
+        @media (max-width: 768px) {
+            .reinvest-select {
+                padding: 14px 12px;
+                font-size: 14px;
+                min-width: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .reinvest-select {
+                padding: 12px 10px;
+                font-size: 13px;
+                min-width: 0;
+            }
+        }
+
         /* Continue Button */
         .continue-btn {
             width: 100%;
@@ -705,6 +907,51 @@
             letter-spacing: 0.5px;
             box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
             transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+        }
+
+        /* Mobile responsive for summary and continue button */
+        @media (max-width: 768px) {
+            .summary {
+                padding: 16px;
+                margin-bottom: 20px;
+            }
+
+            .summary-row {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+
+            .summary-value img {
+                width: 14px;
+                height: 14px;
+            }
+
+            .continue-btn {
+                font-size: 16px;
+                padding: 18px 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .summary {
+                padding: 12px;
+                margin-bottom: 16px;
+            }
+
+            .summary-row {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+
+            .summary-value img {
+                width: 12px;
+                height: 12px;
+            }
+
+            .continue-btn {
+                font-size: 15px;
+                padding: 16px 20px;
+            }
         }
         .continue-btn:hover, .continue-btn:focus {
             background: linear-gradient(135deg, #059669 0%, #10b981 100%);
@@ -1188,10 +1435,23 @@
 
             .reinvest-wrapper {
                 flex: 1;
+                min-width: 0;
             }
 
             .amount-wrapper .amount-input {
                 margin-bottom: 8px;
+            }
+
+            .reinvest-wrapper .form-label {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+
+            .reinvest-wrapper .reinvest-select {
+                width: 100%;
+                min-width: 0;
+                font-size: 14px;
+                padding: 14px 12px;
             }
 
             .preset-amounts {
@@ -1206,6 +1466,27 @@
                 flex: 1;
                 min-width: 0;
                 white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .amount-reinvest-row {
+                gap: 8px;
+            }
+
+            .reinvest-wrapper {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .reinvest-wrapper .form-label {
+                font-size: 13px;
+                margin-bottom: 5px;
+            }
+
+            .reinvest-wrapper .reinvest-select {
+                font-size: 13px;
+                padding: 12px 10px;
             }
         }
 
@@ -1228,6 +1509,87 @@
                 max-width: 800px;
                 margin-left: auto;
                 margin-right: auto;
+            }
+        }
+
+        /* Mobile responsive for deposits section */
+        @media (max-width: 768px) {
+            .deposits-section {
+                padding: 12px;
+                margin-top: 12px;
+            }
+
+            .deposits-header {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+
+            .deposit-card {
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+
+            .deposit-stats {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 6px;
+            }
+
+            .stat-item {
+                padding: 6px;
+            }
+
+            .stat-label {
+                font-size: 9px;
+                margin-bottom: 3px;
+            }
+
+            .stat-value {
+                font-size: 11px;
+            }
+
+            .capital-icon {
+                width: 6px;
+                height: 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .deposits-section {
+                padding: 10px;
+                margin-top: 10px;
+            }
+
+            .deposits-header {
+                font-size: 12px;
+                margin-bottom: 8px;
+            }
+
+            .deposit-card {
+                padding: 8px;
+                margin-bottom: 8px;
+            }
+
+            .deposit-stats {
+                grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+                gap: 4px;
+            }
+
+            .stat-item {
+                padding: 4px;
+            }
+
+            .stat-label {
+                font-size: 8px;
+                margin-bottom: 2px;
+            }
+
+            .stat-value {
+                font-size: 10px;
+            }
+
+            .capital-icon {
+                width: 5px;
+                height: 5px;
             }
         }
 
