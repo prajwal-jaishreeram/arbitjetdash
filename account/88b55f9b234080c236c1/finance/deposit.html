@@ -1507,12 +1507,7 @@
             position: relative;
         }
 
-        .account-balance-wrapper {
-            flex: 1;
-            position: relative;
-        }
-
-        .currency-select, .reinvest-source-select, .account-balance-select {
+        .currency-select, .reinvest-source-select {
             width: 100%;
             background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
             backdrop-filter: blur(20px);
@@ -1531,26 +1526,18 @@
             cursor: pointer;
         }
 
-        .currency-select:focus, .reinvest-source-select:focus, .account-balance-select:focus {
+        .currency-select:focus, .reinvest-source-select:focus {
             border-color: rgba(59,130,246,0.5);
             box-shadow: 0 0 0 2px rgba(59,130,246,0.15);
         }
 
-        .currency-select option, .reinvest-source-select option, .account-balance-select option {
+        .currency-select option, .reinvest-source-select option {
             background: #181824;
             color: #fff;
             font-size: 15px;
         }
 
-        /* Style for Account Balance header option */
-        .account-balance-select option[value=""] {
-            background: #2d3748;
-            color: #a0aec0;
-            font-weight: 600;
-            font-style: italic;
-        }
-
-        .currency-select-arrow, .reinvest-source-arrow, .account-balance-arrow {
+        .currency-select-arrow, .reinvest-source-arrow {
             position: absolute;
             right: 18px;
             top: 50%;
@@ -1559,11 +1546,6 @@
             display: flex;
             align-items: center;
             z-index: 2;
-        }
-
-        /* Move account balance arrow up a bit in desktop view */
-        .account-balance-arrow {
-            top: 40%;
         }
 
         /* Move reinvest source arrow up a bit */
@@ -1575,26 +1557,25 @@
         @media (max-width: 768px) {
             .selectors-row {
                 flex-direction: row;
-                gap: 8px;
+                gap: 12px;
                 margin-bottom: 0px;
         }
 
             .currency-select-wrapper,
-            .reinvest-source-wrapper,
-            .account-balance-wrapper {
+            .reinvest-source-wrapper {
                 flex: 1;
             }
 
-            .currency-select, .reinvest-source-select, .account-balance-select {
-            font-size: 13px;
-                padding: 10px 28px 10px 8px;
+            .currency-select, .reinvest-source-select {
+                font-size: 14px;
+                padding: 12px 32px 12px 10px;
             }
 
-            .currency-select-arrow, .reinvest-source-arrow, .account-balance-arrow {
-                right: 8px;
+            .currency-select-arrow, .reinvest-source-arrow {
+                right: 10px;
         }
 
-            .reinvest-source-arrow, .account-balance-arrow {
+            .reinvest-source-arrow {
                 top: 35%;
             }
         }
@@ -2021,6 +2002,21 @@
             border-top-color: rgba(255, 255, 255, 0.1);
             z-index: 1000;
         }
+
+        @media (min-width: 1024px) {
+            .account-balance {
+                font-size: 1.35rem !important;
+                padding: 7px 20px !important;
+                border-radius: 12px !important;
+            }
+            .account-balance img {
+                width: 24px !important;
+                height: 24px !important;
+            }
+            .account-balance span {
+                font-size: 1.15rem !important;
+            }
+        }
     </style>
 
     <script defer src="/assets/vendor/js/jquery-3.4.0.min.js"></script>
@@ -2170,7 +2166,13 @@
     </div>
             <div class="col-sm-9 col-lg-10 col-xs-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading flex justify-between"><h3 class="panel-title">Deposit Funds</h3></div>
+                    <div class="panel-heading flex justify-between" style="align-items: center;">
+                      <h3 class="panel-title" style="margin-bottom: 0;">Deposit Funds</h3>
+                      <span class="account-balance" style="font-size: 1rem; font-weight: 600; color: #fff; background: #232323; border-radius: 8px; padding: 4px 12px; margin-left: 12px; display: flex; align-items: center; gap: 6px;">
+                        <img src="/images/cryptoicons/SVG/btc.svg" alt="BTC" style="width: 18px; height: 18px; vertical-align: middle;"> 
+                        Balance <span style="color:#fff; opacity:0.8; font-weight:400; margin-left:4px;">$49.98</span>
+                      </span>
+                    </div>
                     
                     <div class="panel-body">
                         <div class="container">
@@ -2181,7 +2183,7 @@
 
 
 
-                <!-- Currency, Account Balance, and Reinvesting Source Selectors -->
+                <!-- Currency and Reinvesting Source Selectors -->
                 <div class="selectors-row">
                     <div class="currency-select-wrapper">
                         <select class="currency-select" id="currency-select">
@@ -2198,23 +2200,6 @@
                             </svg>
                         </span>
                 </div>
-
-                    <div class="account-balance-wrapper">
-                        <select class="account-balance-select" id="account-balance-select">
-                            <option value="">Account Balance</option>
-                            <option value="btc">BTC: 0.0025</option>
-                            <option value="eth">ETH: 0.0450</option>
-                            <option value="usdt">USDT: 1250.50</option>
-                            <option value="usdc">USDC: 850.25</option>
-                            <option value="xaut">XAUT: 0.0012</option>
-                            <option value="usdt_tron">USDT (TRON): 2100.75</option>
-                        </select>
-                        <span class="account-balance-arrow">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 8L10 12L14 8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
-                    </div>
 
                     <div class="reinvest-source-wrapper">
                         <select class="reinvest-source-select" id="reinvest-source-select">
@@ -2635,7 +2620,6 @@
 
         // Initialize
         updateReturns();
-        updateAccountBalanceDropdown();
 
         // Deposit filter logic (dropdown)
         document.addEventListener('DOMContentLoaded', function() {
@@ -2697,35 +2681,6 @@
             }
         });
         });
-
-        // Account balance data (simulated)
-        const accountBalances = {
-            btc: 0.0025,
-            eth: 0.045,
-            usdt: 1250.50,
-            usdc: 850.25,
-            xaut: 0.0012,
-            usdt_tron: 2100.75
-        };
-
-        // Function to update account balance dropdown
-        function updateAccountBalanceDropdown() {
-            const accountBalanceSelect = document.getElementById('account-balance-select');
-            if (!accountBalanceSelect) return;
-
-            // Update all balance options with current values
-            const options = accountBalanceSelect.querySelectorAll('option');
-            options.forEach(option => {
-                if (option.value) { // Skip the "Account Balance" option
-                    const currency = option.value;
-                    const currencyBalance = accountBalances[currency] || 0;
-                    option.textContent = `${currency.toUpperCase()}: ${currencyBalance.toFixed(4)}`;
-                }
-            });
-            
-            // Keep "Account Balance" as the default selected option
-            accountBalanceSelect.value = "";
-        }
 
         // Currency select event listener
         if (currencySelect) {
