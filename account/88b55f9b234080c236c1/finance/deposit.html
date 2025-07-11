@@ -113,6 +113,35 @@
             margin-bottom: 0;
         }
 
+        /* Remove gap between header and Deposit Funds section */
+        .panel {
+            margin-top: 0;
+        }
+
+        .panel-heading {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .panel-body {
+            padding-top: 0;
+        }
+
+        /* Remove gaps from container classes */
+        .container-fluid.content {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        .inner {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        .row {
+            margin-top: 0;
+        }
+
         .navbar .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -221,7 +250,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
             padding: 6px;
-            margin-bottom: 24px;
+            margin-bottom: 12px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
@@ -262,7 +291,7 @@
         @media (max-width: 768px) {
             .crypto-tabs {
                 padding: 4px;
-                margin-bottom: 20px;
+                margin-bottom: 12px;
             }
 
             .crypto-tab {
@@ -295,14 +324,14 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 8px;
-            margin-bottom: 24px;
+            margin-bottom: 12px;
         }
 
         /* Mobile responsive for plan grid */
         @media (max-width: 768px) {
             .plan-grid {
                 gap: 6px;
-                margin-bottom: 20px;
+                margin-bottom: 12px;
             }
 
             .plan-card {
@@ -562,6 +591,12 @@
             .return-value {
                 font-size: 16px;
             }
+
+            /* Hide Weekly Return and Monthly Return on mobile */
+            .return-section:nth-child(2),
+            .return-section:nth-child(3) {
+                display: none;
+            }
         }
 
         @media (max-width: 480px) {
@@ -593,6 +628,12 @@
 
             .return-value {
                 font-size: 14px;
+            }
+
+            /* Hide Weekly Return and Monthly Return on mobile */
+            .return-section:nth-child(2),
+            .return-section:nth-child(3) {
+                display: none;
             }
         }
 
@@ -1367,7 +1408,7 @@
             .payment-method {
                 padding: 8px !important;
                 margin-bottom: 6px !important;
-            }
+        }
             .payment-title, .balance-usd {
                 font-size: 12px !important;
         }
@@ -1453,7 +1494,7 @@
         .selectors-row {
             display: flex;
             gap: 16px;
-            margin-bottom: 24px;
+            margin-bottom: 12px;
         }
 
         .currency-select-wrapper {
@@ -1466,7 +1507,12 @@
             position: relative;
         }
 
-        .currency-select, .reinvest-source-select {
+        .account-balance-wrapper {
+            flex: 1;
+            position: relative;
+        }
+
+        .currency-select, .reinvest-source-select, .account-balance-select {
             width: 100%;
             background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
             backdrop-filter: blur(20px);
@@ -1485,18 +1531,26 @@
             cursor: pointer;
         }
 
-        .currency-select:focus, .reinvest-source-select:focus {
+        .currency-select:focus, .reinvest-source-select:focus, .account-balance-select:focus {
             border-color: rgba(59,130,246,0.5);
             box-shadow: 0 0 0 2px rgba(59,130,246,0.15);
         }
 
-        .currency-select option, .reinvest-source-select option {
+        .currency-select option, .reinvest-source-select option, .account-balance-select option {
             background: #181824;
             color: #fff;
             font-size: 15px;
         }
 
-        .currency-select-arrow, .reinvest-source-arrow {
+        /* Style for Account Balance header option */
+        .account-balance-select option[value=""] {
+            background: #2d3748;
+            color: #a0aec0;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .currency-select-arrow, .reinvest-source-arrow, .account-balance-arrow {
             position: absolute;
             right: 18px;
             top: 50%;
@@ -1505,6 +1559,11 @@
             display: flex;
             align-items: center;
             z-index: 2;
+        }
+
+        /* Move account balance arrow up a bit in desktop view */
+        .account-balance-arrow {
+            top: 40%;
         }
 
         /* Move reinvest source arrow up a bit */
@@ -1516,24 +1575,26 @@
         @media (max-width: 768px) {
             .selectors-row {
                 flex-direction: row;
-                gap: 12px;
+                gap: 8px;
+                margin-bottom: 0px;
         }
 
             .currency-select-wrapper,
-            .reinvest-source-wrapper {
+            .reinvest-source-wrapper,
+            .account-balance-wrapper {
                 flex: 1;
             }
 
-            .currency-select, .reinvest-source-select {
-                font-size: 14px;
-                padding: 12px 32px 12px 10px;
+            .currency-select, .reinvest-source-select, .account-balance-select {
+            font-size: 13px;
+                padding: 10px 28px 10px 8px;
             }
 
-            .currency-select-arrow, .reinvest-source-arrow {
-                right: 10px;
+            .currency-select-arrow, .reinvest-source-arrow, .account-balance-arrow {
+                right: 8px;
         }
 
-            .reinvest-source-arrow {
+            .reinvest-source-arrow, .account-balance-arrow {
                 top: 35%;
             }
         }
@@ -1584,7 +1645,7 @@
         /* Mobile responsive for amount-reinvest row */
         @media (max-width: 768px) {
             .amount-reinvest-row {
-                flex-direction: row;
+            flex-direction: row;
             gap: 10px;
         }
 
@@ -1611,7 +1672,7 @@
         }
 
             .reinvest-wrapper .reinvest-select {
-                width: 100%;
+            width: 100%;
                 min-width: 0;
                 font-size: 13px;
                 padding: 12px 10px;
@@ -1629,10 +1690,14 @@
                 flex: 1;
                 min-width: 0;
                 white-space: nowrap;
-            }
+        }
         }
 
         @media (max-width: 480px) {
+            .selectors-row {
+                margin-bottom: 0px;
+            }
+
             .amount-reinvest-row {
                 gap: 6px;
             }
@@ -1649,7 +1714,7 @@
             .reinvest-wrapper .form-label {
                 font-size: 12px;
                 margin-bottom: 4px;
-        }
+            }
 
             .reinvest-wrapper .reinvest-select {
                 font-size: 12px;
@@ -2116,7 +2181,7 @@
 
 
 
-                <!-- Currency and Reinvesting Source Selectors -->
+                <!-- Currency, Account Balance, and Reinvesting Source Selectors -->
                 <div class="selectors-row">
                     <div class="currency-select-wrapper">
                         <select class="currency-select" id="currency-select">
@@ -2133,6 +2198,23 @@
                             </svg>
                         </span>
                 </div>
+
+                    <div class="account-balance-wrapper">
+                        <select class="account-balance-select" id="account-balance-select">
+                            <option value="">Account Balance</option>
+                            <option value="btc">BTC: 0.0025</option>
+                            <option value="eth">ETH: 0.0450</option>
+                            <option value="usdt">USDT: 1250.50</option>
+                            <option value="usdc">USDC: 850.25</option>
+                            <option value="xaut">XAUT: 0.0012</option>
+                            <option value="usdt_tron">USDT (TRON): 2100.75</option>
+                        </select>
+                        <span class="account-balance-arrow">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 8L10 12L14 8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </div>
 
                     <div class="reinvest-source-wrapper">
                         <select class="reinvest-source-select" id="reinvest-source-select">
@@ -2553,6 +2635,7 @@
 
         // Initialize
         updateReturns();
+        updateAccountBalanceDropdown();
 
         // Deposit filter logic (dropdown)
         document.addEventListener('DOMContentLoaded', function() {
@@ -2614,6 +2697,35 @@
             }
         });
         });
+
+        // Account balance data (simulated)
+        const accountBalances = {
+            btc: 0.0025,
+            eth: 0.045,
+            usdt: 1250.50,
+            usdc: 850.25,
+            xaut: 0.0012,
+            usdt_tron: 2100.75
+        };
+
+        // Function to update account balance dropdown
+        function updateAccountBalanceDropdown() {
+            const accountBalanceSelect = document.getElementById('account-balance-select');
+            if (!accountBalanceSelect) return;
+
+            // Update all balance options with current values
+            const options = accountBalanceSelect.querySelectorAll('option');
+            options.forEach(option => {
+                if (option.value) { // Skip the "Account Balance" option
+                    const currency = option.value;
+                    const currencyBalance = accountBalances[currency] || 0;
+                    option.textContent = `${currency.toUpperCase()}: ${currencyBalance.toFixed(4)}`;
+                }
+            });
+            
+            // Keep "Account Balance" as the default selected option
+            accountBalanceSelect.value = "";
+        }
 
         // Currency select event listener
         if (currencySelect) {
