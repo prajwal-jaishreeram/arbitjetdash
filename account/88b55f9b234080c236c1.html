@@ -129,7 +129,7 @@
         .plan-details h4 { font-size: 1em; font-weight: 600; margin-bottom: 2px; }
         .plan-details .rate { font-size: 0.8em; opacity: 0.7; }
         .current .plan-details h4 { color: #3B82F6; }
-        .target .plan-details h4 { color: #9CA3AF; }
+        .target .plan-details h4 { color: #3B82F6; }
         .progress-section { position: relative; margin-bottom: 14px; }
         .progress-track { background: rgba(255, 255, 255, 0.05); height: 8px; border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
         .progress-fill { background: linear-gradient(90deg, #3B82F6, #6B7280); height: 100%; width: 5%; border-radius: 4px; transition: width 0.8s ease; position: relative; }
@@ -163,13 +163,1080 @@
         @media (max-width: 768px) {
             .card-header { flex-direction: column; gap: 16px; align-items: flex-start; }
             .explore-btn { align-self: stretch; justify-content: center; }
-            .plans-row { grid-template-columns: 1fr; gap: 16px; }
-            .plan-item.target { justify-self: start; }
+            .plans-row { 
+                grid-template-columns: 1fr 1fr; 
+                gap: 12px; 
+                align-items: center;
+            }
+            .plan-item.target { justify-self: end; }
             .connect-line { display: none; }
             .deposit-info { grid-template-columns: repeat(2, 1fr); }
         }
+        
+        @media (max-width: 480px) {
+            .plans-row { 
+                grid-template-columns: 1fr 1fr; 
+                gap: 8px; 
+            }
+            .plan-item {
+                text-align: center;
+            }
+            .plan-item h4 {
+                font-size: 0.9em;
+            }
+            .plan-item .rate {
+                font-size: 0.8em;
+            }
+            .plan-icon img {
+                width: 24px !important;
+                height: 24px !important;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .plans-row { 
+                grid-template-columns: 1fr 1fr; 
+                gap: 6px; 
+            }
+            .plan-item h4 {
+                font-size: 0.8em;
+            }
+            .plan-item .rate {
+                font-size: 0.7em;
+            }
+            .plan-icon img {
+                width: 20px !important;
+                height: 20px !important;
+            }
+        }
+        
+        /* Balance section mobile adjustments */
+        @media (max-width: 768px) {
+            .balance-card .card-header {
+                margin-bottom: 6px !important;
+                padding-bottom: 6px !important;
+            }
+            .balance-card .title {
+                font-size: 1.1em !important;
+                margin-top: -2px !important;
+            }
+            .balance-card .title-icon {
+                font-size: 1.1em !important;
+                margin-top: -2px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .balance-card .card-header {
+                margin-bottom: 4px !important;
+                padding-bottom: 4px !important;
+            }
+            .balance-card .title {
+                font-size: 1em !important;
+                margin-top: -4px !important;
+            }
+            .balance-card .title-icon {
+                font-size: 1em !important;
+                margin-top: -4px !important;
+            }
+            /* Affiliate link area mobile styles */
+            .affiliate-link-area label {
+                font-size: 0.95em !important;
+            }
+            .affiliate-link-box {
+                gap: 4px !important;
+                margin-top: 2px !important;
+            }
+            .affiliate-link-box input[type="text"] {
+                padding: 6px 8px !important;
+                font-size: 0.95em !important;
+                border-radius: 4px !important;
+            }
+            .affiliate-link-box button {
+                padding: 6px 8px !important;
+                font-size: 0.95em !important;
+                border-radius: 4px !important;
+            }
+            #copy-feedback {
+                font-size: 0.85em !important;
+                margin-left: 4px !important;
+            }
+            
+            /* Partner Program header mobile adjustments */
+            .main-card .header {
+                padding: 6px !important;
+                gap: 4px !important;
+            }
+            .main-card .header-icon {
+                width: 20px !important;
+                height: 20px !important;
+                font-size: 0.7em !important;
+            }
+            .main-card .header-content h3 {
+                font-size: 1em !important;
+                margin-bottom: 1px !important;
+            }
+            .main-card .status-badge {
+                padding: 1px 6px !important;
+                font-size: 0.7em !important;
+            }
+        }
+            .plan-item h4 {
+                font-size: 0.8em;
+            }
+            .plan-item .rate {
+                font-size: 0.7em;
+            }
+            .plan-icon img {
+                width: 20px !important;
+                height: 20px !important;
+            }
+        }
     </style>
     <!-- END: Active Deposits Modern Redesign -->
+
+    <!-- Recent Activity Mobile Responsive Styles -->
+    <style>
+        /* Desktop styles for Recent Activity table */
+        @media (min-width: 769px) {
+            .activity-panel {
+                margin-bottom: 16px !important;
+            }
+            .panel-header {
+                padding: 12px 16px !important;
+            }
+            .activity-table td {
+                font-size: 1.1rem !important;
+                padding: 10px 20px !important;
+            }
+            .activity-text {
+                font-size: 1.1rem !important;
+            }
+            .activity-icon {
+                font-size: 1.1rem !important;
+            }
+            .security-badge {
+                font-size: 1rem !important;
+            }
+            .ip-address {
+                font-size: 1.1rem !important;
+            }
+            .timestamp {
+                font-size: 1.1rem !important;
+            }
+            .time-ago {
+                font-size: 1rem !important;
+            }
+        }
+        
+        /* Mobile responsive styles for Recent Activity table */
+        @media (max-width: 768px) {
+            .activity-panel {
+                margin-bottom: 16px !important;
+            }
+            
+            .panel-header {
+                padding: 12px 16px !important;
+            }
+            
+            .panel-title {
+                font-size: 1.2rem !important;
+                gap: 8px !important;
+            }
+            
+            .title-icon {
+                width: 28px !important;
+                height: 28px !important;
+                font-size: 0.9rem !important;
+            }
+            
+            .activity-table {
+                display: block !important;
+            }
+            
+            .activity-table thead {
+                display: none !important;
+            }
+            
+            .activity-table tbody {
+                display: block !important;
+            }
+            
+            .activity-table tr {
+                display: block !important;
+                margin-bottom: 16px !important;
+                background: rgba(255, 255, 255, 0.03) !important;
+                border-radius: 12px !important;
+                padding: 16px !important;
+                border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            }
+            
+            .activity-table td {
+                display: block !important;
+                padding: 8px 0 !important;
+                text-align: left !important;
+                border: none !important;
+            }
+            
+            .activity-table td:not(:last-child) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+                padding-bottom: 12px !important;
+                margin-bottom: 8px !important;
+            }
+            
+            .activity-table td::before {
+                content: attr(data-label) ": ";
+                font-weight: 600 !important;
+                color: #3B82F6 !important;
+                font-size: 1rem !important;
+                text-transform: uppercase !important;
+                letter-spacing: 0.5px !important;
+                margin-bottom: 6px !important;
+                display: block !important;
+            }
+            
+            .activity-content {
+                gap: 10px !important;
+            }
+            
+            .activity-text {
+                font-size: 1.1rem !important;
+                gap: 6px !important;
+                flex-wrap: wrap !important;
+            }
+            
+            .activity-icon {
+                font-size: 1rem !important;
+            }
+            
+            .security-badge {
+                font-size: 0.9rem !important;
+                padding: 2px 6px !important;
+                margin-left: 6px !important;
+            }
+            
+            .ip-address {
+                font-size: 1rem !important;
+                padding: 4px 10px !important;
+                border-radius: 6px !important;
+            }
+            
+            .timestamp {
+                font-size: 1.1rem !important;
+                margin-bottom: 4px !important;
+            }
+            
+            .time-ago {
+                font-size: 1rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .activity-panel {
+                margin-bottom: 0 !important;
+            }
+            
+            /* Trading Bot Widget mobile height reduction */
+            .trading-bot-widget {
+                padding: 4px !important;
+            }
+            .trading-bot-widget h3 {
+                font-size: 0.9rem !important;
+                margin-bottom: 4px !important;
+                padding: 4px 0 !important;
+            }
+            .trading-bot-container {
+                gap: 4px !important;
+            }
+            .tranding-bot-field {
+                padding: 3px 6px !important;
+                min-height: auto !important;
+                margin: 2px 0 !important;
+            }
+            .coin-logo {
+                width: 14px !important;
+                height: 14px !important;
+            }
+            .trading-bot-widget span {
+                font-size: 0.8rem !important;
+                line-height: 1.2 !important;
+            }
+            .trading-bot-widget .flex {
+                gap: 4px !important;
+            }
+            
+            /* Current Deposits mobile layout reorganization */
+            .deposit-info {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr 1fr !important;
+                grid-template-rows: auto auto !important;
+                gap: 8px !important;
+            }
+            .deposit-info .info-item:nth-child(1),
+            .deposit-info .info-item:nth-child(2),
+            .deposit-info .info-item:nth-child(3) {
+                grid-row: 1 !important;
+            }
+            .deposit-info .info-item:nth-child(4),
+            .deposit-info .info-item:nth-child(5) {
+                grid-row: 2 !important;
+                grid-column: span 1.5 !important;
+            }
+        }
+            
+            .panel-header {
+                padding: 10px 12px !important;
+            }
+            
+            .panel-title {
+                font-size: 1.1rem !important;
+                gap: 6px !important;
+            }
+            
+            .title-icon {
+                width: 24px !important;
+                height: 24px !important;
+                font-size: 0.8rem !important;
+            }
+            
+            .activity-table tr {
+                padding: 12px !important;
+                margin-bottom: 12px !important;
+            }
+            
+            .activity-table td {
+                padding: 6px 0 !important;
+            }
+            
+            .activity-table td:not(:last-child) {
+                padding-bottom: 10px !important;
+                margin-bottom: 6px !important;
+            }
+            
+            .activity-table td::before {
+                font-size: 0.95rem !important;
+                margin-bottom: 4px !important;
+            }
+            
+            .activity-content {
+                gap: 8px !important;
+            }
+            
+            .activity-text {
+                font-size: 1rem !important;
+                gap: 4px !important;
+            }
+            
+            .activity-icon {
+                font-size: 0.9rem !important;
+            }
+            
+            .security-badge {
+                font-size: 0.8rem !important;
+                padding: 2px 5px !important;
+                margin-left: 4px !important;
+            }
+            
+            .ip-address {
+                font-size: 0.9rem !important;
+                padding: 3px 8px !important;
+            }
+            
+            .timestamp {
+                font-size: 1rem !important;
+            }
+            
+            .time-ago {
+                font-size: 0.9rem !important;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            .panel-header {
+                padding: 8px 10px !important;
+            }
+            
+            .panel-title {
+                font-size: 1rem !important;
+                gap: 4px !important;
+            }
+            
+            .title-icon {
+                width: 20px !important;
+                height: 20px !important;
+                font-size: 0.7rem !important;
+            }
+            
+            .activity-table tr {
+                padding: 10px !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .activity-table td {
+                padding: 4px 0 !important;
+            }
+            
+            .activity-table td:not(:last-child) {
+                padding-bottom: 8px !important;
+                margin-bottom: 4px !important;
+            }
+            
+            .activity-table td::before {
+                font-size: 0.85rem !important;
+                margin-bottom: 3px !important;
+            }
+            
+            .activity-content {
+                gap: 6px !important;
+            }
+            
+            .activity-text {
+                font-size: 0.9rem !important;
+                gap: 3px !important;
+            }
+            
+            .activity-icon {
+                font-size: 0.8rem !important;
+            }
+            
+            .security-badge {
+                font-size: 0.7rem !important;
+                padding: 1px 4px !important;
+                margin-left: 3px !important;
+            }
+            
+            .ip-address {
+                font-size: 0.8rem !important;
+                padding: 2px 6px !important;
+            }
+            
+            .timestamp {
+                font-size: 0.9rem !important;
+            }
+            
+            .time-ago {
+                font-size: 0.8rem !important;
+            }
+        }
+    </style>
+
+    <!-- Chart & Calendar Mobile Responsive Styles -->
+    <style>
+        /* Chart Container Mobile Responsive */
+        @media (max-width: 768px) {
+            .calendar-panel {
+                margin-bottom: 16px;
+            }
+            
+            .panel-heading {
+                padding: 12px 16px !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                gap: 12px !important;
+            }
+            
+            .panel-title {
+                font-size: 1.2rem !important;
+                margin: 0 !important;
+            }
+            
+            /* Toggle Switch Mobile Improvements */
+            .toggle-container {
+                width: 100% !important;
+                max-width: 200px !important;
+                height: 40px !important;
+                padding: 0 4px !important;
+                border-radius: 20px !important;
+                background: rgba(255, 255, 255, 0.1) !important;
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+            }
+            
+            .toggle-button {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+                padding: 8px 12px !important;
+                min-width: auto !important;
+                color: rgba(255, 255, 255, 0.7) !important;
+                border-radius: 16px !important;
+            }
+            
+            .toggle-button.active {
+                color: #ffffff !important;
+            }
+            
+            .toggle-indicator {
+                height: 32px !important;
+                top: 4px !important;
+                bottom: 4px !important;
+                background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%) !important;
+                border-radius: 16px !important;
+                box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3) !important;
+            }
+            
+            /* Chart Container Mobile */
+            #chart-container .main-card {
+                margin: 0 !important;
+                padding: 16px !important;
+                border-radius: 12px !important;
+            }
+            
+            #chart-container .card-header {
+                padding: 0 0 12px 0 !important;
+                margin-bottom: 12px !important;
+            }
+            
+            #chart-container .title {
+                font-size: 1.1rem !important;
+            }
+            
+            #apexchart-roi {
+                height: 280px !important;
+            }
+            
+            /* Chart Text Size Improvements */
+            #apexchart-roi .apexcharts-text {
+                font-size: 12px !important;
+            }
+            
+            #apexchart-roi .apexcharts-title-text {
+                font-size: 14px !important;
+            }
+            
+            #apexchart-roi .apexcharts-legend-text {
+                font-size: 12px !important;
+            }
+            
+            #apexchart-roi .apexcharts-tooltip {
+                font-size: 12px !important;
+            }
+            
+            /* Calendar Mobile Improvements */
+            .calendar {
+                font-size: 12px !important;
+            }
+            
+            .calendar-header {
+                padding: 8px 12px !important;
+                font-size: 1rem !important;
+            }
+            
+            .calendar-days div {
+                padding: 6px 2px !important;
+                font-size: 11px !important;
+            }
+            
+            .calendar-dates > div {
+                padding: 8px 2px !important;
+                font-size: 11px !important;
+            }
+            
+            .calendar-date-additional-text {
+                font-size: 9px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .panel-heading {
+                padding: 10px 12px !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                gap: 10px !important;
+            }
+            
+            .panel-title {
+                font-size: 1.1rem !important;
+            }
+            
+            /* Toggle Switch Small Mobile */
+            .toggle-container {
+                max-width: 180px !important;
+                height: 36px !important;
+            }
+            
+            .toggle-button {
+                font-size: 13px !important;
+                padding: 6px 10px !important;
+            }
+            
+            .toggle-indicator {
+                height: 28px !important;
+                top: 4px !important;
+                bottom: 4px !important;
+            }
+            
+            /* Chart Container Small Mobile */
+            #chart-container .main-card {
+                padding: 12px !important;
+            }
+            
+            #chart-container .title {
+                font-size: 1rem !important;
+            }
+            
+            #apexchart-roi {
+                height: 240px !important;
+            }
+            
+            /* Chart Text Size Small Mobile */
+            #apexchart-roi .apexcharts-text {
+                font-size: 11px !important;
+            }
+            
+            #apexchart-roi .apexcharts-title-text {
+                font-size: 13px !important;
+            }
+            
+            #apexchart-roi .apexcharts-legend-text {
+                font-size: 11px !important;
+            }
+            
+            #apexchart-roi .apexcharts-tooltip {
+                font-size: 11px !important;
+            }
+            
+            /* Calendar Small Mobile */
+            .calendar {
+                font-size: 11px !important;
+            }
+            
+            .calendar-header {
+                padding: 6px 8px !important;
+                font-size: 0.9rem !important;
+            }
+            
+            .calendar-days div {
+                padding: 4px 1px !important;
+                font-size: 10px !important;
+            }
+            
+            .calendar-dates > div {
+                padding: 6px 1px !important;
+                font-size: 10px !important;
+            }
+            
+            .calendar-date-additional-text {
+                font-size: 8px !important;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .panel-heading {
+                padding: 8px 10px !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                gap: 8px !important;
+            }
+            
+            .panel-title {
+                font-size: 1rem !important;
+            }
+            
+            /* Toggle Switch Ultra Small Mobile */
+            .toggle-container {
+                max-width: 160px !important;
+                height: 32px !important;
+            }
+            
+            .toggle-button {
+                font-size: 12px !important;
+                padding: 5px 8px !important;
+            }
+            
+            .toggle-indicator {
+                height: 24px !important;
+                top: 4px !important;
+                bottom: 4px !important;
+            }
+            
+            /* Chart Container Ultra Small Mobile */
+            #chart-container .main-card {
+                padding: 10px !important;
+            }
+            
+            #chart-container .title {
+                font-size: 0.9rem !important;
+            }
+            
+            #apexchart-roi {
+                height: 200px !important;
+            }
+            
+            /* Chart Text Size Ultra Small Mobile */
+            #apexchart-roi .apexcharts-text {
+                font-size: 10px !important;
+            }
+            
+            #apexchart-roi .apexcharts-title-text {
+                font-size: 12px !important;
+            }
+            
+            #apexchart-roi .apexcharts-legend-text {
+                font-size: 10px !important;
+            }
+            
+            #apexchart-roi .apexcharts-tooltip {
+                font-size: 10px !important;
+            }
+            
+            /* Calendar Ultra Small Mobile */
+            .calendar {
+                font-size: 10px !important;
+            }
+            
+            .calendar-header {
+                padding: 4px 6px !important;
+                font-size: 0.8rem !important;
+            }
+            
+            .calendar-days div {
+                padding: 3px 1px !important;
+                font-size: 9px !important;
+            }
+            
+            .calendar-dates > div {
+                padding: 4px 1px !important;
+                font-size: 9px !important;
+            }
+            
+            .calendar-date-additional-text {
+                font-size: 7px !important;
+            }
+        }
+        
+        /* Chart Background Color Fix */
+        #chart-container .main-card {
+            background: #000000 !important;
+        }
+        
+        /* Chart Container Spacing */
+        #apexchart-roi {
+            padding: 10px 0 !important;
+        }
+        
+        /* Chart Grid Spacing */
+        #apexchart-roi .apexcharts-gridline {
+            stroke: rgba(255, 255, 255, 0.05) !important;
+        }
+        
+        /* Fix Chart Axis Labels - Make "Day of Month" Straight */
+        #apexchart-roi .apexcharts-xaxis-label {
+            transform: none !important;
+            text-anchor: middle !important;
+            font-size: 12px !important;
+            font-weight: 500 !important;
+            color: #9CA3AF !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        /* Ensure all X-axis labels are shown */
+        #apexchart-roi .apexcharts-xaxis-label[style*="display: none"] {
+            display: block !important;
+        }
+        
+        #apexchart-roi .apexcharts-xaxis-label[style*="opacity: 0"] {
+            opacity: 1 !important;
+        }
+        
+        #apexchart-roi .apexcharts-yaxis-label {
+            transform: none !important;
+            text-anchor: end !important;
+            font-size: 12px !important;
+            font-weight: 500 !important;
+            color: #9CA3AF !important;
+        }
+        
+        /* Mobile Chart Axis Labels */
+        @media (max-width: 768px) {
+            #apexchart-roi .apexcharts-xaxis-label {
+                font-size: 11px !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                margin: 0 8px !important;
+                padding: 2px 4px !important;
+            }
+            
+            #apexchart-roi .apexcharts-yaxis-label {
+                font-size: 11px !important;
+                margin: 0 4px !important;
+            }
+            
+            /* Show every 4th label on mobile for better spacing */
+            #apexchart-roi .apexcharts-xaxis-label:nth-child(4n+1) {
+                display: block !important;
+            }
+            
+            /* Hide other labels to prevent crowding */
+            #apexchart-roi .apexcharts-xaxis-label:not(:nth-child(4n+1)) {
+                display: none !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            #apexchart-roi .apexcharts-xaxis-label {
+                font-size: 10px !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                margin: 0 6px !important;
+                padding: 1px 3px !important;
+            }
+            
+            #apexchart-roi .apexcharts-yaxis-label {
+                font-size: 10px !important;
+                margin: 0 3px !important;
+            }
+            
+            /* Show every 6th label on small mobile for better spacing */
+            #apexchart-roi .apexcharts-xaxis-label:nth-child(6n+1) {
+                display: block !important;
+            }
+            
+            /* Hide other labels to prevent crowding */
+            #apexchart-roi .apexcharts-xaxis-label:not(:nth-child(6n+1)) {
+                display: none !important;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            #apexchart-roi .apexcharts-xaxis-label {
+                font-size: 9px !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                margin: 0 4px !important;
+                padding: 1px 2px !important;
+            }
+            
+            #apexchart-roi .apexcharts-yaxis-label {
+                font-size: 9px !important;
+                margin: 0 2px !important;
+            }
+            
+            /* Show every 8th label on ultra small mobile for better spacing */
+            #apexchart-roi .apexcharts-xaxis-label:nth-child(8n+1) {
+                display: block !important;
+            }
+            
+            /* Hide other labels to prevent crowding */
+            #apexchart-roi .apexcharts-xaxis-label:not(:nth-child(8n+1)) {
+                display: none !important;
+            }
+        }
+        
+        /* Improved Toggle Switch Design */
+        .toggle-container {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(10px) !important;
+        }
+        
+        .toggle-button {
+            color: rgba(255, 255, 255, 0.6) !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .toggle-button:hover {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+        
+        .toggle-button.active {
+            color: #ffffff !important;
+        }
+        
+        .toggle-indicator {
+            background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%) !important;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3) !important;
+        }
+        
+        /* Balance Card Header Layout */
+        .balance-card .card-header {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: flex-start !important;
+            align-items: center !important;
+            gap: 10px !important;
+        }
+        
+        .balance-card .title-icon {
+            order: 1 !important;
+        }
+        
+        .balance-card .title {
+            order: 2 !important;
+        }
+        
+        /* Balance Card Mobile Responsive */
+        @media (max-width: 768px) {
+            .balance-card {
+                padding: 16px !important;
+                margin-bottom: 20px !important;
+            }
+            
+            .balance-card .card-header {
+                gap: 12px !important;
+                margin-bottom: 12px !important;
+                padding-bottom: 10px !important;
+                flex-direction: row !important;
+                justify-content: flex-start !important;
+                align-items: center !important;
+            }
+            
+            .balance-card .title-icon {
+                font-size: 1.4em !important;
+            }
+            
+            .balance-card .title {
+                font-size: 1.3em !important;
+            }
+            
+            /* Crypto Icons Mobile */
+            .crypto-icon {
+                width: 28px !important;
+                height: 28px !important;
+                font-size: 14px !important;
+            }
+            
+            .crypto-icon img {
+                width: 18px !important;
+                height: 18px !important;
+            }
+            
+            .crypto-name {
+                font-size: 1.1em !important;
+            }
+            
+            .amount-text {
+                font-size: 1em !important;
+            }
+            
+            .usd-value {
+                font-size: 1.1em !important;
+            }
+            
+            .total-label {
+                font-size: 1.2em !important;
+            }
+            
+            .total-amount {
+                font-size: 1.3em !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .balance-card {
+                padding: 14px !important;
+                margin-bottom: 16px !important;
+            }
+            
+            .balance-card .card-header {
+                gap: 10px !important;
+                margin-bottom: 10px !important;
+                padding-bottom: 8px !important;
+                flex-direction: row !important;
+                justify-content: flex-start !important;
+                align-items: center !important;
+            }
+            
+            .balance-card .title-icon {
+                font-size: 1.3em !important;
+            }
+            
+            .balance-card .title {
+                font-size: 1.2em !important;
+            }
+            
+            /* Crypto Icons Small Mobile */
+            .crypto-icon {
+                width: 32px !important;
+                height: 32px !important;
+                font-size: 16px !important;
+            }
+            
+            .crypto-icon img {
+                width: 20px !important;
+                height: 20px !important;
+            }
+            
+            .crypto-name {
+                font-size: 1.2em !important;
+            }
+            
+            .amount-text {
+                font-size: 1.1em !important;
+            }
+            
+            .usd-value {
+                font-size: 1.2em !important;
+            }
+            
+            .total-label {
+                font-size: 1.3em !important;
+            }
+            
+            .total-amount {
+                font-size: 1.4em !important;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .balance-card {
+                padding: 12px !important;
+                margin-bottom: 14px !important;
+            }
+            
+            .balance-card .card-header {
+                gap: 8px !important;
+                margin-bottom: 8px !important;
+                padding-bottom: 6px !important;
+                flex-direction: row !important;
+                justify-content: flex-start !important;
+                align-items: center !important;
+            }
+            
+            .balance-card .title-icon {
+                font-size: 1.2em !important;
+            }
+            
+            .balance-card .title {
+                font-size: 1.1em !important;
+            }
+            
+            /* Crypto Icons Ultra Small Mobile */
+            .crypto-icon {
+                width: 36px !important;
+                height: 36px !important;
+                font-size: 18px !important;
+            }
+            
+            .crypto-icon img {
+                width: 22px !important;
+                height: 22px !important;
+            }
+            
+            .crypto-name {
+                font-size: 1.3em !important;
+            }
+            
+            .amount-text {
+                font-size: 1.2em !important;
+            }
+            
+            .usd-value {
+                font-size: 1.3em !important;
+            }
+            
+            .total-label {
+                font-size: 1.4em !important;
+            }
+            
+            .total-amount {
+                font-size: 1.5em !important;
+            }
+        }
+    </style>
 
     <!-- Add ApexCharts CDN -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
@@ -849,12 +1916,57 @@ var options = {
                 ],
                 xaxis: {
                     categories: Array.from({length: 30}, (_, i) => i+1),
-                    title: { text: 'Day of Month', style: { color: '#9CA3AF' } },
-                    labels: { style: { colors: '#9CA3AF' } }
+                    title: { 
+                        text: 'Day of Month', 
+                        style: { 
+                            color: '#9CA3AF',
+                            fontSize: '12px',
+                            fontFamily: 'Inter, sans-serif'
+                        } 
+                    },
+                    labels: { 
+                        style: { 
+                            colors: '#9CA3AF',
+                            fontSize: '12px',
+                            fontFamily: 'Inter, sans-serif'
+                        },
+                        rotate: 0,
+                        rotateAlways: false,
+                        show: true,
+                        showDuplicates: false,
+                        hideOverlappingLabels: false,
+                        offsetX: 0,
+                        offsetY: 5
+                    },
+                    tickAmount: 30,
+                    tickPlacement: 'on',
+                    axisBorder: {
+                        show: true,
+                        color: 'rgba(255,255,255,0.1)',
+                        height: 1
+                    },
+                    axisTicks: {
+                        show: true,
+                        color: 'rgba(255,255,255,0.1)',
+                        height: 6
+                    }
                 },
                 yaxis: {
-                    title: { text: 'Percent (%)', style: { color: '#9CA3AF' } },
-                    labels: { style: { colors: '#9CA3AF' } }
+                    title: { 
+                        text: 'Percent (%)', 
+                        style: { 
+                            color: '#9CA3AF',
+                            fontSize: '12px',
+                            fontFamily: 'Inter, sans-serif'
+                        } 
+                    },
+                    labels: { 
+                        style: { 
+                            colors: '#9CA3AF',
+                            fontSize: '12px',
+                            fontFamily: 'Inter, sans-serif'
+                        }
+                    }
                 },
                 legend: {
                     position: 'top',
@@ -990,15 +2102,17 @@ var options = {
                 </table>
             </div>
                 <div class="main-card" style="background: rgba(255,255,255,0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.3); margin-bottom: 24px;">
-            <div class="header" style="background: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(59,130,246,0.05) 100%); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 10px; display: flex; align-items: center; gap: 6px;">
-                <div class="header-icon" style="width: 24px; height: 24px; background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.8em; color: white; box-shadow: 0 4px 20px rgba(59,130,246,0.3);">
-                    <i class="fa-solid fa-handshake"></i>
-                        </div>
-                                <div class="header-content">
-                    <h3 style="font-size: 1.2em; font-weight: 700; background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 2px;">Partner Program</h3>
-                    <div class="status-badge" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 2px 8px; border-radius: 16px; font-size: 0.8em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 10px rgba(16,185,129,0.3);">Affiliate</div>
-                                    </div>
+            <div class="header" style="background: linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(59,130,246,0.05) 100%); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 10px; display: flex; align-items: center; justify-content: space-between; gap: 6px;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <div class="header-icon" style="width: 24px; height: 24px; background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.8em; color: white; box-shadow: 0 4px 20px rgba(59,130,246,0.3);">
+                        <i class="fa-solid fa-handshake"></i>
                     </div>
+                    <div class="header-content">
+                        <h3 style="font-size: 1.2em; font-weight: 700; background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 2px; margin-top: -2px;">Partner Program</h3>
+                    </div>
+                </div>
+                <div class="status-badge" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 2px 8px; border-radius: 16px; font-size: 0.8em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 10px rgba(16,185,129,0.3);">Affiliate</div>
+            </div>
 
             <div class="affiliate-link-area" style="margin: 18px 0 10px 0;">
                 <label for="affiliate-link" style="color: #fff; font-size: 1em; font-weight: 500;">Your Affiliate Link</label>
@@ -1384,6 +2498,45 @@ document.getElementById('share-link-btn').onclick = function() {
   }
 };
 </script>
+
+@media (max-width: 480px) {
+  .affiliate-link-area label {
+    font-size: 0.95em !important;
+  }
+  .affiliate-link-box {
+    gap: 4px !important;
+    margin-top: 2px !important;
+  }
+  .affiliate-link-box input[type="text"] {
+    padding: 6px 8px !important;
+    font-size: 0.95em !important;
+    border-radius: 4px !important;
+  }
+  .affiliate-link-box button {
+    padding: 6px 8px !important;
+    font-size: 0.95em !important;
+    border-radius: 4px !important;
+  }
+  #copy-feedback {
+    font-size: 0.85em !important;
+    margin-left: 4px !important;
+  }
+}
+
+.main-card .header {
+  display: flex;
+  align-items: center;
+}
+.main-card .header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 480px) {
+  .main-card .header-content {
+    justify-content: center !important;
+  }
+}
 
 </body>
 </html>
